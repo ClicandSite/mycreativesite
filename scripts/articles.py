@@ -2,7 +2,7 @@
 # Blocs : ("p", texte) · ("h2", titre) · ("ul", [puces]) · ("cta", texte)
 ARTICLES = [
 dict(slug="site-internet-chauffeur-vtc-les-indispensables", date="2026-11-08",
- title="Site internet de chauffeur VTC : les 9 indispensables pour avoir des clients en direct",
+ title="Que mettre sur un site de chauffeur VTC ? Les 9 indispensables pour avoir des clients en direct",
  desc="Réservation en ligne, tarifs aéroport, WhatsApp, version anglaise, paiement à l'avance : ce que doit contenir le site d'un chauffeur VTC pour trouver des clients sans commission.",
  body=[
  ("p","Les plateformes apportent des courses, mais elles prennent une commission sur chacune d'elles et le client ne vous appartient pas : la prochaine fois, il commandera un autre chauffeur. Votre propre site sert à l'inverse : être trouvé sur Google, rassurer, et faire réserver chez vous, en direct. Encore faut-il qu'il contienne les bonnes informations."),
@@ -141,7 +141,7 @@ dict(slug="etre-visible-sur-google-artisan-commercant", date="2026-11-06", updat
  ("cta","Un site pensé pour Google, en ligne en 48 h"),
  ]),
 dict(slug="site-internet-restaurant-les-indispensables", date="2026-11-06",
- title="Site internet de restaurant : les 8 éléments indispensables",
+ title="Que mettre sur un site de restaurant ? Les 8 indispensables",
  desc="Carte, réservation, horaires, photos, accès : ce que vos clients cherchent sur le site d'un restaurant avant de réserver, et comment le présenter.",
  body=[
  ("p","Avant de pousser la porte d'un restaurant, la plupart des clients regardent son site ou sa fiche Google. Ils cherchent quelques informations précises : si elles manquent, ils vont voir ailleurs."),

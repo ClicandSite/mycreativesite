@@ -6,7 +6,7 @@ PRIX = '<a href="/conseils/combien-coute-un-site-internet/">combien coûte un si
 
 METIERS = [
 dict(slug="site-internet-taxi-les-indispensables", date="2026-11-12",
- title="Site internet de taxi : les indispensables pour avoir des clients en direct",
+ title="Que mettre sur un site de taxi ? Les indispensables pour avoir des clients en direct",
  desc="Réservation en ligne, transport conventionné, tarifs réglementés, zones desservies, bouton d'appel : ce que doit contenir le site d'un taxi pour être trouvé sur Google.",
  body=[
  ("p","Un taxi trouve une bonne partie de ses clients sur la route et à la station. Mais les courses les plus régulières, celles qui remplissent l'agenda (gares tôt le matin, aéroports, transports de patients, entreprises), se réservent à l'avance, et souvent après une recherche sur Google. Un site simple, clair et rapide sur téléphone vous permet de capter ces clients en direct."),
@@ -49,7 +49,7 @@ dict(slug="concession-auto-moto-vendre-plus-avec-son-site", date="2026-11-09",
  ("cta","Voir le modèle concession"),
  ]),
 dict(slug="site-internet-garage-les-indispensables", date="2026-11-08",
- title="Site internet de garage automobile : les 8 indispensables",
+ title="Que mettre sur un site de garage automobile ? Les 8 indispensables",
  desc="Rendez-vous atelier, forfaits affichés, véhicules d'occasion, reprise : ce que doit contenir le site d'un garage auto ou moto pour remplir l'atelier.",
  body=[
  ("p","Quand une voiture tombe en panne ou qu'une révision approche, le réflexe est de chercher « garage » sur son téléphone. Le client compare alors deux ou trois garages en quelques secondes : celui qui affiche ses prix, ses horaires et un moyen simple de prendre rendez-vous a toutes les chances d'emporter le travail."),
@@ -72,7 +72,7 @@ dict(slug="site-internet-garage-les-indispensables", date="2026-11-08",
  ]),
 
 dict(slug="site-internet-agence-immobiliere-les-indispensables", date="2026-11-08",
- title="Site internet d'agence immobilière : les indispensables (et les obligations)",
+ title="Que mettre sur un site d'agence immobilière ? Les indispensables (et les obligations)",
  desc="Biens filtrables, DPE, barème d'honoraires, demande d'estimation en ligne, carte professionnelle : ce que doit contenir le site d'une agence immobilière indépendante.",
  body=[
  ("p","Pour une agence indépendante, le site a deux missions : montrer les biens aux acheteurs et, surtout, convaincre les vendeurs de vous confier leur mandat. Les portails immobiliers font la première ; seul votre site peut faire la seconde."),
@@ -94,7 +94,7 @@ dict(slug="site-internet-agence-immobiliere-les-indispensables", date="2026-11-0
  ]),
 
 dict(slug="site-internet-artisan-batiment-les-indispensables", date="2026-11-08",
- title="Site internet d'artisan du bâtiment : les 8 indispensables pour avoir des chantiers",
+ title="Que mettre sur un site d'artisan du bâtiment ? Les 8 indispensables pour avoir des chantiers",
  desc="Réalisations avant/après, demande de devis, zone d'intervention, assurance décennale, labels : ce que doit contenir le site d'un maçon, peintre, menuisier ou couvreur.",
  body=[
  ("p","Maçon, peintre, menuisier, couvreur, carreleur : vos clients ne vous achètent pas un produit, ils vous confient leur maison. Avant de vous appeler, ils veulent voir ce que vous avez déjà fait et être sûrs que vous êtes sérieux. Votre site est l'endroit idéal pour le leur prouver."),
@@ -117,7 +117,7 @@ dict(slug="site-internet-artisan-batiment-les-indispensables", date="2026-11-08"
  ]),
 
 dict(slug="site-internet-coiffeur-institut-beaute-les-indispensables", date="2026-11-08",
- title="Site internet de coiffeur ou d'institut de beauté : les indispensables",
+ title="Que mettre sur un site de coiffeur ou d'institut de beauté ? Les indispensables",
  desc="Prise de rendez-vous en ligne, prestations et tarifs, photos de réalisations, cartes cadeaux : ce que doit contenir le site d'un salon de coiffure ou d'un institut.",
  body=[
  ("p","Dans la coiffure et l'esthétique, on choisit un salon sur une impression : des photos qui donnent envie, des prix clairs et un rendez-vous facile à prendre. Si l'une de ces trois choses manque, la cliente réserve ailleurs, souvent sur une plateforme qui prend une commission sur votre prestation."),
@@ -140,7 +140,7 @@ dict(slug="site-internet-coiffeur-institut-beaute-les-indispensables", date="202
  ]),
 
 dict(slug="site-internet-veterinaire-les-indispensables", date="2026-11-09",
- title="Site internet de vétérinaire : les indispensables",
+ title="Que mettre sur un site de vétérinaire ? Les indispensables",
  desc="Prise de rendez-vous, urgences, actes courants, tarifs indicatifs, équipe et règles de communication : ce que doit contenir le site d'une clinique vétérinaire.",
  body=[
  ("p","Quand un animal est malade ou qu'un vaccin arrive à échéance, le propriétaire cherche d'abord sur son téléphone : horaires, numéro d'urgence, possibilité de prendre rendez-vous. Un site clair lui donne ces réponses en quelques secondes et soulage le téléphone de l'accueil."),
@@ -161,7 +161,7 @@ dict(slug="site-internet-veterinaire-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle vétérinaire"),
  ]),
 dict(slug="site-internet-auto-ecole-les-indispensables", date="2026-11-09",
- title="Site internet d'auto-école : les indispensables",
+ title="Que mettre sur un site d'auto-école ? Les indispensables",
  desc="Formules et tarifs, réservation des leçons, financement, agrément et taux de réussite : ce que doit contenir le site d'une auto-école.",
  body=[
  ("p","Les futurs élèves, et souvent leurs parents, comparent les auto-écoles sur leur téléphone avant de pousser une porte. Ils cherchent un prix, un planning souple et une agence proche. Un site clair répond à ces trois questions."),
@@ -179,7 +179,7 @@ dict(slug="site-internet-auto-ecole-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle auto-école"),
  ]),
 dict(slug="site-internet-coach-sportif-les-indispensables", date="2026-11-09",
- title="Site internet de coach sportif : les indispensables",
+ title="Que mettre sur un site de coach sportif ? Les indispensables",
  desc="Réservation de séances, formules et carnets, planning des cours, diplômes : ce que doit contenir le site d'un coach sportif ou d'une petite salle.",
  body=[
  ("p","Un client qui cherche un coach veut savoir trois choses : est-ce pour moi, combien ça coûte, quand puis-je commencer. Le site doit y répondre avant même qu'il pense à appeler."),
@@ -197,7 +197,7 @@ dict(slug="site-internet-coach-sportif-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle coach sportif"),
  ]),
 dict(slug="site-internet-photographe-les-indispensables", date="2026-11-09",
- title="Site internet de photographe : les indispensables",
+ title="Que mettre sur un site de photographe ? Les indispensables",
  desc="Portfolio rapide, prestations claires, demande de date, tarifs de départ : ce que doit contenir le site d'un photographe.",
  body=[
  ("p","Pour un photographe, le site est la vitrine du travail. Mais de belles images ne suffisent pas : le visiteur doit aussi comprendre ce que vous proposez, à quel prix et comment réserver."),
@@ -215,7 +215,7 @@ dict(slug="site-internet-photographe-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle photographe"),
  ]),
 dict(slug="site-internet-toiletteur-les-indispensables", date="2026-11-09",
- title="Site internet de toiletteur : les indispensables",
+ title="Que mettre sur un site de toiletteur ? Les indispensables",
  desc="Prise de rendez-vous, prestations par taille d'animal, tarifs, conditions d'accueil : ce que doit contenir le site d'un salon de toilettage.",
  body=[
  ("p","Les propriétaires veulent savoir si vous prenez leur animal, combien cela coûtera et quand vous êtes disponible. Le site doit répondre à ces trois questions sur téléphone."),
@@ -233,7 +233,7 @@ dict(slug="site-internet-toiletteur-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle toiletteur"),
  ]),
 dict(slug="site-internet-fleuriste-les-indispensables", date="2026-11-09",
- title="Site internet de fleuriste : les indispensables",
+ title="Que mettre sur un site de fleuriste ? Les indispensables",
  desc="Commande en ligne, retrait ou livraison, créations de saison, mariages et deuil : ce que doit contenir le site d'un fleuriste.",
  body=[
  ("p","Beaucoup de commandes de fleurs se décident vite, souvent la veille ou le jour même. Un site qui permet de commander en deux minutes, sans commission, récupère des ventes qui partent aujourd'hui vers les plateformes."),
@@ -251,7 +251,7 @@ dict(slug="site-internet-fleuriste-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle fleuriste"),
  ]),
 dict(slug="site-internet-traiteur-les-indispensables", date="2026-11-09",
- title="Site internet de traiteur : les indispensables",
+ title="Que mettre sur un site de traiteur ? Les indispensables",
  desc="Demande de devis complète, carte avec photos, prix par personne, allergènes : ce que doit contenir le site d'un traiteur.",
  body=[
  ("p","Un client qui organise une réception veut se projeter : à quoi ressemblent vos plats, combien par personne, êtes-vous libre à sa date. Le site doit l'aider à vous envoyer une demande complète."),
@@ -269,7 +269,7 @@ dict(slug="site-internet-traiteur-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle traiteur"),
  ]),
 dict(slug="site-internet-location-bateau-les-indispensables", date="2026-11-09",
- title="Site internet de location de bateaux : les indispensables",
+ title="Que mettre sur un site de location de bateaux ? Les indispensables",
  desc="Réservation en ligne, flotte avec ou sans permis, tarifs, caution, sécurité : ce que doit contenir le site d'un loueur de bateaux ou de jet-ski.",
  body=[
  ("p","La clientèle est souvent touristique et réserve depuis son téléphone, parfois la veille. Un site clair, en plusieurs langues, permet de remplir la flotte sans tout céder aux plateformes."),
@@ -287,7 +287,7 @@ dict(slug="site-internet-location-bateau-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle location de bateaux"),
  ]),
 dict(slug="site-internet-kinesitherapeute-les-indispensables", date="2026-11-09",
- title="Site internet de kinésithérapeute : les indispensables",
+ title="Que mettre sur un site de kinésithérapeute ? Les indispensables",
  desc="Prise de rendez-vous, informations pratiques, honoraires et règles de communication : ce que doit contenir le site d'un cabinet de kinésithérapie.",
  body=[
  ("p","Un patient qui sort de chez son médecin avec une ordonnance cherche un cabinet proche, disponible, et veut savoir quoi apporter. Le site doit lui donner ces informations simplement."),
@@ -305,7 +305,7 @@ dict(slug="site-internet-kinesitherapeute-les-indispensables", date="2026-11-09"
  ("cta","Voir le modèle kinésithérapeute"),
  ]),
 dict(slug="site-internet-dentiste-les-indispensables", date="2026-11-09",
- title="Site internet de chirurgien-dentiste : les indispensables",
+ title="Que mettre sur un site de chirurgien-dentiste ? Les indispensables",
  desc="Prise de rendez-vous, urgences, honoraires et devis, règles de communication : ce que doit contenir le site d'un cabinet dentaire.",
  body=[
  ("p","Les patients cherchent un cabinet qui prend de nouveaux patients, un créneau rapide et la conduite à tenir en cas d'urgence. Un site sobre et clair répond à ces questions et allège le standard."),
@@ -323,7 +323,7 @@ dict(slug="site-internet-dentiste-les-indispensables", date="2026-11-09",
  ("cta","Voir le modèle dentiste"),
  ]),
 dict(slug="site-internet-bijouterie-horlogerie-les-indispensables", date="2026-11-09",
- title="Site internet de bijouterie-horlogerie : les indispensables",
+ title="Que mettre sur un site de bijouterie-horlogerie ? Les indispensables",
  desc="Sélection, sur mesure, atelier de réparation, rachat d'or et prise de rendez-vous : ce que doit contenir le site d'une bijouterie-horlogerie.",
  body=[
  ("p","Pour des alliances, une bague de fiançailles ou une montre à réviser, le client cherche une boutique de confiance près de chez lui. Il veut voir ce que vous proposez, savoir si l'atelier est sur place et avoir une idée des prix avant de pousser la porte."),
@@ -341,7 +341,7 @@ dict(slug="site-internet-bijouterie-horlogerie-les-indispensables", date="2026-1
  ("cta","Voir le modèle bijouterie-horlogerie"),
  ]),
 dict(slug='site-internet-profession-liberale-les-indispensables', date="2026-11-09",
- title='Site internet de profession libérale : les indispensables',
+ title='Que mettre sur un site de profession libérale ? Les indispensables',
  desc="Missions, honoraires, prise de rendez-vous et règles de communication : ce que doit contenir le site d'un avocat, d'un expert-comptable ou d'un consultant.",
  body=[
  ("p",'Avant de choisir un professionnel du droit, du chiffre ou du conseil, un client veut comprendre ce que vous faites et comment se passe le premier rendez-vous.'),
@@ -354,7 +354,7 @@ dict(slug='site-internet-profession-liberale-les-indispensables', date="2026-11-
  ("cta",'Voir le modèle profession libérale'),
  ]),
 dict(slug='site-internet-services-a-domicile-les-indispensables', date="2026-11-09",
- title='Site internet de services à domicile : les indispensables',
+ title='Que mettre sur un site de services à domicile ? Les indispensables',
  desc="Formules, tarifs, crédit d'impôt, zone d'intervention et devis en ligne : ce que doit contenir le site d'une entreprise de ménage ou d'aide à domicile.",
  body=[
  ("p","Avant de confier ses clés, une famille veut savoir ce que vous proposez, où vous intervenez, combien ça coûte et si elle peut bénéficier du crédit d'impôt."),
@@ -367,7 +367,7 @@ dict(slug='site-internet-services-a-domicile-les-indispensables', date="2026-11-
  ("cta",'Voir le modèle services à domicile'),
  ]),
 dict(slug='site-internet-evenementiel-les-indispensables', date="2026-11-09",
- title="Site internet d'événementiel : les indispensables",
+ title="Que mettre sur un site d'événementiel ? Les indispensables",
  desc="Réalisations, formules, tarifs indicatifs et demande de devis : ce que doit contenir le site d'un wedding planner, d'un décorateur ou d'un DJ.",
  body=[
  ("p",'Un couple ou une entreprise compare plusieurs prestataires avant de demander un devis. Il veut voir vos réalisations et comprendre comment vous travaillez.'),
@@ -380,7 +380,7 @@ dict(slug='site-internet-evenementiel-les-indispensables', date="2026-11-09",
  ("cta",'Voir le modèle événementiel'),
  ]),
 dict(slug='site-internet-chambres-d-hotes-gite-les-indispensables', date="2026-11-09",
- title="Site internet de chambres d'hôtes ou de gîte : les indispensables",
+ title="Que mettre sur un site de chambres d'hôtes ou de gîte ? Les indispensables",
  desc="Chambres en photos, tarifs par saison, réservation en direct et infos pratiques : ce que doit contenir le site d'une maison d'hôtes.",
  body=[
  ("p",'Beaucoup de voyageurs trouvent votre établissement sur une plateforme, puis cherchent votre site pour réserver en direct. Il doit être prêt à les accueillir.'),
@@ -393,7 +393,7 @@ dict(slug='site-internet-chambres-d-hotes-gite-les-indispensables', date="2026-1
  ("cta","Voir le modèle chambres d'hôtes"),
  ]),
 dict(slug='site-internet-tourisme-loisirs-les-indispensables', date="2026-11-09",
- title="Site internet de guide ou d'activité de loisirs : les indispensables",
+ title="Que mettre sur un site de guide ou d'activité de loisirs ? Les indispensables",
  desc="Programme, tarifs, points de départ et réservation en ligne : ce que doit contenir le site d'un guide touristique ou d'une activité de loisirs.",
  body=[
  ("p","Les touristes réservent leurs activités depuis leur téléphone, souvent la veille. Ils veulent voir le programme, le prix et l'heure de départ en un coup d'œil."),
@@ -406,7 +406,7 @@ dict(slug='site-internet-tourisme-loisirs-les-indispensables', date="2026-11-09"
  ("cta",'Voir le modèle tourisme et loisirs'),
  ]),
 dict(slug='site-internet-location-demenagement-les-indispensables', date="2026-11-09",
- title='Site internet de location de véhicules ou de déménagement : les indispensables',
+ title='Que mettre sur un site de location de véhicules ou de déménagement ? Les indispensables',
  desc="Flotte, tarifs, réservation en ligne et devis de déménagement : ce que doit contenir le site d'un loueur ou d'un déménageur.",
  body=[
  ("p",'Un client qui déménage veut savoir quel volume choisir, combien ça coûte et si un véhicule est libre. Il compare en quelques minutes sur son téléphone.'),
@@ -419,7 +419,7 @@ dict(slug='site-internet-location-demenagement-les-indispensables', date="2026-1
  ("cta",'Voir le modèle location et déménagement'),
  ]),
 dict(slug="site-internet-infirmier-liberal-les-indispensables", date="2026-11-09",
- title="Site internet d'infirmier libéral : les indispensables",
+ title="Que mettre sur un site d'infirmier libéral ? Les indispensables",
  desc="Permanences, soins à domicile, demande de passage et règles de communication : ce que doit contenir le site d'un cabinet infirmier.",
  body=[
  ("p","Un patient qui sort de chez son médecin avec une ordonnance cherche un infirmier disponible, souvent pour le lendemain. Le site doit lui dire où vous trouver, quand, et si vous vous déplacez chez lui."),
@@ -432,7 +432,7 @@ dict(slug="site-internet-infirmier-liberal-les-indispensables", date="2026-11-09
  ("cta","Voir le modèle infirmier libéral"),
  ]),
 dict(slug="site-internet-masseur-osteopathe-bien-etre-les-indispensables", date="2026-11-08",
- title="Site internet de masseur, ostéopathe ou praticien bien-être : les indispensables",
+ title="Que mettre sur un site de masseur, ostéopathe ou praticien bien-être ? Les indispensables",
  desc="Présentation des soins, prise de rendez-vous, tarifs, parcours et formations, règles de communication : ce que doit contenir le site d'un praticien du bien-être.",
  body=[
  ("p","Masseur bien-être, ostéopathe, sophrologue, naturopathe, réflexologue : votre métier repose sur la confiance. Avant de prendre rendez-vous, un nouveau client veut comprendre ce que vous faites, savoir qui vous êtes et se sentir en sécurité. Votre site doit répondre à tout cela avec calme et clarté."),
@@ -455,7 +455,7 @@ dict(slug="site-internet-masseur-osteopathe-bien-etre-les-indispensables", date=
  ]),
 
 dict(slug="site-internet-boulangerie-les-indispensables", date="2026-11-08",
- title="Site internet de boulangerie-pâtisserie : les 7 indispensables",
+ title="Que mettre sur un site de boulangerie-pâtisserie ? Les 7 indispensables",
  desc="Commandes de gâteaux, retrait en boutique, horaires, produits du moment, allergènes : ce que doit contenir le site d'une boulangerie ou d'une pâtisserie.",
  body=[
  ("p","On ne choisit pas sa boulangerie du quotidien sur internet. Mais on y cherche les horaires du dimanche, l'adresse quand on est de passage, et surtout où commander un gâteau d'anniversaire, une bûche ou des viennoiseries pour le bureau. Ce sont ces commandes qu'un site bien fait vous apporte."),
@@ -477,7 +477,7 @@ dict(slug="site-internet-boulangerie-les-indispensables", date="2026-11-08",
  ]),
 
 dict(slug="site-internet-plombier-electricien-les-indispensables", date="2026-11-08",
- title="Site internet de plombier ou d'électricien : les 8 indispensables",
+ title="Que mettre sur un site de plombier ou d'électricien ? Les 8 indispensables",
  desc="Bouton d'appel, urgences, zone d'intervention, tarifs de déplacement, qualifications : ce que doit contenir le site d'un plombier, électricien ou chauffagiste.",
  body=[
  ("p","Une fuite, une panne de courant, un ballon d'eau chaude qui lâche : le client cherche un dépanneur sur son téléphone, dans l'urgence, et appelle l'un des premiers résultats. Il se méfie aussi beaucoup, car le secteur du dépannage est connu pour ses abus. Votre site doit donc être à la fois rapide et rassurant."),

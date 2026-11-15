@@ -55,26 +55,11 @@ PAGES = [
     faq=[("Je peux changer ma carte moi-même ?","Oui, depuis votre espace client : ajoutez un plat, changez un prix ou le menu du jour, le site est mis à jour aussitôt."),
          ("Le site remplace-t-il les plateformes de réservation ?","Il vous évite leurs commissions pour les clients qui vous trouvent directement. Vous pouvez aussi garder vos outils actuels."),
          ("Et si mon restaurant a déjà un site ?","On reprend vos textes et photos dans un modèle moderne, et on branche votre nom de domaine actuel.")]),
-  dict(slug="site-internet-garage-mecanique", k="atelier", style="audacieux", label="Garage d'entretien et mécanique",
-    title="Création de site internet pour garage mécanique et entretien automobile",
-    meta="Site internet pour garage mécanique : rendez-vous atelier en ligne, vidange, pneus, freins, diagnostic, forfaits et tarifs. Dès 29 €/mois, sans engagement.",
-    h1="Le site internet des garages d'entretien et de réparation",
-    lead="Vidange, pneus, freins, distribution, diagnostic : vos clients voient vos forfaits, prennent rendez-vous en ligne et arrivent à l'atelier en sachant le prix.",
-    why=("Pourquoi un site pour un garage mécanique ?", ["Quand un voyant s'allume ou qu'il faut changer les pneus, l'automobiliste cherche un garage près de chez lui sur son téléphone. Il choisit souvent celui qui affiche ses prix et permet de prendre rendez-vous tout de suite.", "Un site avec vos forfaits, vos tarifs et la prise de rendez-vous atelier en ligne vous apporte ces clients, sans passer par des plateformes qui prennent une commission sur chaque intervention."]),
-    feats=[("Rendez-vous atelier","Prestation, date, immatriculation : la demande arrive dans votre agenda et par mail."),
-           ("Forfaits affichés","Vidange, pneus, freins, climatisation, distribution : des prix clairs avant l'appel."),
-           ("Toutes marques","Mettez en avant ce que vous faites : entretien, diagnostic, carrosserie, contrôle technique."),
-           ("Véhicule de prêt","Indiquez vos services : prêt de véhicule, dépose matinale, paiement en plusieurs fois."),
-           ("Avis Google","Vos avis mis en avant pour rassurer les nouveaux clients."),
-           ("Modifiable depuis le téléphone","Tarifs, horaires et photos changés en quelques secondes.")],
-    faq=[("Combien coûte un site internet pour un garage ?","Dès 190 € de mise en ligne puis 29 € par mois avec la formule Essentiel, sans engagement. La version atelier ne comprend pas de véhicules à vendre."),
-         ("Je vends aussi des véhicules d'occasion","Choisissez alors le Pack Auto, Moto & Immo : stock de véhicules, une page Google par véhicule et annonces illimitées sur Abracadeal."),
-         ("Je peux gérer mes créneaux d'atelier ?","Oui : horaires, jours fermés et nombre de véhicules pris en charge en même temps, depuis votre espace client."),
-         ("Combien de temps pour être en ligne ?","En général 48 heures après réception de vos informations et photos.")]),
+  # 15/11/2026 : « garage mécanique » fusionnée dans /site-internet-garage/ (cannibalisation) ; l'ancienne adresse redirige.
   dict(slug="site-internet-garage", k="garage", style="audacieux", pack=True,
-    title="Création de site internet pour garage auto et moto",
-    meta="Site internet pour garage auto et moto : rendez-vous atelier, forfaits, stock de véhicules d'occasion avec une page par véhicule sur Google, annonces illimitées sur Abracadeal. 99 €/mois, sans engagement.",
-    h1="Le site internet des garages auto et moto qui remplit l'atelier et vend les occasions",
+    title="Création de site internet pour garage automobile",
+    meta="Site internet pour garage automobile : rendez-vous atelier, forfaits, stock de véhicules d'occasion avec une page par véhicule sur Google, annonces illimitées sur Abracadeal. 99 €/mois, sans engagement.",
+    h1="Le site internet des garages automobiles qui remplit l'atelier et vend les occasions",
     lead="Rendez-vous atelier, forfaits affichés, véhicules d'occasion et reprise : un site qui travaille pour vous pendant que vous êtes sous le capot. Avec le Pack Auto, Moto & Immo, chaque véhicule a aussi sa page sur Google et part en annonce sur Abracadeal.",
     feats=[("Prise de rendez-vous","Prestation, date souhaitée, immatriculation : la demande arrive par mail et dans votre espace « Mes clients »."),
            ("Forfaits et tarifs","Vidange, pneus, freins, climatisation : des prix affichés qui donnent confiance avant même l'appel."),
@@ -312,9 +297,9 @@ PAGES = [
            ("Le cabinet","Salles, équipement et accessibilité."),
            ("Les praticiens","Noms, qualifications et inscription à l'Ordre."),
            ("Une présentation sobre","Des textes informatifs, sans avis ni promesse de résultat.")],
-    faq=[("Le site respecte-t-il les règles de communication des kinésithérapeutes ?","Oui : les textes restent informatifs, sans procédé publicitaire, témoignage ni promesse de résultat. Vous validez chaque texte avant la mise en ligne."),
-         ("Je peux gérer les créneaux de plusieurs praticiens ?","Oui, depuis votre espace client."),
-         ("Je paie une commission sur les rendez-vous ?","Non : un abonnement fixe dès 29 € par mois."),
+    faq=[("Puis-je présenter mes spécialités, comme la kiné du sport ou la rééducation périnéale ?","Oui, comme des domaines de pratique du cabinet, avec des textes informatifs conformes au code de déontologie. Vous relisez et validez tout avant la mise en ligne."),
+         ("Puis-je indiquer que je me déplace à domicile ?","Oui : le site liste les communes où vous vous déplacez et précise dans quels cas, pour que les patients hors secteur ne vous appellent pas pour rien."),
+         ("Faut-il un logiciel de réservation payant en plus ?","Non : les demandes de rendez-vous arrivent par mail et dans votre espace client, sans commission ni abonnement supplémentaire."),
          ('Combien coûte un site internet pour un kinésithérapeute ?', 'Dès 190 € de mise en ligne puis 29 € par mois avec la formule Essentiel, sans engagement.'),
          ('Le site convient-il à un cabinet de groupe ?', 'Oui : chaque praticien a son nom, ses qualifications et ses créneaux ; le patient choisit au moment de réserver.')]),
   dict(slug="site-internet-dentiste", k="dentiste", why=('Pourquoi un site pour un cabinet dentaire ?', ["Les patients cherchent un cabinet qui prend de nouveaux patients, un créneau rapide et la conduite à tenir en cas d'urgence. Ces questions saturent souvent le standard.", "Un site sobre, avec la prise de rendez-vous en ligne, les honoraires, l'information sur les devis et les urgences, répond à ces questions. Les textes restent informatifs, sans avis ni photos avant-après, dans le respect du code de déontologie."]), style="ocean",
@@ -825,7 +810,7 @@ ARGS = ('<div class="args">'
   '<div><span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span><b>Domaine à votre nom</b><span>Hébergement et domaine inclus.</span></div>'
   '<div><span class="ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span><b>Parfait sur mobile</b><span>Pensé d\'abord pour le téléphone.</span></div>'
   '</div>')
-NAMES = {"vtc":"Chauffeur VTC","taxi":"Taxi","moto":"Concession moto","restaurant":"Restaurant","garage":"Garage auto et moto","concession":"Concession automobile","immobilier":"Agence immobilière","batiment":"Artisan du bâtiment","beaute":"Coiffeur et institut de beauté","bienetre":"Masseur et ostéopathe","veterinaire":"Vétérinaire","atelier":"Garage d'entretien","autoecole":"Auto-école","coach":"Coach sportif","photographe":"Photographe","toiletteur":"Toiletteur","fleuriste":"Fleuriste","traiteur":"Traiteur","nautisme":"Location de bateaux","kine":"Kinésithérapeute","dentiste":"Dentiste","bijouterie":"Bijouterie-horlogerie","liberal":"Professions libérales","services":"Services à domicile","evenementiel":"Événementiel","hebergement":"Chambres d'hôtes et gîtes","tourisme":"Tourisme et loisirs","location":"Location et déménagement","infirmier":"Infirmier libéral","boulangerie":"Boulangerie","depannage":"Plombier et électricien","boutique":"Boutique en ligne"}
+NAMES = {"vtc":"Chauffeur VTC","taxi":"Taxi","moto":"Concession moto","restaurant":"Restaurant","garage":"Garage automobile","concession":"Concession automobile","immobilier":"Agence immobilière","batiment":"Artisan du bâtiment","beaute":"Coiffeur et institut de beauté","bienetre":"Masseur et ostéopathe","veterinaire":"Vétérinaire","atelier":"Garage d'entretien","autoecole":"Auto-école","coach":"Coach sportif","photographe":"Photographe","toiletteur":"Toiletteur","fleuriste":"Fleuriste","traiteur":"Traiteur","nautisme":"Location de bateaux","kine":"Kinésithérapeute","dentiste":"Dentiste","bijouterie":"Bijouterie-horlogerie","liberal":"Professions libérales","services":"Services à domicile","evenementiel":"Événementiel","hebergement":"Chambres d'hôtes et gîtes","tourisme":"Tourisme et loisirs","location":"Location et déménagement","infirmier":"Infirmier libéral","boulangerie":"Boulangerie","depannage":"Plombier et électricien","boutique":"Boutique en ligne"}
 e = html.escape
 
 def trade_links(cur):
@@ -846,7 +831,7 @@ AVANT = {"site-internet-vtc": "devenir-chauffeur-vtc-etapes", "site-internet-tax
   "site-internet-restaurant": "ouvrir-un-restaurant-etapes", "site-internet-coiffeur-institut-beaute": "ouvrir-salon-de-coiffure-etapes",
   "site-internet-artisan-batiment": "s-installer-artisan-batiment-etapes", "site-internet-plombier-electricien": "s-installer-artisan-batiment-etapes",
   "site-internet-coach-sportif": "devenir-coach-sportif-independant", "site-internet-agence-immobiliere": "ouvrir-agence-immobiliere-etapes",
-  "site-internet-chambres-d-hotes-gite": "ouvrir-chambre-d-hotes-etapes", "site-internet-garage-mecanique": "ouvrir-un-garage-automobile-etapes",
+  "site-internet-chambres-d-hotes-gite": "ouvrir-chambre-d-hotes-etapes",
   "site-internet-garage": "ouvrir-un-garage-automobile-etapes", "site-internet-auto-ecole": "ouvrir-une-auto-ecole-etapes",
   "site-internet-boulangerie": "ouvrir-une-boulangerie-etapes", "site-internet-masseur-osteopathe-bien-etre": "devenir-praticien-massage-bien-etre",
   "site-internet-services-a-domicile": "creer-entreprise-services-a-la-personne", "site-internet-toiletteur": "ouvrir-salon-de-toilettage-etapes",
@@ -898,6 +883,8 @@ def devices(k, name, link):
 def page(p):
     from seo_contenu import SEO
     p = {**p, **SEO.get(p["slug"], {})}
+    from seo_metiers_body import BODY  # 15/11/2026 : texte propre à chaque métier (anti-duplication)
+    if not p.get("body") and p["slug"] in BODY: p["body"] = BODY[p["slug"]]
     url = f'{SITE}/{p["slug"]}/'
     plans = [PACK] if p.get("pack") else [BOUTIQUE] if p.get("k") == "boutique" else PRICES
     faq_ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in p["faq"]]}
@@ -990,13 +977,13 @@ def page(p):
   <div class="cta"><div><h2>Votre site en ligne en 48 heures</h2><p>Rien n'est facturé avant que vous ayez validé votre site.</p></div><a class="btn" href="/#commande">Je veux mon site</a></div>
 </div></section>
 </main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
 '''
 
-CTA_LINK = {"Voir le modèle garage d'entretien": "/site-internet-garage-mecanique/", "Voir le modèle auto-école": "/site-internet-auto-ecole/", "Voir le modèle boulangerie": "/site-internet-boulangerie/", "Voir le modèle bien-être": "/site-internet-masseur-osteopathe-bien-etre/", "Voir le modèle services à domicile": "/site-internet-services-a-domicile/", "Voir le modèle toiletteur": "/site-internet-toiletteur/", "Voir le modèle fleuriste": "/site-internet-fleuriste/", "Voir le modèle photographe": "/site-internet-photographe/", "Voir le modèle traiteur": "/site-internet-traiteur/", "Voir le modèle agence immobilière": "/site-internet-agence-immobiliere/", "Voir le modèle institut de beauté": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle chambres d'hôtes": "/site-internet-chambres-d-hotes-gite/", "Voir le modèle coach sportif": "/site-internet-coach-sportif/", "Voir le modèle restaurant": "/site-internet-restaurant/", "Voir le modèle coiffure": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle artisan du bâtiment": "/site-internet-artisan-batiment/", "Voir le modèle VTC": "/site-internet-vtc/", "Votre site pour votre création d'entreprise": "/site-internet-creation-entreprise/", "Le site de votre auto-entreprise": "/site-internet-auto-entrepreneur/", "Voir le modèle taxi": "/site-internet-taxi/", "Voir le modèle garage d'entretien": "/site-internet-garage-mecanique/", "Voir le modèle auto-école": "/site-internet-auto-ecole/", "Voir le modèle coach sportif": "/site-internet-coach-sportif/", "Voir le modèle photographe": "/site-internet-photographe/", "Voir le modèle toiletteur": "/site-internet-toiletteur/", "Voir le modèle fleuriste": "/site-internet-fleuriste/", "Voir le modèle traiteur": "/site-internet-traiteur/", "Voir le modèle location de bateaux": "/site-internet-location-bateau/", "Voir le modèle kinésithérapeute": "/site-internet-kinesitherapeute/", "Voir le modèle dentiste": "/site-internet-dentiste/", "Voir le modèle bijouterie-horlogerie": "/site-internet-bijouterie/", "Voir le modèle profession libérale": "/site-internet-profession-liberale/", "Voir le modèle services à domicile": "/site-internet-services-a-domicile/", "Voir le modèle événementiel": "/site-internet-evenementiel/", "Voir le modèle chambres d'hôtes": "/site-internet-chambres-d-hotes-gite/", "Voir le modèle tourisme et loisirs": "/site-internet-tourisme-loisirs/", "Voir le modèle location et déménagement": "/site-internet-location-demenagement/", "Voir le modèle infirmier libéral": "/site-internet-infirmier-liberal/", "Voir le modèle vétérinaire": "/site-internet-veterinaire/", "Voir le modèle restaurant": "/site-internet-restaurant/", "Voir le modèle VTC": "/site-internet-vtc/", "Voir le modèle garage": "/site-internet-garage/", "Voir le modèle concession": "/site-internet-concession-automobile/", "Voir le Pack Auto, Moto & Immo": "/site-internet-diffusion-annonces-auto-immo/", "Voir le modèle immobilier": "/site-internet-agence-immobiliere/", "Voir le modèle bâtiment": "/site-internet-artisan-batiment/", "Voir le modèle beauté": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle bien-être": "/site-internet-masseur-osteopathe-bien-etre/", "Voir le modèle boulangerie": "/site-internet-boulangerie/", "Voir le modèle dépannage": "/site-internet-plombier-electricien/", "Voir la formule Boutique": "/site-internet-boutique-en-ligne/", "Découvrir les modèles par métier": "/#modeles", "Lancer mon site": "/#commande", "Un site pensé pour Google, en ligne en 48 h": "/site-internet-rapide/"}
+CTA_LINK = {"Voir le modèle garage d'entretien": "/site-internet-garage/", "Voir le modèle auto-école": "/site-internet-auto-ecole/", "Voir le modèle boulangerie": "/site-internet-boulangerie/", "Voir le modèle bien-être": "/site-internet-masseur-osteopathe-bien-etre/", "Voir le modèle services à domicile": "/site-internet-services-a-domicile/", "Voir le modèle toiletteur": "/site-internet-toiletteur/", "Voir le modèle fleuriste": "/site-internet-fleuriste/", "Voir le modèle photographe": "/site-internet-photographe/", "Voir le modèle traiteur": "/site-internet-traiteur/", "Voir le modèle agence immobilière": "/site-internet-agence-immobiliere/", "Voir le modèle institut de beauté": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle chambres d'hôtes": "/site-internet-chambres-d-hotes-gite/", "Voir le modèle coach sportif": "/site-internet-coach-sportif/", "Voir le modèle restaurant": "/site-internet-restaurant/", "Voir le modèle coiffure": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle artisan du bâtiment": "/site-internet-artisan-batiment/", "Voir le modèle VTC": "/site-internet-vtc/", "Votre site pour votre création d'entreprise": "/site-internet-creation-entreprise/", "Le site de votre auto-entreprise": "/site-internet-auto-entrepreneur/", "Voir le modèle taxi": "/site-internet-taxi/", "Voir le modèle garage d'entretien": "/site-internet-garage/", "Voir le modèle auto-école": "/site-internet-auto-ecole/", "Voir le modèle coach sportif": "/site-internet-coach-sportif/", "Voir le modèle photographe": "/site-internet-photographe/", "Voir le modèle toiletteur": "/site-internet-toiletteur/", "Voir le modèle fleuriste": "/site-internet-fleuriste/", "Voir le modèle traiteur": "/site-internet-traiteur/", "Voir le modèle location de bateaux": "/site-internet-location-bateau/", "Voir le modèle kinésithérapeute": "/site-internet-kinesitherapeute/", "Voir le modèle dentiste": "/site-internet-dentiste/", "Voir le modèle bijouterie-horlogerie": "/site-internet-bijouterie/", "Voir le modèle profession libérale": "/site-internet-profession-liberale/", "Voir le modèle services à domicile": "/site-internet-services-a-domicile/", "Voir le modèle événementiel": "/site-internet-evenementiel/", "Voir le modèle chambres d'hôtes": "/site-internet-chambres-d-hotes-gite/", "Voir le modèle tourisme et loisirs": "/site-internet-tourisme-loisirs/", "Voir le modèle location et déménagement": "/site-internet-location-demenagement/", "Voir le modèle infirmier libéral": "/site-internet-infirmier-liberal/", "Voir le modèle vétérinaire": "/site-internet-veterinaire/", "Voir le modèle restaurant": "/site-internet-restaurant/", "Voir le modèle VTC": "/site-internet-vtc/", "Voir le modèle garage": "/site-internet-garage/", "Voir le modèle concession": "/site-internet-concession-automobile/", "Voir le Pack Auto, Moto & Immo": "/site-internet-diffusion-annonces-auto-immo/", "Voir le modèle immobilier": "/site-internet-agence-immobiliere/", "Voir le modèle bâtiment": "/site-internet-artisan-batiment/", "Voir le modèle beauté": "/site-internet-coiffeur-institut-beaute/", "Voir le modèle bien-être": "/site-internet-masseur-osteopathe-bien-etre/", "Voir le modèle boulangerie": "/site-internet-boulangerie/", "Voir le modèle dépannage": "/site-internet-plombier-electricien/", "Voir la formule Boutique": "/site-internet-boutique-en-ligne/", "Découvrir les modèles par métier": "/#modeles", "Lancer mon site": "/#commande", "Un site pensé pour Google, en ligne en 48 h": "/site-internet-rapide/"}
 ARTICLE_CSS = """
 .art{max-width:740px;padding-block:10px 40px}
 .art h1{margin:6px 0 14px}
@@ -1042,7 +1029,7 @@ def shell(title, desc, url, ld, body, og_type="website"):
 <body>
 <header class="top">{HEADER}</header>
 <main>{body}</main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
@@ -1057,19 +1044,39 @@ def render_block(b):
     if t == "cta": return f'<div class="box"><b>{e(v)}</b><a class="btn" href="{CTA_LINK.get(v, "/#tarifs")}">Voir</a></div>'
     return ""
 
+def money_map():
+    """15/11/2026 : guide -> page métier (offre) à pousser en haut de l'article (anti-cannibalisation)."""
+    from articles import ARTICLES
+    slugs = {a["slug"] for a in ARTICLES}
+    m = {}
+    for p in PAGES:
+        cands = [GUIDES.get(p.get("k")), p["slug"] + "-les-indispensables", AVANT.get(p["slug"])]
+        if p["slug"] == "site-internet-vtc": cands.append("site-internet-chauffeur-vtc-les-indispensables")
+        if p["slug"] == "site-internet-bijouterie": cands.append("site-internet-bijouterie-horlogerie-les-indispensables")
+        for g in cands:
+            if g in slugs and g not in m: m[g] = p
+    return m
+
+AUTHOR = {"@type":"Person","name":"Anthony Doche","url":SITE+"/a-propos/","jobTitle":"Fondateur de MyCreativeSite"}
+
 def build_blog():
     from articles import ARTICLES
     os.makedirs("conseils", exist_ok=True)
+    mm = money_map()
     for a in ARTICLES:
+        mp = mm.get(a["slug"])
+        top = (f'<div class="box" style="margin:18px 0 6px"><div><b>Vous voulez ce site sans y passer vos soirées ?</b><br>'
+               f'Découvrez notre offre de <a href="/{mp["slug"]}/">{e(mp["title"][0].lower() + mp["title"][1:])}</a> : modèle prêt, en ligne en 48 h.</div>'
+               f'<a class="btn" href="/{mp["slug"]}/">Voir l\'offre</a></div>') if mp else ""
         url = f"{SITE}/conseils/{a['slug']}/"
         others = "".join(f'<a href="/conseils/{o["slug"]}/">{e(o["title"])}</a>' for o in ARTICLES if o is not a)
         body = f'''<div class="wrap crumbs"><a href="/">Accueil</a> › <a href="/conseils/">Conseils</a></div>
-<article class="wrap art"><h1>{e(a["title"])}</h1><p class="date">Publié le {datetime.date.fromisoformat(a["date"]).strftime("%d/%m/%Y")}{(" · mis à jour le " + datetime.date.fromisoformat(a["updated"]).strftime("%d/%m/%Y")) if a.get("updated") else ""} · MyCreativeSite</p>
-{"".join(render_block(b) for b in a["body"])}
+<article class="wrap art"><h1>{e(a["title"])}</h1><p class="date">Publié le {datetime.date.fromisoformat(a["date"]).strftime("%d/%m/%Y")}{(" · mis à jour le " + datetime.date.fromisoformat(a["updated"]).strftime("%d/%m/%Y")) if a.get("updated") else ""} · par <a href="/a-propos/">Anthony Doche</a>, MyCreativeSite</p>
+{top}{"".join(render_block(b) for b in a["body"])}
 <h2>À lire aussi</h2><div class="links">{others}</div></article>'''
         ld = [{"@context":"https://schema.org","@type":"Article","headline":a["title"],"description":a["desc"],"datePublished":a["date"],"dateModified":a.get("updated",a["date"]),
                "inLanguage":"fr-FR","mainEntityOfPage":url,"image":SITE+"/img/og.jpg",
-               "author":{"@type":"Organization","name":"MyCreativeSite","url":SITE+"/"},"publisher":{"@type":"Organization","name":"MyCreativeSite","url":SITE+"/"}},
+               "author":AUTHOR,"publisher":{"@type":"Organization","name":"MyCreativeSite","url":SITE+"/"}},
               {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
                {"@type":"ListItem","position":1,"name":"Accueil","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Conseils","item":SITE+"/conseils/"},
                {"@type":"ListItem","position":3,"name":a["title"],"item":url}]}]
@@ -1235,6 +1242,81 @@ body:JSON.stringify({{p_company:d.get('company'),p_email:d.get('email'),p_phone:
 """
     open("landing-page/merci/index.html", "w").write(shell("Merci : votre brief de landing page", "Brief de votre landing page MyCreativeSite.", url + "merci/", [], merci).replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<meta name="robots" content="noindex">', 1))
 
+
+# 15/11/2026 : pages de confiance (audit SEO) — À propos, Confidentialité, et redirections des pages fusionnées
+REDIRECTS = {"site-internet-garage-mecanique": "/site-internet-garage/"}
+
+ABOUT_BODY = """<div class="wrap crumbs"><a href="/">Accueil</a> › À propos</div>
+<article class="wrap art">
+<h1>À propos de MyCreativeSite</h1>
+<p>MyCreativeSite crée des sites internet clés en main pour les artisans, les commerçants et les indépendants : chauffeurs VTC, garages, restaurants, coiffeurs, artisans du bâtiment, professions de santé… Le principe est simple : vous choisissez un modèle pensé pour votre métier, vous le voyez déjà rempli avec votre nom avant de payer, et il est en ligne en 48 heures, hébergement et nom de domaine compris.</p>
+<h2>Qui est derrière le site</h2>
+<p>MyCreativeSite est un service de la société <b>iDream Lab</b> (SASU, SIREN 130 813 744, RCS de Cannes), installée au 34 rue Borniol, à Cannes. Elle est dirigée par <b>Anthony Doche</b>, son fondateur.</p>
+<p>Anthony est d'abord un chef d'entreprise local : il dirige une société de chauffeur privé sur la Côte d'Azur. C'est là qu'il a vu le problème que MyCreativeSite résout : les petites entreprises dépendent de plateformes qui prennent une commission sur chaque client, alors qu'un site à leur nom, bien placé sur Google, leur amène des clients en direct. Les agences demandent souvent plusieurs milliers d'euros et des semaines de délai ; les outils à faire soi-même prennent des soirées entières. MyCreativeSite se place entre les deux.</p>
+<h2>Notre façon de travailler</h2>
+<ul><li><b>Un modèle par métier</b> : chaque modèle est écrit pour un métier précis (rendez-vous atelier pour un garage, réservation pour un VTC, carte pour un restaurant), pas un thème passe-partout.</li>
+<li><b>Vu avant de payer</b> : vous voyez votre site avec votre nom avant de vous engager.</li>
+<li><b>Un abonnement sans surprise</b> : hébergement, nom de domaine, mises à jour et dépannage inclus (voir les <a href="/cgv.html">conditions générales de vente</a>).</li>
+<li><b>Respect de vos visiteurs</b> : statistiques de visite sans cookie publicitaire (voir la <a href="/confidentialite/">politique de confidentialité</a>).</li></ul>
+<h2>Nous contacter</h2>
+<p>Par e-mail : <b>contact@mycreativesite.fr</b>.</p>
+<div class="box"><div><b>Envie de voir votre site ?</b><br>Choisissez votre métier et voyez votre modèle rempli avec votre nom.</div><a class="btn" href="/#modeles">Voir les modèles</a></div>
+</article>"""
+
+PRIVACY_BODY = """<div class="wrap crumbs"><a href="/">Accueil</a> › Confidentialité</div>
+<article class="wrap art">
+<h1>Politique de confidentialité</h1>
+<p>Cette page explique quelles données personnelles MyCreativeSite utilise, pourquoi, combien de temps, et comment exercer vos droits. Le responsable de traitement est <b>iDream Lab</b>, SASU, 34 rue Borniol, 06400 Cannes (SIREN 130 813 744), représentée par Anthony Doche, son président. Contact : <b>contact@mycreativesite.fr</b>.</p>
+<h2>1. Clients et personnes qui commandent un site</h2>
+<p>Quand vous remplissez le formulaire de commande ou utilisez votre espace client, nous recevons le nom de votre entreprise, votre ville, votre téléphone, votre e-mail et les contenus que vous ajoutez à votre site. Ces données servent à créer et faire fonctionner votre site, à vous facturer et à vous assister.</p>
+<ul><li><b>Base légale</b> : l'exécution du contrat (ou des mesures précontractuelles si vous n'avez pas encore commandé).</li>
+<li><b>Durée</b> : toute la durée de l'abonnement, puis 3 ans après la fin de la relation ; les factures sont gardées 10 ans (obligation comptable).</li>
+<li><b>Paiement</b> : vos données bancaires sont saisies directement chez Stripe ; nous ne les voyons jamais.</li></ul>
+<h2>2. Professionnels contactés par e-mail (prospection)</h2>
+<p>Nous écrivons à des professionnels pour leur présenter nos services. Les coordonnées utilisées sont <b>professionnelles et publiques</b> : la base SIRENE de l'INSEE (nom de l'entreprise, activité, adresse) et l'adresse e-mail publiée par l'entreprise elle-même, par exemple sur son site ou sa fiche publique. Le message est toujours en rapport avec l'activité du professionnel.</p>
+<ul><li><b>Base légale</b> : notre intérêt légitime à présenter une offre en rapport avec votre profession (prospection entre professionnels, admise par la CNIL).</li>
+<li><b>Opposition</b> : vous pouvez refuser à tout moment, sans justification, en répondant « STOP » au message ou en écrivant à contact@mycreativesite.fr. Votre adresse est alors placée sur une liste d'opposition pour ne plus être contactée.</li>
+<li><b>Durée</b> : 3 ans à compter du dernier contact resté sans réponse, puis suppression. La liste d'opposition est gardée aussi longtemps que nécessaire pour respecter votre refus.</li></ul>
+<h2>3. Visiteurs du site</h2>
+<p>Le site n'utilise <b>ni cookie publicitaire ni outil de suivi d'une autre société</b> (pas de Google Analytics, pas de pixel Facebook). Il compte ses visites de façon anonyme : un identifiant tiré au hasard, gardé dans votre navigateur et renouvelé au bout de 13 mois, permet de compter une visite par page et par jour, avec la provenance (Google, lien direct…) et le type d'appareil. Aucune adresse IP n'est enregistrée. Cette mesure d'audience, limitée et anonyme, est dispensée de consentement selon les recommandations de la CNIL.</p>
+<p>Vous pouvez refuser d'être compté : <a href="/#nostats">ne plus compter mes visites</a> (et <a href="/#stats">être compté à nouveau</a>).</p>
+<p>Les polices de caractères sont chargées depuis Google Fonts : votre navigateur contacte donc les serveurs de Google pour les afficher.</p>
+<h2>4. Sous-traitants</h2>
+<p>Nous ne vendons ni ne louons vos données. Elles sont seulement traitées, pour notre compte, par ces prestataires techniques :</p>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:14px 0;font-size:.95rem" border="1" cellpadding="8"><thead><tr><th>Prestataire</th><th>Rôle</th><th>Lieu</th></tr></thead><tbody>
+<tr><td>GitHub, Inc. (GitHub Pages)</td><td>Hébergement des pages du site</td><td>États-Unis (clauses contractuelles types)</td></tr>
+<tr><td>Supabase, Inc.</td><td>Base de données : commandes, espace client, statistiques de visite</td><td>Union européenne</td></tr>
+<tr><td>Stripe Payments Europe, Ltd.</td><td>Paiement en ligne et facturation</td><td>Irlande (UE)</td></tr>
+<tr><td>OVH SAS</td><td>Nom de domaine et messagerie e-mail</td><td>France</td></tr>
+</tbody></table></div>
+<h2>5. Vos droits</h2>
+<p>Vous pouvez demander l'accès à vos données, leur rectification, leur suppression, la limitation de leur traitement, leur portabilité, et vous opposer à leur utilisation, en écrivant à <b>contact@mycreativesite.fr</b>. Nous répondons sous un mois au plus. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" rel="nofollow">cnil.fr</a>).</p>
+<p style="margin-top:18px;color:var(--muted)">Dernière mise à jour : 15 novembre 2026. Voir aussi les <a href="/mentions-legales.html">mentions légales</a> et les <a href="/cgv.html">CGV</a>.</p>
+</article>"""
+
+REDIRECT_HTML = """<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Page déplacée · MyCreativeSite</title>
+<meta name="robots" content="noindex,follow"><link rel="canonical" href="{full}">
+<meta http-equiv="refresh" content="0; url={new}"><script>location.replace("{new}"+location.search+location.hash)</script>
+</head><body><p>Cette page a été déplacée : <a href="{new}">{full}</a></p></body></html>
+"""
+
+def build_trust():
+    url = SITE + "/a-propos/"
+    ld = [{"@context":"https://schema.org","@type":"AboutPage","name":"À propos de MyCreativeSite","url":url,"inLanguage":"fr-FR","mainEntity":{"@id":SITE+"/#org"}},
+          {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+           {"@type":"ListItem","position":1,"name":"Accueil","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"À propos","item":url}]}]
+    os.makedirs("a-propos", exist_ok=True)
+    open("a-propos/index.html","w").write(shell("À propos de MyCreativeSite", "Qui est derrière MyCreativeSite : iDream Lab, société cannoise fondée par Anthony Doche, qui crée des sites clés en main pour artisans, commerçants et indépendants.", url, ld, ABOUT_BODY))
+    url = SITE + "/confidentialite/"
+    ld = [{"@context":"https://schema.org","@type":"WebPage","name":"Politique de confidentialité","url":url,"inLanguage":"fr-FR"}]
+    os.makedirs("confidentialite", exist_ok=True)
+    open("confidentialite/index.html","w").write(shell("Politique de confidentialité", "Données personnelles chez MyCreativeSite : clients, prospection entre professionnels, statistiques de visite sans cookie publicitaire, sous-traitants, durées et droits.", url, ld, PRIVACY_BODY))
+    for old, new in REDIRECTS.items():  # GitHub Pages : pas de 301, donc meta refresh + canonical + noindex
+        os.makedirs(old, exist_ok=True)
+        open(f"{old}/index.html","w").write(REDIRECT_HTML.format(full=SITE+new, new=new))
+    return ["a-propos/", "confidentialite/"]
+
 def main():
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     for p in PAGES + CITIES + INTENT:
@@ -1244,7 +1326,8 @@ def main():
     blog = build_blog()
     aide = build_help()
     landing_pages()
-    urls = [("", "1.0"), ("landing-page/", "0.8")] + [(p["slug"] + "/", "0.8") for p in PAGES + CITIES + INTENT] + [(u, "0.6") for u in blog] + [(u, "0.4") for u in aide] + [("cgv.html", "0.3")]
+    trust = build_trust()
+    urls = [("", "1.0"), ("landing-page/", "0.8")] + [(p["slug"] + "/", "0.8") for p in PAGES + CITIES + INTENT] + [(u, "0.6") for u in blog] + [(u, "0.4") for u in aide] + [(u, "0.3") for u in trust] + [("cgv.html", "0.3")]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     from articles import ARTICLES
     adate = {f"conseils/{a['slug']}/": a["date"] for a in ARTICLES}
