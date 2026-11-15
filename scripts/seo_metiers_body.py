@@ -371,3 +371,322 @@ BODY["site-internet-coiffeur-institut-beaute"].append(("Vos produits et vos marq
   "Les marques que vous utilisez en salon (colorations végétales, soins professionnels, cosmétiques bio) sont un argument pour une partie de la clientèle. Le site les présente, explique pourquoi vous les avez choisies, et signale si elles sont en vente au salon. Une cliente attentive à la composition des produits vous choisira pour ça."]))
 BODY["site-internet-agence-immobiliere"].append(("Montrer vos ventes et votre méthode", [
   "Les biens vendus, avec leur délai de vente, prouvent votre efficacité mieux qu'un slogan. Le site garde une rubrique « Vendus » et présente votre méthode : estimation argumentée, photos professionnelles, visites virtuelles, compte rendu après chaque visite, accompagnement jusqu'à l'acte. Un vendeur qui compare plusieurs agences voit tout de suite ce qu'il obtient avec vous."]))
+
+# 15/11/2026 (Anthony : « fais pareil pour les autres métiers, autant être premier partout ») : tous les métiers à ~1 000 mots
+def _add(slug, sections, faq):
+    BODY[slug] += sections
+    FAQ_EXTRA[slug] = FAQ_EXTRA.get(slug, []) + faq
+
+_add("site-internet-boulangerie", [
+  ("Le snacking du midi", [
+    "Sandwichs, formules déjeuner, quiches, salades : pour beaucoup de boulangeries, le midi pèse lourd dans la journée. Le site présente vos formules et leurs prix, et les entreprises voisines peuvent passer commande la veille pour un plateau d'équipe. Une demande bien préparée, c'est moins d'attente au comptoir et moins de gâchis.",
+    "Vous changez la formule du jour ou de la semaine vous-même, depuis votre téléphone."]),
+  ("Vos pains et votre savoir-faire", [
+    "Levain naturel, farines Label Rouge ou bio, meunier de la région, fermentation longue, viennoiseries pur beurre : c'est ce qui vous distingue d'un terminal de cuisson. Une page présente votre façon de faire, vos pains du jour et ceux de la semaine (pain de seigle le mardi, brioche le dimanche), pour que les clients sachent quand venir.",
+    "Vos récompenses (meilleure baguette du département, concours de galette) y ont leur place."]),
+  ("Pâtisserie sur commande", [
+    "Entremets, number cakes, pièces montées, gâteaux personnalisés : une galerie montre vos créations et un formulaire demande la date, le nombre de parts et le thème. Ces commandes se préparent plusieurs jours à l'avance, et le site les fait arriver au bon moment."]),
+],[
+  ("Les clients peuvent-ils commander une bûche ou une galette à l'avance ?", "Oui : ils choisissent le produit, la taille et la date de retrait, et la commande arrive par mail et dans votre espace client."),
+  ("Puis-je afficher mes horaires spéciaux pour les fêtes ?", "Oui, vous modifiez vous-même vos horaires et vos fermetures exceptionnelles, qui s'affichent tout de suite sur le site."),
+  ("Combien coûte un site pour une boulangerie ?", "Dès 29 € par mois en Essentiel, plus 190 € de mise en ligne une seule fois, hébergement et nom de domaine compris, sans engagement."),
+])
+
+_add("site-internet-masseur-osteopathe-bien-etre", [
+  ("Une page par soin", [
+    "Massage relaxant, modelage aux pierres chaudes, réflexologie plantaire, drainage, soin du dos, séance d'ostéopathie pour adulte, nourrisson ou sportif : chaque soin a sa fiche, avec sa durée, son prix et à qui il s'adresse. Ce sont ces pages précises qui ressortent sur Google quand quelqu'un cherche un soin particulier près de chez lui.",
+    "Vous ajoutez un nouveau soin ou une formule de saison vous-même, en quelques minutes."]),
+  ("Les entreprises et les événements", [
+    "Massage assis en entreprise, ateliers bien-être pour les équipes, présence sur un salon ou un mariage : c'est une clientèle régulière et bien payée. Une rubrique présente ces prestations et reçoit les demandes de devis avec la date, le lieu et le nombre de participants."]),
+  ("Ostéopathe : ce que le patient veut savoir", [
+    "Durée de la séance, tenue, nombre de séances, remboursement par les mutuelles, prise en charge des nourrissons et des femmes enceintes : le site répond à ces questions en termes simples, sans promesse de guérison. Votre numéro ADELI ou RPPS et votre formation sont indiqués, comme le titre d'ostéopathe le demande."]),
+],[
+  ("Puis-je proposer des cartes cadeaux ?", "Oui : les cartes cadeaux sont présentées sur le site, et chaque demande arrive chez vous pour que vous l'envoyiez ou la prépariez."),
+  ("Combien coûte un site pour un praticien bien-être ou un ostéopathe ?", "Dès 29 € par mois en Essentiel, plus 190 € de mise en ligne une seule fois, sans engagement ni commission sur les séances."),
+])
+
+_add("site-internet-concession-moto", [
+  ("Une page Google par moto", [
+    "Un motard cherche un modèle précis : une MT-07, une Africa Twin, un scooter 125 pour la ville. Chaque moto d'occasion a sa propre page, avec photos, kilométrage, année, entretien, équipements et prix, et Google peut l'indexer. Votre stock travaille pour vous sur des centaines de recherches.",
+    "Vous ajoutez et retirez vos motos depuis votre espace client, depuis votre téléphone à l'atelier."]),
+  ("Le permis A2 et les jeunes permis", [
+    "Les jeunes permis cherchent une moto compatible A2 ou bridable. Le site le signale sur chaque fiche, et une page explique le passage du A2 au A après deux ans. C'est une clientèle qui revient : elle achète une première moto, puis une plus grosse."]),
+  ("La saison", [
+    "Le printemps fait la saison des ventes, l'hiver celle de l'atelier et du stockage. Le site met en avant ce qui compte au bon moment : vos arrivages et vos essais au printemps, vos forfaits d'hivernage et de révision en automne."]),
+],[
+  ("Puis-je proposer des essais sur le site ?", "Oui : chaque fiche moto a un bouton pour demander un essai, et la demande arrive chez vous avec les coordonnées du client."),
+  ("Mes motos sont-elles diffusées ailleurs que sur mon site ?", "Avec le Pack Auto, Moto & Immo, votre stock est aussi publié sur Abracadeal, sans ressaisie."),
+])
+
+_add("site-internet-location-demenagement", [
+  ("Particuliers et professionnels", [
+    "Un particulier loue un utilitaire pour un week-end ; un artisan a besoin d'un camion benne pour un chantier ; une entreprise déménage ses bureaux. Le site sépare ces clientèles, avec pour chacune vos véhicules ou vos formules adaptées, et un formulaire qui demande les bonnes informations.",
+    "Les professionnels peuvent demander une facturation mensuelle ou une location longue durée."]),
+  ("Votre flotte en détail", [
+    "Volume en mètres cubes, charge utile, permis nécessaire, hayon, nombre de places : chaque véhicule a sa fiche. Le client sait tout de suite quel véhicule choisir pour un studio ou une maison, ce qui évite les erreurs le jour du départ.",
+    "Pour les déménagements, présentez vos formules (économique, standard, clés en main) et ce que chacune comprend."]),
+  ("Être trouvé au bon moment", [
+    "« Location utilitaire » ou « déménageur » suivi d'une ville : ce sont des recherches faites la veille ou la semaine du besoin. Le site affiche votre adresse, vos horaires et un bouton d'appel, et liste les communes que vous couvrez."]),
+],[
+  ("Les clients peuvent-ils choisir un véhicule précis ?", "Oui : chaque véhicule a sa fiche, et la demande de réservation indique le véhicule souhaité et les dates."),
+  ("Puis-je envoyer mes devis depuis le site ?", "Oui : depuis votre espace client, vous éditez un devis en PDF à votre nom pour chaque demande."),
+])
+
+_add("site-internet-profession-liberale", [
+  ("Une page par domaine d'intervention", [
+    "Droit de la famille, droit du travail, création d'entreprise, comptabilité des indépendants, rénovation, conseil en patrimoine : un client cherche une réponse à sa situation, pas un cabinet en général. Chaque domaine a sa page, qui explique les situations courantes et la façon dont vous accompagnez. Ce sont ces pages qui sortent sur Google.",
+    "Le ton reste factuel, sans comparaison avec vos confrères ni promesse de résultat."]),
+  ("Le premier contact", [
+    "Le formulaire demande l'objet de la demande, l'urgence et les documents dont le client dispose. Vous préparez le premier rendez-vous, au cabinet ou en visio, et vous pouvez indiquer vos honoraires pour une première consultation.",
+    "Les demandes arrivent par mail et dans votre espace client, confidentielles."]),
+  ("Votre parcours", [
+    "Formation, années d'expérience, inscription à l'ordre ou à la chambre, langues parlées, associations professionnelles : une page présente votre parcours. Pour une profession de conseil, c'est souvent ce qui décide le client."]),
+],[
+  ("Puis-je publier des articles sur mon domaine ?", "Oui : vous ajoutez des articles depuis votre espace client. Expliquer les questions fréquentes de vos clients est aussi ce qui vous fait trouver sur Google."),
+  ("Les demandes envoyées par le site restent-elles confidentielles ?", "Oui : elles arrivent uniquement dans votre boîte mail et votre espace client, sur une connexion sécurisée."),
+])
+
+_add("site-internet-evenementiel", [
+  ("Vos formules, clairement", [
+    "Formule soirée, formule mariage complet, option cérémonie laïque, location seule ou avec installation : présenter vos formules avec un prix de départ filtre les demandes hors budget et rassure les clients qui n'osent pas demander. Les options (heures en plus, éclairage, machine à fumée, livre d'or photo) s'ajoutent facilement.",
+    "Vous modifiez vos formules et vos prix vous-même, d'une saison à l'autre."]),
+  ("Les entreprises", [
+    "Séminaires, soirées de fin d'année, lancements de produit, inaugurations : les entreprises réservent plus tôt, ont des budgets plus élevés et reviennent chaque année. Une rubrique leur est dédiée, avec vos références et une demande de devis adaptée (nombre de participants, lieu, horaires)."]),
+  ("Les avis et les références", [
+    "Les couples et les entreprises lisent les avis avant de choisir. Le site renvoie vers vos avis Google et présente quelques témoignages de clients, avec leur accord, ainsi que les lieux de réception où vous avez déjà travaillé."]),
+],[
+  ("Puis-je indiquer les dates où je ne suis plus disponible ?", "Oui : vous signalez vos dates déjà réservées, et le formulaire invite le client à donner une date de repli."),
+  ("Le site convient-il à un loueur de matériel événementiel ?", "Oui : chaque article (tentes, mobilier, sonorisation, décoration) a sa fiche avec ses photos et son prix de location."),
+])
+
+_add("site-internet-tourisme-loisirs", [
+  ("Une page par activité", [
+    "Sortie demi-journée, journée complète, coucher de soleil, initiation, sortie privée : chaque activité a sa page avec les photos, le programme heure par heure, le niveau, le prix et le lieu de rendez-vous. Les visiteurs qui cherchent une activité précise tombent sur la bonne page, pas sur un catalogue.",
+    "Vous pouvez aussi présenter des idées pour les familles, les couples ou les groupes d'amis."]),
+  ("Cartes cadeaux et réservations hors saison", [
+    "Une sortie en kayak ou un baptême de parapente, c'est un cadeau très demandé. Les cartes cadeaux vendues en hiver remplissent vos créneaux du printemps. Le site les présente toute l'année."]),
+  ("Votre région, votre terrain", [
+    "Parlez de votre coin : les sentiers, les spots, les villages, la faune. Ces textes donnent envie, montrent que vous connaissez le terrain, et sont aussi lus par Google, qui associe votre site à votre région."]),
+],[
+  ("Puis-je proposer des cartes cadeaux ?", "Oui : elles sont présentées sur le site, et chaque demande arrive chez vous pour que vous l'envoyiez au client."),
+  ("Le site gère-t-il les groupes et les écoles ?", "Oui : une demande de devis dédiée recueille le nombre de participants, l'âge et la date souhaitée."),
+])
+
+_add("site-internet-traiteur", [
+  ("Mariages et grandes réceptions", [
+    "Pour un mariage, le couple veut savoir ce qui est compris : cocktail, entrée, plat, dessert, pièce montée, service, vaisselle, mobilier, nappage. Une rubrique détaille vos formules de réception et propose une dégustation sur rendez-vous. C'est souvent ce qui fait la différence avec un concurrent qui envoie seulement un prix."]),
+  ("Votre cuisine et vos produits", [
+    "Produits frais, circuits courts, fait maison, spécialités régionales ou du monde : présentez ce qui vous distingue, avec de vraies photos de vos buffets et de vos plats. Les clients choisissent un traiteur sur ses photos autant que sur ses prix.",
+    "Vous changez vos menus de saison vous-même depuis votre espace client."]),
+  ("Livraison et service", [
+    "Livraison seule, installation du buffet, maîtres d'hôtel, reprise de la vaisselle : le site présente ce que vous proposez et votre zone d'intervention, avec les éventuels frais de déplacement. Le client sait à quoi s'attendre avant de demander un devis."]),
+],[
+  ("Puis-je proposer une dégustation avant un mariage ?", "Oui : une demande de dégustation peut être faite depuis le site, et vous fixez le rendez-vous avec le couple."),
+  ("Le site convient-il à un traiteur qui fait aussi de la vente en boutique ?", "Oui : la boutique a sa rubrique avec ses horaires et ses plats du jour, à côté de l'activité réception."),
+])
+
+_add("site-internet-photographe", [
+  ("Vos tarifs, sans détour", [
+    "Les clients hésitent à contacter un photographe qui n'affiche aucun prix. Présentez vos formules avec un prix de départ : séance portrait, séance famille, reportage mariage à la demi-journée ou à la journée, prise de vue pour entreprise. Le client arrive en sachant si vous êtes dans son budget, et vous perdez moins de temps.",
+    "Les options (album, tirages, séance d'engagement) s'ajoutent à chaque formule."]),
+  ("Le déroulé d'une séance", [
+    "Où se passe la séance, combien de temps, comment se préparer, quand arrivent les photos, comment elles sont livrées : une page explique le déroulé, ce qui rassure ceux qui n'ont jamais été photographiés par un professionnel."]),
+  ("Les entreprises", [
+    "Portraits d'équipe, photos de locaux, produits, événements, photos immobilières : les entreprises ont besoin d'images régulièrement. Une rubrique présente vos prestations pour elles, avec la question des droits d'utilisation réglée dès le devis."]),
+],[
+  ("Puis-je livrer les photos à mes clients depuis le site ?", "Le site présente votre portfolio ; pour la livraison, vous continuez d'utiliser votre outil de galerie privée, et le site peut y renvoyer."),
+  ("Le site peut-il être en anglais pour les mariages de couples étrangers ?", "Oui, la version anglaise est incluse en formule Premium."),
+])
+
+_add("site-internet-location-bateau", [
+  ("Une fiche par bateau", [
+    "Semi-rigide, bateau à moteur, voilier, catamaran, jet-ski, paddle : chaque embarcation a sa fiche avec ses photos, sa capacité, sa puissance, l'équipement à bord (taud de soleil, échelle de bain, glacière) et ses tarifs à la demi-journée, à la journée ou à la semaine. Le client choisit en connaissance de cause.",
+    "Vous ajoutez et retirez vos bateaux vous-même au fil des saisons."]),
+  ("Le skipper, un service à part", [
+    "Beaucoup de clients n'ont pas le permis ou préfèrent profiter sans piloter. Une rubrique présente vos sorties avec skipper : balade, journée aux îles, coucher de soleil, demande en mariage, anniversaire. Ce sont des prestations à forte valeur, très recherchées."]),
+  ("Préparer la sortie", [
+    "Heure d'arrivée, documents à présenter, briefing de sécurité, ce qu'il faut apporter, où se garer : une page explique tout avant le départ. Les clients arrivent prêts, et les départs se font à l'heure."]),
+],[
+  ("Puis-je demander une caution ?", "Oui : le montant de la caution et ses conditions sont indiqués sur chaque fiche et dans vos conditions de location."),
+  ("Le site convient-il aux sorties avec skipper ?", "Oui : chaque sortie avec skipper a sa page, avec son programme, sa durée et son prix."),
+])
+
+_add("site-internet-services-a-domicile", [
+  ("Un service par page", [
+    "Ménage régulier, grand ménage de printemps, repassage, jardinage, petit bricolage, garde d'enfants après l'école, aide aux courses : chaque service a sa page avec ce qui est compris, la fréquence possible et le prix horaire après crédit d'impôt. Les familles qui cherchent un service précis trouvent la bonne page.",
+    "Vous ajoutez un nouveau service vous-même, par exemple un service de saison."]),
+  ("Comment se passe le premier rendez-vous", [
+    "Visite à domicile ou appel, devis gratuit, choix de l'intervenant, jour et horaire fixes, remplacement en cas d'absence, facture et attestation fiscale chaque année : expliquer ces étapes rassure les clients qui n'ont jamais fait appel à une entreprise de services à domicile."]),
+  ("Les seniors et leurs proches", [
+    "Souvent, ce n'est pas la personne âgée qui cherche, mais son fils ou sa fille, parfois loin. Une rubrique s'adresse à eux : services proposés, suivi, contact direct avec l'intervenant, aides possibles (APA, caisses de retraite)."]),
+],[
+  ("Le site explique-t-il l'attestation fiscale ?", "Oui : il rappelle que vous envoyez chaque année une attestation pour le crédit d'impôt, si vous êtes déclaré en services à la personne."),
+  ("Puis-je recruter des intervenants via le site ?", "Oui : une page « Nous rejoindre » peut recevoir les candidatures, qui arrivent par mail."),
+])
+
+_add("site-internet-fleuriste", [
+  ("La boutique en ligne de vos créations", [
+    "Bouquets du moment, bouquets de saison, compositions, plantes, orchidées : chaque création a sa photo, son prix et ses tailles. Vous changez la vitrine chaque semaine depuis votre téléphone, avec les fleurs arrivées le matin.",
+    "Le client précise le message de la carte, la date et l'adresse de livraison."]),
+  ("Votre zone de livraison", [
+    "Le site indique les communes livrées, les frais selon la distance et l'heure limite de commande pour une livraison le jour même. Les clients qui envoient des fleurs à un proche dans votre ville vous trouvent sur Google, même s'ils habitent loin."]),
+  ("Votre style", [
+    "Champêtre, moderne, fleurs locales et de saison, fleurs séchées, zéro plastique : présentez votre style et vos engagements. Une clientèle de plus en plus nombreuse choisit son fleuriste pour ça."]),
+],[
+  ("Les clients peuvent-ils écrire un message pour la carte ?", "Oui : le formulaire de commande prévoit le texte de la carte, la date et l'adresse de livraison."),
+  ("Puis-je indiquer une heure limite pour la livraison du jour ?", "Oui, elle est affichée sur le site et vous la modifiez vous-même."),
+])
+
+_add("site-internet-infirmier-liberal", [
+  ("Les informations pratiques", [
+    "Adresse du cabinet, accès, parking, accessibilité, horaires de permanence, documents à préparer (ordonnance, carte Vitale, attestation de mutuelle) : une page réunit tout ce dont le patient a besoin avant le premier soin.",
+    "Vous les modifiez vous-même, par exemple pendant les congés ou les remplacements."]),
+  ("Les soins après une hospitalisation", [
+    "La sortie d'hôpital ou de clinique est un moment où les familles cherchent un infirmier en urgence : pansements, injections d'anticoagulants, retrait des fils, surveillance. Une rubrique explique comment organiser la prise en charge avant la sortie, pour que le patient ne se retrouve pas sans soins le premier jour."]),
+  ("Le bilan de soins infirmiers", [
+    "Pour les patients âgés ou dépendants, le site peut expliquer le bilan de soins infirmiers et les soins d'hygiène à domicile, en lien avec le médecin traitant. Les proches comprennent ce qui est possible et à qui s'adresser."]),
+],[
+  ("Puis-je indiquer mes communes de tournée ?", "Oui : le site liste vos communes, et le patient sait tout de suite si vous intervenez chez lui."),
+  ("Le site convient-il à un remplaçant ?", "Oui : vous pouvez présenter les infirmiers du cabinet et les remplaçants réguliers."),
+])
+
+_add("site-internet-toiletteur", [
+  ("Les prestations, une par une", [
+    "Bain et séchage, tonte, coupe ciseaux, épilation, démêlage, coupe des griffes, nettoyage des oreilles, toilettage du chat : chaque prestation a sa description, sa durée et son prix par gabarit. Le client sait ce qu'il réserve et combien il va payer.",
+    "Les forfaits chiot, pour habituer le jeune chien au toilettage, ont leur page."]),
+  ("Le bien-être de l'animal", [
+    "Les propriétaires veulent savoir comment leur animal est traité : temps d'attente, séchage, manipulation des chiens anxieux ou âgés, produits utilisés. Expliquer votre façon de faire rassure et fidélise."]),
+  ("Les races et les coupes", [
+    "Une page par type de pelage (chiens à poils longs, bouclés, à double pelage) explique ce qu'il faut et à quelle fréquence. Ces pages répondent aux questions des propriétaires et sortent sur Google sur des recherches précises."]),
+],[
+  ("Puis-je afficher mes tarifs par race ?", "Oui : vos tarifs sont présentés par gabarit ou par race, et vous les modifiez vous-même."),
+  ("Le site accepte-t-il les chats ?", "Oui : vous présentez vos prestations pour chats et NAC si vous les proposez."),
+])
+
+_add("site-internet-coach-sportif", [
+  ("Une page par programme", [
+    "Remise en forme, perte de poids, renforcement musculaire, préparation à une course, coaching prénatal ou postnatal, sport après 60 ans : chaque programme a sa page avec son public, son déroulé et son tarif. Le client se reconnaît dans une situation précise.",
+    "Vous ajoutez un nouveau programme ou un stage vous-même."]),
+  ("Les cours collectifs", [
+    "Cours en extérieur, bootcamp, pilates, cross-training en petit groupe : le planning est affiché sur le site, avec le lieu, le niveau et le nombre de places. Les demandes d'inscription arrivent chez vous."]),
+  ("Les entreprises", [
+    "Séances pour les salariés, ateliers de prévention du mal de dos, défis sportifs : une rubrique présente vos offres pour les entreprises, une clientèle régulière qui paie bien."]),
+],[
+  ("Puis-je publier mon planning de cours ?", "Oui : vous le modifiez vous-même chaque semaine depuis votre espace client."),
+  ("Puis-je afficher ma carte professionnelle ?", "Oui : votre carte d'éducateur sportif et vos diplômes figurent sur le site, ce qui rassure les clients."),
+])
+
+_add("site-internet-chambres-d-hotes-gite", [
+  ("Votre table d'hôtes et vos services", [
+    "Table d'hôtes, panier pique-nique, location de vélos, piscine, spa, accueil des randonneurs ou des cyclistes : présentez ce qui rend votre maison unique, avec les prix et les jours de service. Ce sont souvent ces détails qui font choisir une maison d'hôtes plutôt qu'un hôtel."]),
+  ("Les séjours à thème et les groupes", [
+    "Week-end en amoureux, séjour vendanges, réunion de famille, petit séminaire : proposez des séjours à thème et la location de toute la maison. Ces demandes arrivent rarement par les plateformes et rapportent plus."]),
+  ("Les informations pratiques", [
+    "Heure d'arrivée et de départ, accès, parking, animaux, enfants, conditions d'annulation, acompte : une page claire évite les malentendus et les messages répétés. Vous la modifiez vous-même à chaque saison."]),
+],[
+  ("Puis-je proposer la location de toute la maison ?", "Oui : une rubrique dédiée reçoit les demandes de groupe, avec les dates et le nombre de personnes."),
+  ("Puis-je indiquer mes périodes de fermeture ?", "Oui, vous les signalez vous-même et elles s'affichent sur le site."),
+])
+
+_add("site-internet-auto-ecole", [
+  ("Les tarifs détaillés", [
+    "Forfait code, forfait 20 heures, heure supplémentaire, présentation à l'examen, accompagnement, frais d'inscription : afficher vos tarifs en détail est une obligation pour une auto-école et un vrai argument face aux offres qui cachent les frais. Le site présente chaque formule clairement.",
+    "Vous modifiez vos tarifs vous-même à chaque changement."]),
+  ("Les élèves et leurs parents", [
+    "Souvent, ce sont les parents qui choisissent et qui paient. Une rubrique leur répond : conduite accompagnée, rendez-vous pédagogiques, financement (CPF, permis à 1 € par jour, aides locales), suivi de la progression. Rassurer les parents, c'est gagner l'inscription."]),
+  ("Les formations pour adultes", [
+    "Reprise de conduite après une longue pause, perfectionnement, conduite en boîte automatique, stage de récupération de points : les adultes cherchent aussi une auto-école. Une page par formation leur répond directement."]),
+],[
+  ("Le site peut-il expliquer le financement par le CPF ?", "Oui : une page explique les grandes lignes et précise si vos formations sont éligibles."),
+  ("Puis-je présenter mes moniteurs ?", "Oui : chaque moniteur peut être présenté avec sa photo et ses spécialités."),
+])
+
+_add("site-internet-bijouterie", [
+  ("Vos créations et vos marques", [
+    "Bagues, colliers, boucles d'oreilles, alliances, montres : présentez vos collections en photo, avec un prix de départ si vous le souhaitez, sans vendre en ligne. Le client repère les pièces qui lui plaisent et vient les voir en boutique.",
+    "Vous ajoutez vos nouveautés vous-même, depuis votre téléphone."]),
+  ("L'atelier", [
+    "Si vous avez un atelier, montrez-le : bijoutier ou horloger au travail, outils, savoir-faire, délais. Un client confie plus volontiers une montre de famille ou une bague ancienne à quelqu'un dont il voit le travail."]),
+  ("Les alliances", [
+    "Les couples cherchent leurs alliances plusieurs mois avant le mariage, souvent sur Google. Une page dédiée présente vos modèles, les métaux, la gravure, le délai de fabrication, et propose un rendez-vous au calme."]),
+],[
+  ("Puis-je présenter mes services de réparation avec un délai ?", "Oui : chaque service (pile, révision, mise à taille, soudure) peut afficher un délai et un prix indicatifs."),
+  ("Puis-je proposer des rendez-vous privés ?", "Oui : un formulaire permet de demander un rendez-vous, par exemple pour choisir des alliances."),
+])
+
+_add("site-internet-concession-automobile", [
+  ("Utilitaires et professionnels", [
+    "Artisans, livreurs, entreprises : les véhicules utilitaires ont leur rubrique, avec le volume, la charge utile, les aménagements et les solutions de location avec option d'achat. C'est une clientèle qui revient régulièrement renouveler sa flotte."]),
+  ("L'après-vente", [
+    "Révision, entretien sous garantie, pneus, carrosserie, contrôle technique : si vous avez un atelier, le site prend les rendez-vous. Un client bien suivi après l'achat revient acheter son prochain véhicule chez vous."]),
+  ("Être trouvé sur les modèles recherchés", [
+    "Les acheteurs tapent un modèle, une motorisation et une ville. Avec une page par véhicule et des informations complètes (finition, options, Crit'Air, consommation), vos voitures sortent sur ces recherches précises, pas seulement sur le nom de votre concession."]),
+],[
+  ("Puis-je afficher la vignette Crit'Air et la consommation ?", "Oui : chaque fiche véhicule prévoit ces informations, utiles aux acheteurs dans les villes à zone à faibles émissions."),
+  ("Le site prend-il les rendez-vous atelier ?", "Oui : la prise de rendez-vous pour l'entretien et la révision est incluse."),
+])
+
+_add("site-internet-dentiste", [
+  ("Les actes, expliqués simplement", [
+    "Détartrage, soins de caries, dévitalisation, couronne, bridge, implant, blanchiment, orthodontie : une page explique chaque acte en termes simples, combien de temps il prend, combien de séances il faut, et s'il est pris en charge. Les patients arrivent mieux informés, et moins inquiets.",
+    "Le contenu reste informatif, comme le demande le code de déontologie."]),
+  ("Les enfants et les patients anxieux", [
+    "Le dispositif M'T dents, le premier rendez-vous d'un enfant, l'accueil des patients qui ont peur du dentiste : si votre cabinet y fait attention, le site le dit. C'est souvent ce que cherchent les parents."]),
+  ("Le cabinet", [
+    "Équipe, assistantes, équipements (radiographie numérique, empreinte optique), protocoles d'hygiène et de stérilisation : une page présente le cabinet avec des photos. Elle rassure avant la première visite."]),
+],[
+  ("Le site peut-il expliquer le 100 % Santé ?", "Oui : une page présente les grandes lignes du 100 % Santé dentaire et rappelle qu'un devis est remis avant toute prothèse."),
+  ("Puis-je indiquer si je prends de nouveaux patients ?", "Oui, et vous modifiez cette information vous-même selon vos disponibilités."),
+])
+
+_add("site-internet-veterinaire", [
+  ("Une page par service", [
+    "Consultation, vaccination, chirurgie, dentisterie, imagerie, analyses, hospitalisation, comportement, NAC : chaque service a sa page qui explique ce qui est fait et quand consulter. Les propriétaires qui cherchent un service précis tombent sur la bonne page.",
+    "Vous ajoutez un nouveau service vous-même."]),
+  ("Les chiots et les chatons", [
+    "Premiers vaccins, identification, vermifuges, stérilisation, alimentation, éducation : une rubrique accompagne les nouveaux propriétaires. C'est une clientèle qui reste fidèle pendant toute la vie de l'animal."]),
+  ("Les animaux âgés", [
+    "Bilans de santé, douleur, arthrose, alimentation adaptée, accompagnement de fin de vie : une page traite ces sujets avec délicatesse. Les propriétaires y trouvent des réponses et savent qu'ils peuvent compter sur vous."]),
+],[
+  ("Puis-je présenter les services de garde ?", "Oui : le site indique votre organisation pour les urgences et le service de garde vers lequel vous orientez."),
+  ("Le site convient-il à une clinique avec plusieurs vétérinaires ?", "Oui : chaque vétérinaire est présenté avec ses domaines d'intérêt."),
+])
+
+_add("site-internet-kinesitherapeute", [
+  ("Les sportifs", [
+    "Entorse, tendinite, rupture des ligaments croisés, reprise après blessure, prévention : les sportifs cherchent un kinésithérapeute qui comprend leur pratique. Si c'est votre cas, une page le présente, avec votre approche de la reprise progressive."]),
+  ("Les enfants et les nourrissons", [
+    "Kinésithérapie respiratoire, troubles orthopédiques, développement moteur : si vous recevez des enfants, une rubrique l'explique aux parents, avec les situations où consulter et la façon dont se passent les séances."]),
+  ("Les informations pratiques", [
+    "Durée d'une séance, tenue, documents, annulation, retard, remplacements pendant les congés : une page réunit ces informations et vous évite les questions répétées au téléphone."]),
+],[
+  ("Puis-je présenter les remplaçants du cabinet ?", "Oui : chaque praticien et remplaçant régulier peut être présenté."),
+])
+
+# Dernière section par métier, pour dépasser les 1 000 mots
+_LAST = {
+ "site-internet-concession-moto": ("Équipement et accessoires", "Casques, blousons, gants, bottes, antivols, bagagerie, intercoms : l'équipement représente une part importante du chiffre d'une concession. Le site présente les marques que vous distribuez et vos conseils pour bien choisir sa taille ou son niveau de protection, avec un rendez-vous pour l'essayage. Les motards qui cherchent un casque ou un blouson près de chez eux vous trouvent sur Google, et repartent souvent avec plus que ce qu'ils étaient venus chercher. Vos événements (portes ouvertes, balades, essais de nouveaux modèles) ont aussi leur place, et fidélisent votre clientèle locale."),
+ "site-internet-tourisme-loisirs": ("Sécurité et conditions", "Âge minimum, poids maximum, savoir nager, condition physique, femmes enceintes, conditions météo, annulation et report : une page claire répond à ces questions avant la réservation. Elle évite les mauvaises surprises au point de rendez-vous et montre votre sérieux. Indiquez aussi ce qui est fourni (combinaison, casque, gilet, matériel) et ce qu'il faut apporter (chaussures fermées, crème solaire, eau). Les familles, en particulier, choisissent l'activité qui répond le plus clairement à leurs questions, et elles sont nombreuses à préparer leurs vacances depuis leur canapé, des semaines à l'avance."),
+ "site-internet-coach-sportif": ("Le bilan de départ", "Un premier rendez-vous bien mené fait souvent la différence entre un prospect et un client. Le site explique comment se passe votre bilan : objectifs, antécédents, tests de condition physique, mensurations si le client le souhaite, puis un programme adapté. Il propose de réserver ce bilan directement, gratuit ou payant selon votre choix. Les clients qui hésitent à se lancer, souvent parce qu'ils n'ont pas fait de sport depuis longtemps, sont rassurés de voir qu'on part de leur niveau réel, sans jugement. C'est aussi l'occasion d'expliquer le suivi entre les séances : conseils, ajustements, messages."),
+ "site-internet-evenementiel": ("Le déroulé de A à Z", "Premier contact, rendez-vous ou appel pour comprendre l'événement, devis détaillé, acompte, réunion de préparation, repérage du lieu, jour J, bilan : expliquer votre façon de travailler rassure, surtout pour un mariage où tout doit être parfait. Le site présente ces étapes simplement, avec les délais habituels et ce que vous attendez du client à chaque moment. Les couples et les organisateurs d'entreprise comparent souvent plusieurs prestataires : celui qui montre qu'il a une méthode, des contrats clairs et un plan B en cas d'imprévu se démarque nettement."),
+ "site-internet-profession-liberale": ("Honoraires et transparence", "Beaucoup de clients hésitent à contacter un professionnel par peur du coût. Le site peut présenter votre mode de facturation : forfait pour certaines missions, taux horaire, convention d'honoraires, provision, aide juridictionnelle ou dispositifs d'aide quand ils existent dans votre profession. Sans donner un prix pour chaque situation, expliquer comment vous facturez lève un frein important. Les mentions obligatoires de votre profession sur ce point sont respectées, et vous gardez la main sur ces textes depuis votre espace client, pour les mettre à jour quand vos conditions évoluent."),
+ "site-internet-masseur-osteopathe-bien-etre": ("Votre cabinet, votre ambiance", "Lumière, musique, huiles, linge, table chauffante, espace douche : pour un soin bien-être, l'ambiance fait partie de la prestation. Le site la montre en photos et décrit le moment que le client va vivre, de l'accueil au thé servi après la séance. Pour un ostéopathe, l'accent est mis sur le sérieux : salle de soins, accessibilité, horaires élargis le soir ou le samedi. Dans les deux cas, l'adresse, le plan, le parking et les transports sont affichés clairement, car la plupart des clients consultent le site depuis leur téléphone juste avant de partir."),
+ "site-internet-fleuriste": ("Les entreprises et les événements", "Abonnement floral pour l'accueil d'un hôtel ou d'un cabinet, décoration d'un séminaire, fleurs pour un restaurant, compositions pour un salon : les entreprises sont une clientèle régulière et fidèle. Une rubrique leur présente vos formules, avec une fréquence de livraison et un budget mensuel, et reçoit leurs demandes de devis. Pour les mariages et les événements privés, une galerie de vos décorations de table, d'arches et de bouquets de mariée aide les futurs mariés à se projeter. Ces demandes arrivent par mail et dans votre espace client, où vous suivez chaque devis."),
+ "site-internet-chambres-d-hotes-gite": ("Ce que disent vos hôtes", "Les voyageurs lisent les avis avant de réserver. Le site renvoie vers vos avis Google et peut reprendre, avec leur accord, quelques mots de vos hôtes. Il présente aussi votre histoire : pourquoi vous avez ouvert votre maison, ce que vous aimez faire découvrir, vos adresses préférées. C'est ce lien personnel que les voyageurs viennent chercher dans une maison d'hôtes, et que les plateformes ne savent pas montrer. Pour les gîtes, un livret d'accueil en ligne (wifi, tri des déchets, commerces, numéros utiles) évite bien des questions pendant le séjour."),
+ "site-internet-toiletteur": ("La boutique et les conseils", "Shampoings, brosses, produits anti-parasitaires, accessoires, friandises : si vous vendez des produits, le site les présente avec vos conseils d'utilisation. Une rubrique conseils répond aux questions fréquentes : à quelle fréquence brosser, comment éviter les nœuds, que faire après une baignade, comment couper les griffes sans blesser. Ces pages font revenir les clients entre deux toilettages, sont lues par Google et montrent votre expertise. Vous les rédigez avec vos mots depuis votre espace client, et vous pouvez y ajouter vos photos."),
+ "site-internet-location-demenagement": ("Les conseils pour bien déménager", "Combien de cartons pour un deux-pièces, comment protéger la vaisselle, quel volume pour une maison, quelles démarches faire avant de partir (changement d'adresse, résiliation, état des lieux, autorisation de stationnement) : une rubrique conseils aide vos clients et leur montre votre expérience. Ces pages sont très recherchées sur Google pendant la préparation d'un déménagement, bien avant la réservation. Elles amènent des visiteurs qui, une fois rassurés, vous demandent un devis. Vous pouvez aussi y présenter vos fournitures : cartons, papier bulle, adhésif, housses."),
+ "site-internet-photographe": ("Votre regard", "Ce qui fait choisir un photographe, au-delà du prix, c'est son regard : naturel, lumineux, documentaire, artistique, noir et blanc. Une page « À propos » raconte votre parcours, ce que vous aimez photographier et ce que vos clients disent de vous. Elle montre aussi votre visage : on choisit plus facilement quelqu'un qu'on a déjà vu, surtout pour une journée aussi importante qu'un mariage. Vos parutions, expositions ou récompenses complètent la présentation et rassurent les clients exigeants."),
+ "site-internet-location-bateau": ("Vos idées de sorties", "Où aller pour une demi-journée, quelle crique choisir selon le vent, où mouiller pour déjeuner, quels lieux protégés respecter : une page de suggestions d'itinéraires aide vos clients à profiter de leur sortie et montre votre connaissance du plan d'eau. Elle est aussi très lue par les vacanciers qui préparent leur séjour. Ajoutez vos conseils de sécurité (météo, zones interdites, distances à respecter des plages) : vos clients partent mieux préparés, et vos bateaux reviennent en bon état."),
+ "site-internet-auto-ecole": ("Le code de la route", "Salle de code, tests en ligne, sessions de révision encadrées, inscription à l'examen du code : présentez comment vous préparez vos élèves à l'épreuve théorique. Beaucoup d'élèves révisent seuls sur une application ; votre accompagnement en salle et vos conseils font la différence le jour de l'examen. Le site indique vos horaires de salle de code et vos sessions de révision intensive pendant les vacances scolaires, une période où les inscriptions affluent. Les demandes d'inscription arrivent directement chez vous, sans plateforme intermédiaire."),
+ "site-internet-kinesitherapeute": ("Les seniors et le maintien à domicile", "Prévention des chutes, rééducation après une fracture, maintien de la mobilité, accompagnement des maladies chroniques : les patients âgés et leurs proches cherchent un kinésithérapeute disponible et proche, parfois à domicile. Une rubrique leur explique ce qui est possible, sur prescription du médecin, et comment organiser les séances. Les proches, souvent à distance, y trouvent les informations utiles et un moyen simple de vous contacter, ce qui facilite la mise en place des soins."),
+ "site-internet-infirmier-liberal": ("Les vaccinations et les prélèvements", "Vaccination contre la grippe ou le Covid, prises de sang à domicile ou au cabinet, tests : ces soins sont très recherchés à certaines périodes de l'année. Le site indique ce que vous faites, sur quelles plages horaires, et s'il faut une ordonnance. En période de campagne de vaccination, une simple mise à jour depuis votre espace client permet d'afficher vos créneaux et d'éviter des dizaines d'appels. Les patients savent où et quand venir, et le cabinet reste joignable pour les urgences."),
+ "site-internet-bijouterie": ("Le rachat et l'estimation", "Bijoux hérités, or cassé, montres anciennes : beaucoup de personnes ne savent pas ce que valent leurs objets et hésitent à pousser la porte d'un comptoir. Le site explique comment se passe une estimation dans votre boutique, ce que vous rachetez, comment le prix est calculé selon le cours de l'or, et les documents à apporter. Cette transparence attire une clientèle qui ne serait jamais venue autrement, et qui revient souvent ensuite pour acheter ou faire transformer une pièce."),
+ "site-internet-traiteur": ("Les fêtes de fin d'année", "Foie gras, plateaux de fruits de mer, bûches, menus de réveillon, buffets d'entreprise : la fin d'année concentre une grande partie des commandes. Le site met en avant votre carte de fêtes dès novembre, avec les dates limites de commande et les créneaux de retrait. Les clients commandent tranquillement à l'avance, et vous organisez votre production sans être débordé les derniers jours. Après les fêtes, vous remettez votre carte habituelle en quelques minutes depuis votre espace client."),
+ "site-internet-services-a-domicile": ("Des intervenants de confiance", "Recrutement, vérifications, formation, assurance, encadrement : expliquer comment vous choisissez et suivez vos intervenants rassure les clients qui vont leur confier les clés de leur maison ou leurs enfants. Le site peut présenter votre équipe, la façon dont un intervenant attitré est désigné, et ce qui se passe s'il est absent ou si le client souhaite changer. C'est l'argument principal face aux particuliers non déclarés, et ce que les familles comparent en premier."),
+ "site-internet-boulangerie": ("Vos engagements", "Farine locale, produits de saison, fait maison, lutte contre le gaspillage (dons, invendus à prix réduit en fin de journée), emballages réduits : les clients sont de plus en plus attentifs à ces engagements. Le site les présente simplement, avec des photos de votre fournil et de votre équipe. Les recherches « boulangerie artisanale » ou « pain au levain » suivies d'un quartier sont fréquentes : une page qui parle de votre façon de travailler vous fait apparaître sur ces recherches, devant les chaînes."),
+ "site-internet-concession-automobile": ("La reprise, première étape de la vente", "La plupart des acheteurs ont un véhicule à revendre. Le formulaire de reprise du site demande la marque, le modèle, l'année, le kilométrage, l'état et des photos : vous faites une première estimation avant le rendez-vous, et le client sait que la reprise est possible chez vous. C'est souvent ce qui déclenche la visite en concession. Les demandes arrivent dans votre espace client, où vous suivez chaque dossier jusqu'à la vente."),
+ "site-internet-veterinaire": ("Les conseils de saison", "Chenilles processionnaires au printemps, coups de chaleur en été, épillets, tiques, intoxications de fin d'année : une rubrique de conseils de saison aide les propriétaires à protéger leur animal et leur rappelle quand consulter. Ces pages sont très recherchées sur Google au bon moment, et elles amènent de nouveaux clients vers votre clinique. Vous les rédigez ou les complétez vous-même depuis votre espace client, avec les particularités de votre région."),
+ "site-internet-dentiste": ("Accès et informations pratiques", "Adresse, étage, ascenseur, accès en fauteuil roulant, parking, transports en commun, horaires, moyens de paiement, tiers payant, annulation d'un rendez-vous : une page réunit ces informations et évite des appels au secrétariat. Elle est d'autant plus utile que les patients la consultent souvent juste avant de partir, depuis leur téléphone. Vous la mettez à jour vous-même pendant les congés ou en cas de changement d'horaires."),
+}
+for _s, (_h, _t) in _LAST.items():
+    BODY[_s].append((_h, [_t]))
