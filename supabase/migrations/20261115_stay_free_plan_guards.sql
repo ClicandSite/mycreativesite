@@ -1,0 +1,5 @@
+-- 15/11/2026 (Anthony : « rester en gratuit ») : garde-fous pour rester dans l'offre gratuite Supabase (base 0,5 Go).
+-- Appliquée via MCP (migration "stay_free_plan_guards").
+-- 1) clicandsite-crawl : ne tourne plus si la base dépasse 350 Mo (en plus de la condition « réserve < 300 »).
+-- 2) cs-leads-purge (dimanche 3 h 17) : purge aussi site_visits et client_visits de plus de 25 mois.
+-- Fait à la main le même jour : VACUUM FULL cron.job_run_details (25 Mo -> 3,3 Mo, base 132 -> 111 Mo).
