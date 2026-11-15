@@ -286,3 +286,88 @@ BODY["site-internet-concession-automobile"] = [
     "Ce sont les trois questions qui font une vente. Le site propose une estimation de reprise, présente vos solutions de financement avec les mentions obligatoires du crédit, et détaille la garantie de chaque véhicule.",
     "Avec le Pack Auto, Moto & Immo, votre stock est aussi publié sur Abracadeal, sans ressaisie."]),
 ]
+
+# 15/11/2026 (Anthony : « au top du top ») : les 5 métiers les plus disputés passent au niveau des pages enrichies (~1 100 mots)
+BODY["site-internet-vtc"] += [
+  ("Hôtels, conciergeries, entreprises : la clientèle qui revient", [
+    "Un réceptionniste d'hôtel ou une conciergerie cherche un chauffeur fiable à qui confier ses clients, pas une application. Une page « Professionnels » présente vos conditions pour eux : réservation par mail ou téléphone, facturation mensuelle, bons de commande, chauffeur nommé. C'est souvent cette clientèle qui fait vivre un VTC toute l'année, en dehors des saisons touristiques.",
+    "Depuis votre espace client, vous éditez devis et bons en PDF à votre nom, et vous retrouvez l'historique de chaque client professionnel."]),
+  ("Être trouvé par les voyageurs", [
+    "Les recherches qui rapportent sont précises : « VTC aéroport » suivi d'une ville, « chauffeur privé » et le nom d'une destination, « transfert gare ». Le site indique votre ville de base, les aéroports, gares, hôtels et lieux d'événements que vous desservez, avec un forfait pour chacun quand c'est possible. Il se charge vite sur téléphone, car la plupart des réservations se font depuis un mobile, parfois depuis le tapis à bagages.",
+    "La version anglaise, incluse en Premium, compte beaucoup : sur les trajets aéroport, une grande partie des clients sont étrangers."]),
+  ("Moins de commission, plus de marge", [
+    "Faites le calcul sur un mois : chaque course passée par votre site au lieu d'une plateforme vous laisse la commission en entier. Quelques transferts par mois suffisent en général à payer l'abonnement du site, le reste est du bénéfice."]),
+]
+BODY["site-internet-restaurant"] += [
+  ("Groupes, privatisations et événements", [
+    "Anniversaire, repas d'entreprise, baptême, soirée de fin d'année : ces réservations rapportent plus qu'un service ordinaire, mais elles arrivent rarement par les plateformes. Une rubrique dédiée présente votre capacité, vos menus de groupe, la privatisation de la salle ou de la terrasse, et un formulaire demande la date, le nombre de convives et le budget par personne.",
+    "Vous répondez avec un devis en PDF à votre nom, envoyé depuis votre espace client."]),
+  ("Vente à emporter et livraison sans intermédiaire", [
+    "Si vous faites de la vente à emporter, le site présente la carte à emporter, les horaires de retrait et un bouton pour appeler ou commander. Les applications de livraison peuvent rester un complément, mais les clients fidèles qui commandent chez vous directement vous laissent toute la marge.",
+    "Les bons cadeaux sont aussi une bonne source de chiffre d'affaires, surtout en fin d'année."]),
+  ("Ce que Google regarde pour un restaurant", [
+    "Pour apparaître sur « restaurant » suivi d'un quartier, Google croise votre fiche Google, votre site et les avis. Le site renforce la fiche : même nom, même adresse, mêmes horaires, une carte lisible par Google, et des données structurées qui indiquent votre type de cuisine et votre fourchette de prix. Pensez à mettre le lien de votre site sur votre fiche Google : c'est souvent le premier clic des clients."]),
+]
+BODY["site-internet-artisan-batiment"] += [
+  ("Des demandes de devis qui valent le déplacement", [
+    "Le pire pour un artisan, c'est de se déplacer pour un devis qui n'aboutira jamais. Le formulaire du site trie en amont : type de travaux, surface ou quantité, commune, délai souhaité, budget approximatif et photos. Vous voyez tout de suite si le chantier vous intéresse et vous arrivez au rendez-vous avec une idée précise.",
+    "Les demandes sont classées dans votre espace « Mes clients », avec leur statut (à rappeler, devis envoyé, accepté), et vous pouvez éditer un devis en PDF à votre nom."]),
+  ("Les aides à la rénovation, un argument qui fait signer", [
+    "MaPrimeRénov', certificats d'économies d'énergie, éco-prêt à taux zéro, TVA réduite : les particuliers savent que les aides existent mais ne savent pas lesquelles les concernent. Une page qui explique les grandes lignes et précise que vous êtes RGE (si c'est le cas) vous fait sortir du lot. Vous l'adaptez à vos travaux : isolation, pompe à chaleur, fenêtres, chauffage.",
+    "Les règles des aides changent souvent : le texte reste général et renvoie vers France Rénov' pour le détail, et vous le mettez à jour vous-même."]),
+  ("Votre métier, pas un artisan générique", [
+    "Maçon, plaquiste, peintre, carreleur, couvreur, menuisier, chauffagiste : le site présente vos vrais savoir-faire, un par un, avec les photos de vos chantiers. Ce sont ces pages précises qui sortent sur Google quand un particulier tape le nom d'un métier suivi de sa ville."]),
+]
+BODY["site-internet-coiffeur-institut-beaute"] += [
+  ("Des prestations qui se vendent mieux en ligne", [
+    "Certaines prestations demandent qu'on rassure avant de réserver : un balayage, un lissage, des extensions de cils, une épilation définitive. Une fiche par prestation explique le déroulé, la durée, l'entretien après et le prix de départ, avec des photos de vos réalisations. La cliente arrive au salon décidée, et vous perdez moins de temps en explications.",
+    "Les mariées ont leur rubrique : essai, coiffure et maquillage le jour J, déplacement sur le lieu de réception."]),
+  ("Fidéliser sans logiciel coûteux", [
+    "Une cliente fidèle revient toutes les six à huit semaines. Le site lui permet de redemander un rendez-vous en un clic, de voir vos nouveautés et vos offres du moment, et d'offrir une carte cadeau à une amie. Vos produits vendus en salon peuvent y être présentés pour qu'elle les demande à sa prochaine visite.",
+    "Vous gardez la main sur tout depuis votre espace client : prestations, prix, horaires, congés, photos."]),
+  ("Salon, institut ou à domicile", [
+    "Si vous travaillez à domicile ou que vous louez un fauteuil, le site indique votre zone, vos jours de passage et vos frais de déplacement. C'est une vraie différence face aux grandes enseignes, qui ne se déplacent pas."]),
+]
+BODY["site-internet-agence-immobiliere"] += [
+  ("Des pages qui travaillent votre secteur", [
+    "Un vendeur qui cherche « estimation maison » suivi de sa commune doit tomber sur vous. Le site prévoit une page par quartier ou par commune que vous couvrez : ambiance, écoles, transports, types de biens et fourchettes de prix constatées. Ces pages vous positionnent comme l'agence qui connaît le secteur, et elles sortent sur Google pendant des années.",
+    "Vous les rédigez avec votre connaissance du terrain ; le modèle fournit la structure."]),
+  ("Location et gestion", [
+    "Si vous faites de la location ou de la gestion locative, une rubrique s'adresse aux propriétaires bailleurs : vos services, vos honoraires, la garantie loyers impayés si vous la proposez. Pour les locataires, chaque annonce de location affiche le loyer, les charges, le dépôt de garantie et les honoraires à leur charge, comme l'exige la loi.",
+    "Les demandes de visite et de dossier arrivent directement chez vous."]),
+  ("Agent indépendant ou agence de quartier", [
+    "Agent commercial rattaché à un réseau ou agence indépendante : le site met votre nom et votre visage en avant, ce que les portails ne font pas. Les vendeurs choisissent une personne de confiance, pas une liste d'annonces."]),
+]
+
+FAQ_EXTRA = {
+  "site-internet-vtc": [
+    ("Mes clients peuvent-ils réserver pour plus tard ?", "Oui : la réservation se fait à l'avance, avec la date, l'heure, le départ et l'arrivée. C'est d'ailleurs la règle pour un VTC, qui ne peut pas prendre de client sans réservation préalable."),
+    ("Puis-je afficher ma carte professionnelle VTC ?", "Oui. Votre numéro de carte et votre inscription au registre peuvent figurer sur le site et dans les mentions légales, ce qui rassure les clients et les hôtels."),
+    ("Le site existe-t-il en anglais ?", "Oui, la version anglaise est incluse en formule Premium : utile pour les transferts aéroport et la clientèle d'affaires étrangère.")],
+  "site-internet-restaurant": [
+    ("Comment indiquer les allergènes ?", "Chaque plat peut afficher ses allergènes, ou le site indique que l'information est disponible sur demande. Les deux façons de faire sont prévues."),
+    ("Puis-je recevoir les demandes de groupe et de privatisation ?", "Oui : un formulaire dédié demande la date, le nombre de convives et le budget, et vous répondez avec un devis en PDF depuis votre espace client."),
+    ("Combien coûte un site de restaurant ?", "Dès 29 € par mois en Essentiel, plus 190 € de mise en ligne une seule fois, hébergement et nom de domaine compris, sans engagement.")],
+  "site-internet-artisan-batiment": [
+    ("Puis-je recevoir des photos avec les demandes de devis ?", "Oui : le client joint des photos du chantier au formulaire, ce qui vous aide à estimer avant de vous déplacer."),
+    ("Le site parle-t-il des aides comme MaPrimeRénov' ?", "Oui, si vous le souhaitez : une page explique les grandes lignes des aides à la rénovation et précise si vous êtes RGE. Vous la modifiez vous-même quand les règles changent."),
+    ("Combien coûte un site pour un artisan ?", "Dès 29 € par mois en Essentiel, plus 190 € de mise en ligne une seule fois, sans engagement.")],
+  "site-internet-coiffeur-institut-beaute": [
+    ("Puis-je vendre des cartes cadeaux sur le site ?", "Oui : les cartes cadeaux sont présentées sur le site, et la demande arrive chez vous pour que vous la prépariez."),
+    ("Mes photos Instagram peuvent-elles apparaître ?", "Oui : le site renvoie vers votre compte Instagram, et vous ajoutez vos plus belles réalisations dans la galerie depuis votre téléphone."),
+    ("Combien coûte un site de coiffeur ou d'institut ?", "Dès 29 € par mois en Essentiel, plus 190 € de mise en ligne une seule fois, sans engagement ni commission sur les rendez-vous.")],
+  "site-internet-agence-immobiliere": [
+    ("Chaque bien a-t-il sa propre page sur Google ?", "Oui : chaque annonce a son adresse, ses photos et ses informations, et Google peut l'indexer comme une page à part entière."),
+    ("Puis-je créer des pages pour mes quartiers ?", "Oui : vous ajoutez des pages par commune ou par quartier, qui vous positionnent sur les recherches des vendeurs de votre secteur.")],
+}
+
+BODY["site-internet-vtc"].append(("Votre véhicule, votre meilleure vitrine", [
+  "Berline, van de 7 ou 8 places, véhicule électrique ou hybride : le client veut voir dans quoi il va voyager. Le site présente votre véhicule en photos, le nombre de passagers et de valises, le confort à bord, et propose le van pour les familles, les groupes et les transferts avec beaucoup de bagages. Pour un mariage ou un événement, une rubrique présente la mise à disposition à l'heure ou à la journée."]))
+BODY["site-internet-restaurant"].append(("Raconter votre cuisine", [
+  "Votre chef, vos producteurs, vos plats signature, votre cave, votre terrasse : c'est ce qui donne envie de pousser votre porte plutôt que celle d'à côté. Le site leur donne de la place, avec de vraies photos de vos plats et de votre salle, et vous les changez au fil des saisons depuis votre espace client."]))
+BODY["site-internet-artisan-batiment"].append(("Les mentions qui rassurent", [
+  "Numéro SIRET, assurance décennale avec le nom de l'assureur et la zone couverte, qualifications Qualibat ou RGE, garantie de parfait achèvement : ces mentions sont dans les mentions légales et au pied de chaque page. Pour un particulier qui a déjà entendu parler d'un chantier qui a mal tourné, c'est souvent ce qui fait la différence."]))
+BODY["site-internet-coiffeur-institut-beaute"].append(("Vos produits et vos marques", [
+  "Les marques que vous utilisez en salon (colorations végétales, soins professionnels, cosmétiques bio) sont un argument pour une partie de la clientèle. Le site les présente, explique pourquoi vous les avez choisies, et signale si elles sont en vente au salon. Une cliente attentive à la composition des produits vous choisira pour ça."]))
+BODY["site-internet-agence-immobiliere"].append(("Montrer vos ventes et votre méthode", [
+  "Les biens vendus, avec leur délai de vente, prouvent votre efficacité mieux qu'un slogan. Le site garde une rubrique « Vendus » et présente votre méthode : estimation argumentée, photos professionnelles, visites virtuelles, compte rendu après chaque visite, accompagnement jusqu'à l'acte. Un vendeur qui compare plusieurs agences voit tout de suite ce qu'il obtient avec vous."]))

@@ -885,6 +885,8 @@ def page(p):
     p = {**p, **SEO.get(p["slug"], {})}
     from seo_metiers_body import BODY  # 15/11/2026 : texte propre à chaque métier (anti-duplication)
     if not p.get("body") and p["slug"] in BODY: p["body"] = BODY[p["slug"]]
+    from seo_metiers_body import FAQ_EXTRA
+    if p["slug"] in FAQ_EXTRA: p["faq"] = list(p["faq"]) + [x for x in FAQ_EXTRA[p["slug"]] if x[0] not in {q for q, _ in p["faq"]}]
     url = f'{SITE}/{p["slug"]}/'
     plans = [PACK] if p.get("pack") else [BOUTIQUE] if p.get("k") == "boutique" else PRICES
     faq_ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in p["faq"]]}
