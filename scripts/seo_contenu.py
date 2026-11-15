@@ -222,3 +222,137 @@ SEO["site-internet-auto-entrepreneur"] = dict(
       "Et si votre activité grandit au-delà de la micro-entreprise, le site vous suit : vous changez de formule ou de statut sans tout refaire. Pour savoir si un site vaut le coup pour vous, lisez <a href=\"/conseils/auto-entrepreneur-site-internet/\">auto-entrepreneur : faut-il un site internet ?</a>"]),
   ]
 )
+
+# ---------------------------------------------------------------- Passe SEO du 15/11/2026
+SEO["site-internet-facile-a-modifier"] = dict(
+  seo_title="Site internet facile à modifier soi-même, dès 29 €/mois",
+  meta="Site internet facile à modifier soi-même : prix, horaires, photos changés depuis votre téléphone, avec l'aperçu en direct. Dès 29 €/mois, sans engagement.",
+  h1="Un site internet facile à modifier soi-même, depuis votre téléphone",
+  lead="Changer un prix, annoncer une fermeture ou remplacer une photo ne devrait pas demander un appel à un prestataire. Avec MyCreativeSite, votre site est fait pour vous, puis vous le modifiez vous-même dans votre espace client, en voyant le résultat en direct avant d'enregistrer.",
+  body=[
+    ("Pourquoi c'est important de pouvoir modifier son site seul", [
+      "Un site qui affiche des horaires d'hiver en plein été ou un tarif de l'an dernier fait perdre des clients sans qu'on s'en rende compte. Le visiteur se déplace pour rien, appelle pour vérifier, ou part chez un concurrent dont la page est à jour.",
+      "Quand chaque changement passe par un prestataire, on le reporte. Quand il se fait en quelques secondes depuis son téléphone, on le fait tout de suite, entre deux clients. C'est la différence entre un site qui vit et une page oubliée."]),
+    ("Ce que vous changez vous-même, sans compétence technique", [
+      "<b>Vos prix et votre carte</b> : vous ajoutez, supprimez ou modifiez une ligne de tarif. <b>Vos horaires</b> : fermeture exceptionnelle, congés, horaires d'été. <b>Vos photos</b> : vous en prenez une avec votre téléphone et vous la mettez à la place de l'ancienne, elle est redimensionnée automatiquement.",
+      "<b>Vos textes</b> : présentation, services, informations pratiques. <b>Votre style</b> : vous pouvez passer à un autre des 25 styles plus tard, sans frais et sans perdre vos textes. Ce sont des cases à remplir, comme un formulaire : la mise en page reste protégée, et un bouton annule la dernière modification si vous vous trompez."]),
+    ("L'aperçu en direct : vous voyez avant de publier", [
+      "Dans l'espace client, votre site s'affiche à côté de ce que vous tapez. Vous voyez la phrase changer, la photo se placer, le prix apparaître, sur ordinateur comme sur téléphone. Pas de surprise une fois en ligne.",
+      "Vous pouvez essayer tout de suite, sans inscription, avec la <a href=\"/espace/?demo=restaurant\">démo de l'espace client</a> : c'est le même outil que celui que reçoivent nos clients."]),
+    ("Vous préférez qu'on s'en occupe ? C'est prévu aussi", [
+      "Pouvoir modifier seul ne veut pas dire devoir tout faire seul. Au départ, on rédige vos textes et on installe le site pour vous. Ensuite, en formules Pro (49 € par mois) et Premium (79 € par mois), vous nous envoyez un simple message avec le changement voulu, et on le fait.",
+      "En Essentiel (29 € par mois + 190 € de mise en ligne), vous gardez la main sur vos prix, horaires et photos depuis l'espace client, et les dépannages à distance restent compris. Le détail est dans les <a href=\"/#tarifs\">tarifs</a>."]),
+    ("Comment ça marche", [
+      "Vous choisissez une formule, votre métier parmi les modèles, puis votre style. Vous envoyez vos informations et vos photos, ou vous remplissez le site vous-même avec l'aperçu en direct. Votre site est en ligne en général sous 48 heures ouvrées, sur une adresse provisoire d'abord : rien n'est facturé avant votre validation.",
+      "Une fois en ligne, l'espace client vous montre aussi vos statistiques de visites, sans compter vos propres passages. Pour voir les modèles par métier, passez par la page <a href=\"/site-internet-cle-en-main/\">site internet clé en main</a> ou par notre offre <a href=\"/site-internet-rapide/\">site en ligne en 48 h</a>."]),
+  ],
+  faq=[
+    ("Faut-il savoir coder pour modifier mon site ?", "Non. Vous remplissez des champs comme dans un formulaire, et l'aperçu vous montre le résultat avant d'enregistrer."),
+    ("Puis-je modifier mon site depuis mon téléphone ?", "Oui. L'espace client fonctionne sur téléphone : vous changez un prix, un horaire ou une photo en quelques secondes."),
+    ("Est-ce que je risque de casser la mise en page ?", "Non. La mise en page est protégée et vous pouvez annuler votre dernière modification en un clic."),
+    ("Puis-je changer le style de mon site plus tard ?", "Oui, sans frais. Vos textes et vos photos sont conservés quand vous passez à un autre style."),
+    ("Et si je n'ai pas le temps de m'en occuper ?", "En formules Pro et Premium, vous nous envoyez vos changements par message et on s'en occupe pour vous."),
+  ])
+
+SEO["site-internet-boutique-en-ligne"] = dict(
+  seo_title="Création de boutique en ligne pas chère pour commerçants",
+  meta="Création de boutique en ligne pas chère : catalogue, panier, paiement par carte, retrait ou livraison. 99 €/mois + 490 € de mise en ligne, sans commission.",
+  h1="Création de boutique en ligne pas chère, à votre nom",
+  lead="Créateurs, épiceries fines, caves, fleuristes, concept stores : la formule Boutique vous donne une vraie boutique en ligne à votre nom, avec catalogue, panier, paiement par carte, retrait ou livraison. 99 € par mois et 490 € de mise en ligne, sans engagement et sans commission de notre part sur vos ventes.",
+  body=[
+    ("Pourquoi vendre sur votre propre boutique", [
+      "Les places de marché apportent du passage, mais prélèvent une part de chaque vente et gardent la relation avec le client. Sur votre boutique, l'acheteur commande chez vous, sous votre nom de domaine, et revient chez vous la fois suivante.",
+      "Pour un commerce de quartier, c'est aussi un moyen de vendre en dehors des heures d'ouverture : le client voit vos produits le soir sur son téléphone, paie, puis passe les chercher ou se fait livrer."]),
+    ("Ce que contient votre boutique en ligne", [
+      "<b>Un catalogue clair</b>, avec photos, prix, rayons et filtres par budget, pensé d'abord pour le téléphone. <b>Un panier et le paiement par carte</b> : le paiement passe par votre propre compte Stripe et arrive sur votre compte bancaire, les frais de Stripe s'ajoutant à chaque paiement.",
+      "<b>Retrait ou livraison</b> : retrait gratuit en boutique, ou livraison avec vos frais et votre seuil de livraison offerte. <b>Les commandes rangées</b> : chaque commande arrive dans votre espace, onglet Mes clients, avec son statut de paiement. Et vos produits sont publiés en illimité sur Abracadeal, synchronisés avec votre catalogue."]),
+    ("Pourquoi elle reste peu chère", [
+      "Une boutique sur mesure en agence se chiffre souvent en milliers d'euros, sans compter la maintenance. Ici, la boutique part d'un modèle déjà construit : on l'adapte à vos produits, à vos couleurs et à vos conditions de livraison au lieu de tout développer.",
+      "L'abonnement comprend l'hébergement sécurisé, le nom de domaine à votre nom, la version mobile, les mises à jour, les sauvegardes et la maintenance à distance. La formule Boutique reprend aussi tout ce que contient Premium : CRM, site en français et en anglais, référencement local renforcé, logo et bannière offerts et style Signature."]),
+    ("Votre catalogue, tenu depuis votre téléphone", [
+      "Un nouveau produit arrive ? Vous prenez la photo, vous saisissez le nom et le prix dans votre espace client, et il est en ligne. Un article épuisé, une promotion, un changement de prix : la modification prend quelques secondes, avec l'aperçu en direct.",
+      "La formule est pensée pour les petites boutiques, avec jusqu'à 40 produits mis en avant. Pour un très grand catalogue, mieux vaut nous en parler avant de commander. Pour préparer votre projet, lisez notre guide <a href=\"/conseils/creer-boutique-en-ligne-les-indispensables/\">créer une boutique en ligne : les indispensables</a>."]),
+    ("Comment ça marche", [
+      "Vous choisissez la formule Boutique, puis votre style. Vous envoyez vos informations, vos premières photos de produits et vos conditions de retrait ou de livraison. On installe la boutique, vous la voyez sur une adresse provisoire, et elle part en ligne en général sous 48 heures ouvrées. Rien n'est facturé avant votre validation.",
+      "Vous préférez commencer par un site vitrine sans vente en ligne ? Les formules dès 29 € par mois sont détaillées sur la page <a href=\"/site-internet-pas-cher/\">site internet pas cher</a>. Pour commander, rendez-vous sur le <a href=\"/#commande\">formulaire de commande</a>."]),
+  ],
+  faq=[
+    ("Combien coûte la boutique en ligne ?", "99 € par mois et 490 € de mise en ligne, une fois, sans engagement. TVA non applicable : le prix affiché est le prix payé. Les frais bancaires de Stripe s'ajoutent à chaque paiement."),
+    ("Prenez-vous une commission sur mes ventes ?", "Non. Le paiement passe par votre propre compte Stripe et arrive sur votre compte bancaire. MyCreativeSite ne touche pas à vos ventes."),
+    ("Combien de produits puis-je mettre en ligne ?", "La formule est pensée pour les petites boutiques, jusqu'à 40 produits mis en avant. Pour un très grand catalogue, parlons-en avant."),
+    ("Mes clients peuvent-ils retirer leur commande en magasin ?", "Oui. Vous proposez le retrait gratuit en boutique, la livraison avec vos frais, ou les deux."),
+    ("Mes produits apparaissent-ils ailleurs que sur ma boutique ?", "Oui : avec la formule Boutique, vos produits sont publiés en illimité sur Abracadeal, synchronisés avec votre catalogue."),
+  ])
+
+SEO["site-internet-plombier-electricien"] = dict(
+  seo_title="Création site internet plombier, électricien, dépannage",
+  meta="Création de site internet pour plombier et électricien : demande de rappel, zone d'intervention, tarifs, bouton d'appel. En ligne en 48 h, dès 29 €/mois.",
+  h1="Création de site internet pour plombier et électricien",
+  lead="Une fuite, un disjoncteur qui saute, plus d'eau chaude : le client cherche un artisan sur son téléphone, tout de suite. Votre site de plombier ou d'électricien lui montre vos services, votre zone et vos tarifs, et lui permet de vous appeler ou de demander un rappel en un geste.",
+  feats=[("Demande de rappel","Problème, code postal, délai souhaité : la demande vous arrive par mail et dans votre espace « Mes clients »."),
+         ("Interventions récentes","Le problème, la solution, le temps passé et le prix : la preuve concrète de votre travail."),
+         ("Tarifs transparents","Déplacement, débouchage, recherche de fuite, remise en service : vos prix, fixés par vous."),
+         ("Zone d'intervention","Vos communes et vos délais, pour être trouvé quand on cherche votre métier près de chez soi."),
+         ("Bouton d'appel","Toujours visible sur téléphone, pour vous joindre en un geste en cas d'urgence."),
+         ("Vos engagements","Assurances, garantie de la main-d'œuvre, prix annoncé avant de commencer : ce que vous proposez réellement.")],
+  body=[
+    ("Pourquoi un site aide un plombier ou un électricien", [
+      "En dépannage, le client ne compare pas pendant des jours : il choisit vite, souvent parmi les premiers artisans qui lui inspirent confiance. Un site clair, avec un numéro qui s'appelle d'un seul doigt, des prix lisibles et des communes nommées, rassure au moment où il hésite.",
+      "Le site travaille aussi pour les chantiers moins urgents : remplacement de chauffe-eau, mise aux normes du tableau, rénovation d'une salle de bain. Là, le client prend le temps de regarder vos interventions et vos engagements avant de demander un devis."]),
+    ("Ce que contient votre site de dépannage", [
+      "Le modèle dépannage est construit pour la plomberie, l'électricité et le chauffage, et convient aussi aux serruriers et vitriers. En haut de page, un formulaire court : le problème, le code postal, le délai souhaité. Juste en dessous, vos services, vos tarifs et votre zone d'intervention.",
+      "La rubrique « Interventions récentes » montre des cas réels : le problème, ce que vous avez fait, le temps passé et le prix. Vous l'alimentez depuis votre téléphone, avec une photo, à la fin du chantier. Une rubrique « Nos engagements » présente ce que vous proposez vraiment : assurances, garantie, prix annoncé avant de commencer, moyens de paiement."]),
+    ("Être trouvé dans votre secteur", [
+      "Un artisan travaille sur un territoire. Votre site nomme vos communes et vos services, ce qui aide Google à comprendre où et pour quoi vous proposer. La formule Premium ajoute un référencement local renforcé, et la fiche Google optimisée est proposée en option à 149 €, une fois.",
+      "Aucun site ne peut promettre une place précise dans Google, mais un site rapide, adapté au téléphone et précis sur votre zone part avec de bons atouts. Notre guide <a href=\"/conseils/etre-visible-sur-google-artisan-commercant/\">être visible sur Google quand on est artisan</a> donne les bonnes pratiques."]),
+    ("Quelle formule pour un artisan du dépannage ?", [
+      "<b>Essentiel, 29 € par mois</b> (+ 190 € de mise en ligne) : le site, les demandes de rappel, l'agenda de réservation, les devis en PDF à votre logo et le QR code de votre site, à coller sur le camion ou les factures.",
+      "<b>Pro, 49 € par mois</b> (+ 290 €) : en plus, vos avis Google affichés sur le site, le bouton « Laisser un avis » et les modifications faites par nous sur simple message. <b>Premium, 79 € par mois</b> (+ 490 €) : CRM, site français et anglais, référencement local renforcé, logo et bannière offerts."]),
+    ("Comment ça marche", [
+      "Vous choisissez la formule, le métier « Plomberie, électricité, dépannage », puis votre style. Vous envoyez vos services, vos tarifs, vos communes et quelques photos depuis le chantier. On rédige les textes, on installe tout, et le site est en ligne en général sous 48 heures ouvrées après réception de vos informations. Vous changez ensuite vos prix et vos interventions vous-même.",
+      "Vous travaillez surtout en rénovation ? Le <a href=\"/site-internet-artisan-batiment/\">site pour artisan du bâtiment</a> met en avant vos réalisations et vos devis. Vous démarrez votre activité ? Lisez <a href=\"/conseils/site-internet-plombier-electricien-les-indispensables/\">site de plombier ou d'électricien : les indispensables</a>."]),
+  ],
+  faq=[
+    ("Combien coûte un site internet de plombier ou d'électricien ?", "Dès 29 € par mois et 190 € de mise en ligne avec la formule Essentiel, sans engagement. Hébergement, nom de domaine, version mobile et dépannages du site sont compris."),
+    ("Comment je reçois les demandes de rappel ?", "Par mail et dans votre espace client, onglet Mes clients, avec le problème, le code postal et le délai souhaité."),
+    ("Puis-je ajouter une intervention depuis le chantier ?", "Oui, depuis votre téléphone, avec la photo, la description et le prix."),
+    ("Le site indique-t-il mes communes d'intervention ?", "Oui. Vous listez vos communes et vos délais, et vous pouvez les modifier quand votre secteur change."),
+    ("Le site convient-il à un auto-entrepreneur ?", "Oui. La formule Essentiel est faite pour démarrer, et vous pouvez passer à une autre formule plus tard."),
+    ("Je suis serrurier ou vitrier, le modèle me convient-il ?", "Oui. Le modèle dépannage s'adapte : vous remplacez les services et les tarifs par les vôtres."),
+  ])
+
+SEO["site-internet-garage"] = dict(
+  seo_title="Site internet garage automobile : atelier et occasions",
+  meta="Site internet pour garage automobile : rendez-vous atelier, forfaits, véhicules d'occasion avec une page Google chacun, annonces sur Abracadeal. 99 €/mois.",
+  h1="Site internet pour garage automobile qui vend aussi des occasions",
+  lead="Votre garage entretient des véhicules et en vend aussi ? Ce site réunit les deux : rendez-vous atelier et forfaits d'un côté, stock de voitures et de motos d'occasion de l'autre. Avec le Pack Auto, Moto & Immo, chaque véhicule a sa page sur Google et part en annonce sur Abracadeal.",
+  feats=[("Prise de rendez-vous","Prestation, date souhaitée, immatriculation : la demande arrive par mail et dans votre espace « Mes clients »."),
+         ("Forfaits et tarifs","Vidange, pneus, freins, climatisation : des prix affichés qui donnent confiance avant même l'appel."),
+         ("Stock de véhicules","Voitures et motos avec photos, fiche technique complète, prix et statut (en vente, réservé, vendu), filtrables par marque, énergie et budget."),
+         ("Une page Google par véhicule","Chaque occasion a sa propre page, avec titre, prix, photos et fiche technique, lisible par Google et partageable sur WhatsApp."),
+         ("Annonces illimitées sur Abracadeal","Vos véhicules sont publiés et mis à jour automatiquement sur Abracadeal, sans passerelle à payer."),
+         ("Demande de reprise","Le client envoie son immatriculation et son kilométrage pour une demande de reprise : un contact de plus à chaque visite.")],
+  body=[
+    ("Pourquoi un site pour un garage qui vend des véhicules", [
+      "Un garage mixte a deux types de clients : l'automobiliste qui cherche où faire sa vidange ou ses pneus, et l'acheteur qui cherche une occasion près de chez lui. Les deux commencent par une recherche sur leur téléphone, et les deux veulent voir un prix avant d'appeler.",
+      "Un seul site peut répondre aux deux : l'atelier remplit l'agenda, et le stock en ligne fait venir des acheteurs qui ont déjà repéré leur véhicule. Les rendez-vous et les demandes de reprise arrivent au même endroit, dans votre espace."]),
+    ("Le côté atelier : rendez-vous et forfaits", [
+      "Vos prestations sont présentées avec leurs prix : vidange, pneus, freins, climatisation, distribution, diagnostic. Le client choisit sa prestation, une date et indique son immatriculation ; la demande vous arrive par mail et dans l'onglet Mes clients.",
+      "Vous indiquez aussi vos services pratiques : prêt de véhicule, dépose matinale, marques prises en charge. Horaires, jours de fermeture et tarifs se changent depuis votre téléphone, sans attendre personne."]),
+    ("Le côté vente : votre stock d'occasions sur Google et sur Abracadeal", [
+      "Dans l'onglet Mes véhicules, vous remplissez une vraie fiche : marque, modèle, année, kilométrage, énergie, boîte, puissance, équipements et jusqu'à 30 photos. Le véhicule apparaît dans la vitrine du site, filtrable par marque, énergie et budget, avec sa propre page lisible par Google.",
+      "Le même véhicule est publié sur Abracadeal, synchronisé : si vous baissez le prix ou le passez en « vendu », le site et l'annonce suivent. Aucune passerelle ni logiciel de diffusion n'est à payer en plus. Le fonctionnement complet est détaillé sur la page du <a href=\"/site-internet-diffusion-annonces-auto-immo/\">Pack Auto, Moto &amp; Immo</a>."]),
+    ("Quelle formule choisir pour votre garage ?", [
+      "Vous vendez des véhicules : le Pack Auto, Moto &amp; Immo, à 99 € par mois et 490 € de mise en ligne. Il comprend tout Pro (paiement en ligne, avis Google sur le site, modifications faites par nous sur simple message), le CRM, les annonces illimitées sur Abracadeal et votre page professionnelle Abracadeal. Le SIRET est demandé au paiement.",
+      "Vous faites seulement l'entretien et la réparation ? Le Pack n'est pas utile : le <a href=\"/site-internet-garage-mecanique/\">site pour garage mécanique</a> se fait dès Essentiel, à 29 € par mois. Vous ne faites que de la vente, sans atelier ? Voyez le <a href=\"/site-internet-concession-automobile/\">site de concession automobile</a> ou la <a href=\"/site-internet-concession-moto/\">concession moto</a>."]),
+    ("Comment ça marche", [
+      "Vous choisissez la formule, le métier « Garage », puis votre style. Vous envoyez vos prestations, vos tarifs, vos horaires et vos premiers véhicules, ou vous les saisissez vous-même avec l'aperçu en direct. Le site est en ligne en général sous 48 heures ouvrées après réception de vos informations, et rien n'est facturé avant votre validation. Pour la liste des rubriques utiles, lisez <a href=\"/conseils/site-internet-garage-les-indispensables/\">site de garage : les indispensables</a>."]),
+  ],
+  faq=[
+    ("Quelle formule pour un garage qui vend aussi des véhicules ?", "Le Pack Auto, Moto & Immo, à 99 € par mois et 490 € de mise en ligne, sans engagement. Un garage qui fait seulement l'entretien peut choisir Essentiel, Pro ou Premium, dès 29 € par mois."),
+    ("Je peux ajouter mes véhicules moi-même ?", "Oui. Dans l'onglet Mes véhicules, vous remplissez une fiche complète avec jusqu'à 30 photos. Le site et Abracadeal se mettent à jour tout seuls."),
+    ("Les motos sont-elles prises en charge ?", "Oui. La fiche accepte voitures, motos et scooters."),
+    ("Comment je reçois les rendez-vous atelier ?", "Par mail et dans votre espace client, onglet Mes clients, avec la prestation, la date souhaitée et l'immatriculation."),
+    ("Que devient une annonce quand le véhicule est vendu ?", "Vous le passez en « vendu » une seule fois : le site et l'annonce Abracadeal sont mis à jour ensemble."),
+    ("Combien de temps pour être en ligne ?", "En général 48 heures ouvrées après réception de vos informations et photos."),
+  ])

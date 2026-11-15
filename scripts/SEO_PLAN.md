@@ -11,10 +11,10 @@ Faits autorisés : `scripts/BRIEF_CONTENU_SEO.md`.
 | 2 | /site-internet-pas-cher/ | création site internet pas cher / site vitrine pas cher | Fait le 11/11/2026 |
 | 3 | /site-internet-cle-en-main/ | site internet clé en main | Fait le 11/11/2026 |
 | 4 | /site-internet-rapide/ | site internet rapide (en ligne en 48 h) | Fait le 11/11/2026 |
-| 5 | /site-internet-facile-a-modifier/ | site internet facile à modifier soi-même | À faire |
-| 6 | /site-internet-boutique-en-ligne/ | création boutique en ligne pas cher | À faire |
-| 7 | /site-internet-plombier-electricien/ | création site internet plombier électricien | À faire |
-| 8 | /site-internet-garage/ | site internet garage automobile | À faire |
+| 5 | /site-internet-facile-a-modifier/ | site internet facile à modifier soi-même | Fait le 15/11/2026 |
+| 6 | /site-internet-boutique-en-ligne/ | création boutique en ligne pas cher | Fait le 15/11/2026 |
+| 7 | /site-internet-plombier-electricien/ | création site internet plombier électricien | Fait le 15/11/2026 |
+| 8 | /site-internet-garage/ | site internet garage automobile | Fait le 15/11/2026 |
 | 9 | /site-internet-garage-mecanique/ | site internet garage mécanique | À faire |
 | 10 | /site-internet-artisan-batiment/ | site internet artisan bâtiment | À faire |
 | 11 | /site-internet-restaurant/ | création site internet restaurant | À faire |
