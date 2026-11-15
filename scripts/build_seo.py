@@ -935,9 +935,7 @@ def page(p):
 <meta property="og:image" content="{SITE + ("/img/modele-" + p["k"] + "-d.jpg" if p.get("k") else "/img/og.jpg")}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png"><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=2"><meta name="apple-mobile-web-app-title" content="MyCreativeSite">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script type="application/ld+json">{json.dumps(svc_ld, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps(faq_ld, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps(crumbs_ld, ensure_ascii=False)}</script>
@@ -1022,9 +1020,7 @@ def shell(title, desc, url, ld, body, og_type="website"):
 <meta property="og:image" content="{SITE}/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png"><link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=2"><meta name="apple-mobile-web-app-title" content="MyCreativeSite">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;600;700&display=swap">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css">
 {lds}
 <style>{CSS}{ARTICLE_CSS}</style>
 </head>
@@ -1282,7 +1278,7 @@ PRIVACY_BODY = """<div class="wrap crumbs"><a href="/">Accueil</a> › Confident
 <h2>3. Visiteurs du site</h2>
 <p>Le site n'utilise <b>ni cookie publicitaire ni outil de suivi d'une autre société</b> (pas de Google Analytics, pas de pixel Facebook). Il compte ses visites de façon anonyme : un identifiant tiré au hasard, gardé dans votre navigateur et renouvelé au bout de 13 mois, permet de compter une visite par page et par jour, avec la provenance (Google, lien direct…) et le type d'appareil. Aucune adresse IP n'est enregistrée. Cette mesure d'audience, limitée et anonyme, est dispensée de consentement selon les recommandations de la CNIL.</p>
 <p>Vous pouvez refuser d'être compté : <a href="/#nostats">ne plus compter mes visites</a> (et <a href="/#stats">être compté à nouveau</a>).</p>
-<p>Les polices de caractères sont chargées depuis Google Fonts : votre navigateur contacte donc les serveurs de Google pour les afficher.</p>
+<p>Les polices de caractères sont hébergées sur notre propre site : aucune requête n'est envoyée à Google ou à un autre service pour les afficher.</p>
 <h2>4. Sous-traitants</h2>
 <p>Nous ne vendons ni ne louons vos données. Elles sont seulement traitées, pour notre compte, par ces prestataires techniques :</p>
 <div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;margin:14px 0;font-size:.95rem" border="1" cellpadding="8"><thead><tr><th>Prestataire</th><th>Rôle</th><th>Lieu</th></tr></thead><tbody>
