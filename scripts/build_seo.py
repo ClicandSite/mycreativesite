@@ -977,7 +977,7 @@ def page(p):
   <div class="cta"><div><h2>Votre site en ligne en 48 heures</h2><p>Rien n'est facturé avant que vous ayez validé votre site.</p></div><a class="btn" href="/#commande">Je veux mon site</a></div>
 </div></section>
 </main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
@@ -1027,7 +1027,7 @@ def shell(title, desc, url, ld, body, og_type="website"):
 <body>
 <header class="top">{HEADER}</header>
 <main>{body}</main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
@@ -1315,6 +1315,66 @@ def build_trust():
         open(f"{old}/index.html","w").write(REDIRECT_HTML.format(full=SITE+new, new=new))
     return ["a-propos/", "confidentialite/"]
 
+
+# 16/11/2026 : page Réalisations racontée (au départ / ce que nous avons fait / où ça en est), idée reprise d'Onisite
+REAL = [
+  dict(name="Elite Prestige Services", tag="Chauffeur privé · Côte d'Azur", url="https://www.elite-prestige-services.fr/", host="elite-prestige-services.fr", img="ref-eps",
+       intro="Une société de chauffeur privé basée à Cannes, qui couvre Nice, Monaco, Saint-Tropez et toute la Côte d'Azur.",
+       depart="Le site tournait sur WordPress, avec une extension de réservation, un constructeur de pages, une boutique et une extension de traduction empilés les uns sur les autres. Chaque mise à jour devenait un risque : une évolution de Google Maps avait par exemple cassé le dessin des zones de prise en charge.",
+       fait=["Un site neuf, rapide sur mobile, en quatre langues pour la clientèle étrangère.",
+             "Une réservation en quelques étapes : trajet, date et heure, choix du véhicule, récapitulatif, paiement en ligne par carte avec Stripe.",
+             "Des forfaits clairs pour les aéroports, les gares, les stations de ski et les grands événements de la Côte d'Azur (Festival de Cannes, Grand Prix de Monaco…).",
+             "Un espace d'administration pensé pour le téléphone : devis, paiements, partenaires (hôtels, conciergeries) et répartition des courses.",
+             "Le référencement local : pages par destination et par événement, fiche Google, Bing, et un suivi régulier de la Search Console."],
+       ou="En ligne. Le travail continue surtout sur le référencement, pour que les réservations arrivent par le site plutôt que par les applications."),
+  dict(name="Abracadeal", tag="Petites annonces · toute la France", url="https://abracadeal.fr/", host="abracadeal.fr", img="ref-abra",
+       intro="Un site de petites annonces pour toute la France, pour les particuliers et les professionnels : véhicules, immobilier, maison, high-tech, emploi, vacances.",
+       depart="Une idée, une maquette, et une contrainte forte : les garages et les agences n'ont pas le temps de saisir leurs annonces une par une sur un site de plus.",
+       fait=["Des comptes particuliers et professionnels, avec connexion par Google ou Facebook.",
+             "La reprise automatique du stock des professionnels depuis leur propre site, avec leur accord, puis la mise à jour sans rien faire de leur côté.",
+             "Une modération automatique des textes et des photos, doublée d'une validation humaine.",
+             "Une page publique par professionnel, référencée sur Google, des boutons de partage sur chaque annonce et une messagerie.",
+             "Les options de visibilité (« À la une », remontées) payées en ligne avec Stripe."],
+       ou="En ligne depuis octobre 2026. Les premiers garages diffusent leur stock, et le catalogue grandit chaque semaine."),
+  dict(name="Clic&Site", tag="Guide de voyage · France", url="https://clicandsite.fr/", host="clicandsite.fr", img="ref-cs",
+       intro="Un guide pratique des plus beaux lieux de France, en français et en anglais, avec réservation des activités en ligne.",
+       depart="Un nom de domaine déjà connu de Google, et l'envie d'en faire un guide utile plutôt qu'une simple page d'accueil.",
+       fait=["Des pages par ville et par quartier (Côte d'Azur, Paris…), écrites pour répondre aux vraies questions des voyageurs.",
+             "Une version anglaise sur un domaine à part, pour la clientèle étrangère.",
+             "Des liens de réservation d'activités placés dans le texte, là où le lecteur en a besoin, et vérifiés un par un.",
+             "Des pages de saison : sports d'hiver en hiver, plages et excursions en mer en été."],
+       ou="En ligne depuis novembre 2026, enrichi plusieurs fois par semaine."),
+]
+
+def build_realisations():
+    url = SITE + "/realisations/"
+    cards = ""
+    for r in REAL:
+        li = "".join(f"<li>{e(x)}</li>" for x in r["fait"])
+        cards += f"""<section style="margin:36px 0 10px">
+<h2>{e(r["name"])}</h2>
+<p style="color:var(--muted);margin-top:-4px">{e(r["tag"])}</p>
+<a href="{r["url"]}" target="_blank" rel="noopener" style="display:block;margin:14px 0 16px"><img src="/img/{r["img"]}-d.jpg?v=2" width="960" height="600" loading="lazy" alt="Page d'accueil du site {e(r["name"])}" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--line,#e6e6e9)"></a>
+<p>{e(r["intro"])}</p>
+<h3>Au départ</h3><p>{e(r["depart"])}</p>
+<h3>Ce que nous avons fait</h3><ul>{li}</ul>
+<h3>Où ça en est</h3><p>{e(r["ou"])} <a href="{r["url"]}" target="_blank" rel="noopener">Voir {e(r["host"])} ↗</a></p>
+</section>"""
+    body = f"""<div class="wrap crumbs"><a href="/">Accueil</a> › Réalisations</div>
+<article class="wrap art">
+<h1>Nos réalisations, racontées</h1>
+<p>Pour chaque site : d'où l'on partait, ce que nous avons construit et où il en est aujourd'hui. Trois projets très différents, un chauffeur privé, un site de petites annonces et un guide de voyage, tous en ligne et utilisés chaque jour.</p>
+{cards}
+<div class="box" style="margin-top:30px"><div><b>Et votre site ?</b><br>Choisissez votre métier et voyez votre modèle rempli avec votre nom, avant de payer quoi que ce soit.</div><a class="btn" href="/#modeles">Voir les modèles</a></div>
+</article>"""
+    ld = [{"@context":"https://schema.org","@type":"CollectionPage","name":"Réalisations MyCreativeSite","url":url,"inLanguage":"fr-FR",
+           "hasPart":[{"@type":"WebSite","name":r["name"],"url":r["url"]} for r in REAL]},
+          {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+           {"@type":"ListItem","position":1,"name":"Accueil","item":SITE+"/"},{"@type":"ListItem","position":2,"name":"Réalisations","item":url}]}]
+    os.makedirs("realisations", exist_ok=True)
+    open("realisations/index.html","w").write(shell("Réalisations : nos sites racontés", "Trois sites réalisés par MyCreativeSite et racontés de A à Z : Elite Prestige Services (chauffeur privé), Abracadeal (petites annonces) et Clic&Site (guide de voyage).", url, ld, body))
+    return ["realisations/"]
+
 def main():
     import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     for p in PAGES + CITIES + INTENT:
@@ -1324,7 +1384,7 @@ def main():
     blog = build_blog()
     aide = build_help()
     landing_pages()
-    trust = build_trust()
+    trust = build_trust() + build_realisations()
     urls = [("", "1.0"), ("landing-page/", "0.8")] + [(p["slug"] + "/", "0.8") for p in PAGES + CITIES + INTENT] + [(u, "0.6") for u in blog] + [(u, "0.4") for u in aide] + [(u, "0.3") for u in trust] + [("cgv.html", "0.3")]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     from articles import ARTICLES
