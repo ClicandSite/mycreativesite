@@ -979,7 +979,7 @@ def page(p):
   <div class="cta"><div><h2>Votre site en ligne en 48 heures</h2><p>Rien n'est facturé avant que vous ayez validé votre site.</p></div><a class="btn" href="/#commande">Je veux mon site</a></div>
 </div></section>
 </main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><a href="https://www.instagram.com/mycreativesite.fr/" target="_blank" rel="noopener me">Instagram</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
@@ -1029,7 +1029,7 @@ def shell(title, desc, url, ld, body, og_type="website"):
 <body>
 <header class="top">{HEADER}</header>
 <main>{body}</main>
-<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
+<footer><div class="wrap"><span style="display:inline-flex;align-items:center;gap:8px"><img src="/img/m-badge.webp" alt="" width="20" height="20" style="width:20px;height:20px">© 2026 MyCreativeSite</span><nav><a href="/">Accueil</a><a href="/conseils/">Conseils</a><a href="/realisations/">Réalisations</a><a href="/landing-page/">Landing page</a><a href="/a-propos/">À propos</a><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv.html">CGV</a><a href="https://www.instagram.com/mycreativesite.fr/" target="_blank" rel="noopener me">Instagram</a><span style="user-select:all">contact@mycreativesite.fr</span></nav></div></footer>
 <script src="/assets/cs-visits.js?v=4" defer></script>
 </body>
 </html>
@@ -1291,7 +1291,7 @@ PRIVACY_BODY = """<div class="wrap crumbs"><a href="/">Accueil</a> › Confident
 </tbody></table></div>
 <h2>5. Vos droits</h2>
 <p>Vous pouvez demander l'accès à vos données, leur rectification, leur suppression, la limitation de leur traitement, leur portabilité, et vous opposer à leur utilisation, en écrivant à <b>contact@mycreativesite.fr</b>. Nous répondons sous un mois au plus. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" rel="nofollow">cnil.fr</a>).</p>
-<p style="margin-top:18px;color:var(--muted)">Dernière mise à jour : 15 novembre 2026. Voir aussi les <a href="/mentions-legales.html">mentions légales</a> et les <a href="/cgv.html">CGV</a>.</p>
+<p style="margin-top:18px;color:var(--muted)">Dernière mise à jour : 15 novembre 2026. Voir aussi les <a href="/mentions-legales.html">mentions légales</a> et les <a href="/cgv.html">CGV</a><a href="https://www.instagram.com/mycreativesite.fr/" target="_blank" rel="noopener me">Instagram</a>.</p>
 </article>"""
 
 REDIRECT_HTML = """<!doctype html>
