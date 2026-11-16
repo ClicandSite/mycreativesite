@@ -48,6 +48,8 @@
     var utm = (q.get('utm_source') || '') + ' ' + (q.get('utm_medium') || '');
     if (/prospect/i.test(utm) || q.get('s')) src = 'prospection';
     else if (/mail/i.test(utm)) src = 'email';
+    else if (/insta/i.test(utm)) src = 'instagram';
+    else if (/facebook|(^|\s)fb(\s|$)/i.test(utm)) src = 'facebook';
     else if (!host || /(^|\.)mycreativesite\.fr$/.test(host)) { src = 'direct'; host = ''; }
     else if (/(^|\.)abracadeal\.(fr|com)$/.test(host)) src = 'abracadeal';
     else if (/(^|\.)google\./.test(host)) src = 'google';
