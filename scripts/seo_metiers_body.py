@@ -690,3 +690,37 @@ _LAST = {
 }
 for _s, (_h, _t) in _LAST.items():
     BODY[_s].append((_h, [_t]))
+
+# 16/11/2026 (passage SEO) : pages d'intention et page Cannes enrichies.
+# BODY_EXTRA s'ajoute à la fin d'un « body » existant (pages déjà enrichies dans seo_contenu.py).
+BODY_EXTRA = {
+ "site-internet-auto-entrepreneur": [
+  ("Un site, une charge que vous ne déduisez pas", [
+    "En micro-entreprise, vous ne déduisez pas vos frais réels : vos cotisations et votre impôt sont calculés sur votre chiffre d'affaires, après un abattement forfaitaire. Chaque euro dépensé pour le site sort donc directement de votre poche. C'est pour ça qu'une formule mensuelle modeste, sans gros chèque au départ et sans engagement, est souvent plus adaptée qu'un site à plusieurs milliers d'euros.",
+    "Le calcul est simple : si un seul client par mois vous trouve grâce à votre site, l'abonnement est en général largement remboursé."]),
+  ("Mieux que les plateformes pour se faire connaître", [
+    "Les plateformes de mise en relation et les annuaires sont utiles pour démarrer, mais elles prennent souvent une commission et mettent vos concurrents juste à côté de vous. Votre site, lui, ne parle que de vous. Il sert de carte de visite quand un client potentiel cherche votre nom après vous avoir croisé, et c'est l'adresse que vous mettez sur vos devis, vos factures et vos réseaux sociaux.",
+    "Gardez les plateformes si elles vous apportent des clients, et faites de votre site le lieu où les clients satisfaits reviennent vous chercher."]),
+  ("Démarrer petit, grandir ensuite", [
+    "Vous commencez avec la formule Essentiel et le modèle de votre métier. Si votre activité décolle, vous passez en Pro pour encaisser des acomptes en ligne, ou en Premium pour gérer vos clients et avoir un site en anglais : votre site, vos textes et votre nom de domaine restent les mêmes, rien n'est à refaire. Et si vous changez de statut, en passant en société par exemple, il suffit de mettre à jour vos mentions légales."]),
+ ],
+ "site-internet-creation-entreprise": [
+  ("Réserver son nom de domaine en même temps que son nom", [
+    "Le nom de votre entreprise et votre nom de domaine vont ensemble. Avant de valider votre nom, vérifiez que l'adresse en .fr est libre, et réservez-la tout de suite : quelques euros par an suffisent, et ça évite de devoir choisir un nom de site différent de votre enseigne. Vérifiez aussi auprès de l'INPI que le nom n'est pas déjà protégé par une marque dans votre secteur.",
+    "Avec MyCreativeSite, le nom de domaine est compris dans l'abonnement et enregistré à votre nom."]),
+  ("Les 90 premiers jours", [
+    "Les premiers mois, votre site sert surtout à rassurer : un client qui hésite à faire appel à une entreprise toute neuve vérifie qu'elle existe vraiment. Des coordonnées complètes, des prix clairs, des photos de vos premières réalisations et vos premiers avis font plus que n'importe quel slogan.",
+    "Pensez à ajouter chaque nouvelle réalisation au fil de l'eau depuis votre téléphone : en trois mois, votre site aura l'air d'une entreprise installée."]),
+ ],
+}
+
+BODY["creation-site-internet-cannes"] = [
+  ("Une clientèle qui change avec le calendrier", [
+    "À Cannes, l'activité suit le calendrier des congrès et des festivals : Festival du film en mai, MIPIM au printemps, Cannes Lions en juin, Yachting Festival en septembre, sans compter les salons professionnels toute l'année. Pendant ces semaines, des milliers de visiteurs cherchent un restaurant, un chauffeur, un coiffeur ou un artisan, souvent depuis leur téléphone et souvent en anglais.",
+    "Un site à jour, avec des horaires et des tarifs adaptés à ces périodes, vous fait profiter de ce flux au lieu de le laisser aux plateformes."]),
+  ("Le Cannet, Mougins, Mandelieu, Cagnes-sur-Mer : vos clients sont autour", [
+    "Le reste de l'année, ce sont surtout les habitants de l'agglomération qui vous font vivre. Ils cherchent « près de chez moi » ou tapent votre métier suivi de leur commune. Votre site indique clairement les communes où vous travaillez, de Cagnes-sur-Mer à Mandelieu-la-Napoule, pour ressortir sur ces recherches.",
+    "Nous travaillons à distance, ce qui permet de garder des prix bas, mais nous sommes à Cannes si vous préférez en parler de vive voix."]),
+  ("Déjà des sites en ligne sur la Côte d'Azur", [
+    "Parmi nos réalisations, un chauffeur privé basé à Cannes qui couvre Nice, Monaco et Saint-Tropez, avec réservation en ligne et site en quatre langues. Vous pouvez lire son histoire, et celle de nos autres projets, sur la page <a href=\"/realisations/\">Réalisations</a>."]),
+]

@@ -885,6 +885,8 @@ def page(p):
     p = {**p, **SEO.get(p["slug"], {})}
     from seo_metiers_body import BODY  # 15/11/2026 : texte propre à chaque métier (anti-duplication)
     if not p.get("body") and p["slug"] in BODY: p["body"] = BODY[p["slug"]]
+    from seo_metiers_body import BODY_EXTRA
+    if p.get("body") and p["slug"] in BODY_EXTRA: p["body"] = list(p["body"]) + BODY_EXTRA[p["slug"]]
     from seo_metiers_body import FAQ_EXTRA
     if p["slug"] in FAQ_EXTRA: p["faq"] = list(p["faq"]) + [x for x in FAQ_EXTRA[p["slug"]] if x[0] not in {q for q, _ in p["faq"]}]
     url = f'{SITE}/{p["slug"]}/'
