@@ -1,0 +1,6 @@
+-- 16/11/2026 : formulaire de commande en 2 temps (4 champs visibles : métier, entreprise, téléphone, e-mail).
+-- cs_order_submit : ville et style deviennent facultatifs (style « moderne » par défaut, ville complétée dans l'espace).
+-- Appliqué via MCP en remplaçant dans la fonction existante les deux lignes :
+--   if length(trim(coalesce(p_city,''))) < 2 then raise exception 'Indiquez votre ville'; end if;
+--   if coalesce(p_style,'') !~ '^[a-z]{3,20}$' then raise exception 'Choisissez un style'; end if;
+-- 16/11/2026 aussi : cs_track_visit garde le point dans les chemins (migration track_visit_keep_dot).

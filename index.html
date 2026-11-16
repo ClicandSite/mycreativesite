@@ -174,6 +174,12 @@ details p{color:var(--muted);padding-bottom:16px}
 form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .f{display:grid;gap:6px;min-width:0}
 .f.full{grid-column:1/-1}
+.more{border:1px solid var(--line);border-radius:12px;padding:0;background:rgba(255,255,255,.02)}
+.more>summary{cursor:pointer;list-style:none;padding:13px 14px;font-size:.92rem;font-weight:600;color:inherit;display:flex;justify-content:space-between;gap:10px}
+.more>summary::-webkit-details-marker{display:none}.more>summary::after{content:"Modifier";color:var(--brand);font-weight:700;flex:none}
+.more[open]>summary::after{content:"Fermer"}
+.more-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:4px 14px 16px}
+@media (max-width:640px){.more-in{grid-template-columns:1fr}}
 label{font-size:.82rem;font-weight:600;color:#B9BED6}
 input,select{width:100%;font:inherit;font-size:.96rem;padding:13px 14px;border-radius:10px;border:1px solid #343B63;background:#1C2240;color:#F2F3F9;min-width:0}
 form .btn{grid-column:1/-1;justify-self:start;background:var(--pop);color:#12162B}
@@ -1116,22 +1122,24 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
     <div>
       <span class="eyebrow">Commander</span>
       <h2 style="margin-top:12px">Votre site en ligne dans 48 heures.</h2>
-      <p class="sub">Choisissez votre modèle et votre style, laissez vos coordonnées. Rien n'est facturé avant que vous ayez validé votre site.</p>
+      <p class="sub">Votre métier, votre nom et vos coordonnées suffisent pour commencer : le reste se règle ensuite dans votre espace. Rien n'est facturé avant que vous ayez validé votre site.</p>
       <ol class="steps-o">
-        <li><b>Vous envoyez cette demande</b><span>Une minute, depuis votre téléphone.</span></li>
+        <li><b>Vous envoyez cette demande</b><span>30 secondes, depuis votre téléphone.</span></li>
         <li><b>Vous remplissez votre site, ou on le fait pour vous</b><span>Textes, prix, horaires, photos : depuis votre espace, avec l'aperçu en direct. Ou vous nous envoyez tout et on s'en occupe en 48 h.</span></li>
         <li><b>Vous le voyez en vrai</b><span>Sur une adresse provisoire, sur ordinateur et téléphone.</span></li>
         <li><b>Vous validez et vous payez</b><span>On réserve alors votre nom de domaine et votre site part en ligne.</span></li>
       </ol>
     </div>
     <form id="orderform">
-      <div class="f full"><label for="o-plan">Formule</label><select id="o-plan"><option>Essentiel</option><option selected>Pro</option><option>Premium</option><option>Boutique</option><option value="AutoImmo">Pack Auto, Moto &amp; Immo</option></select></div>
-      <div class="f"><label for="o-trade">Votre métier</label><select id="o-trade" required><option value="" selected>Choisissez votre métier</option><option value="vtc">Chauffeur VTC</option><option value="taxi">Taxi</option><option value="restaurant">Restaurant</option><option value="atelier">Garage, entretien et pneus</option><option value="concession">Concession automobile</option><option value="moto">Concession moto</option><option value="immobilier">Agence immobilière</option><option value="batiment">Bâtiment, artisan</option><option value="beaute">Coiffure, beauté</option><option value="bienetre">Bien-être, santé</option><option value="veterinaire">Vétérinaire</option><option value="autoecole">Auto-école</option><option value="coach">Coach sportif</option><option value="photographe">Photographe</option><option value="toiletteur">Toilettage</option><option value="fleuriste">Fleuriste</option><option value="traiteur">Traiteur</option><option value="nautisme">Location de bateaux</option><option value="kine">Kinésithérapeute</option><option value="dentiste">Dentiste</option><option value="bijouterie">Bijouterie-horlogerie</option><option value="liberal">Professions libérales</option><option value="services">Services à domicile</option><option value="evenementiel">Événementiel</option><option value="hebergement">Chambres d'hôtes et gîtes</option><option value="tourisme">Tourisme et loisirs</option><option value="location">Location et déménagement</option><option value="infirmier">Infirmier libéral</option><option value="boulangerie">Boulangerie, pâtisserie</option><option value="boutique">Boutique, vente en ligne</option><option value="depannage">Plomberie, électricité, dépannage</option><option value="autre">Autre métier</option></select></div>
-      <div class="f"><label for="o-style">Style</label><select id="o-style" required><option value="" selected>Choisissez un style</option><option value="moderne">Moderne</option><option value="luxe">Luxe</option><option value="riviera">Riviera</option><option value="chaleureux">Chaleureux</option><option value="audacieux">Audacieux</option><option value="minimal">Minimal crème</option><option value="nuit">Nuit bleue</option><option value="provence">Provence lavande</option><option value="ocean">Océan</option><option value="pop">Pop vitaminé</option><option value="corporate">Pro sérieux</option><option value="retro">Rétro</option><option value="zen">Zen nature</option><option value="neon">Néon</option><option value="poudre">Rose poudré</option><option value="terracotta">Terracotta</option><option value="graphite">Graphite</option><option value="foret">Forêt</option><option value="soleil">Soleil</option><option value="marine">Marine chic</option><option value="signature">Signature Émeraude (Premium et +)</option><option value="signatureonyx">Signature Onyx (Premium et +)</option><option value="signaturesaphir">Signature Saphir (Premium et +)</option><option value="signaturebordeaux">Signature Bordeaux (Premium et +)</option><option value="signatureivoire">Signature Ivoire (Premium et +)</option></select></div><p class="pickline" id="o-pick"></p>
+      <div class="f full"><label for="o-trade">Votre métier</label><select id="o-trade" required><option value="" selected>Choisissez votre métier</option><option value="vtc">Chauffeur VTC</option><option value="taxi">Taxi</option><option value="restaurant">Restaurant</option><option value="atelier">Garage, entretien et pneus</option><option value="concession">Concession automobile</option><option value="moto">Concession moto</option><option value="immobilier">Agence immobilière</option><option value="batiment">Bâtiment, artisan</option><option value="beaute">Coiffure, beauté</option><option value="bienetre">Bien-être, santé</option><option value="veterinaire">Vétérinaire</option><option value="autoecole">Auto-école</option><option value="coach">Coach sportif</option><option value="photographe">Photographe</option><option value="toiletteur">Toilettage</option><option value="fleuriste">Fleuriste</option><option value="traiteur">Traiteur</option><option value="nautisme">Location de bateaux</option><option value="kine">Kinésithérapeute</option><option value="dentiste">Dentiste</option><option value="bijouterie">Bijouterie-horlogerie</option><option value="liberal">Professions libérales</option><option value="services">Services à domicile</option><option value="evenementiel">Événementiel</option><option value="hebergement">Chambres d'hôtes et gîtes</option><option value="tourisme">Tourisme et loisirs</option><option value="location">Location et déménagement</option><option value="infirmier">Infirmier libéral</option><option value="boulangerie">Boulangerie, pâtisserie</option><option value="boutique">Boutique, vente en ligne</option><option value="depannage">Plomberie, électricité, dépannage</option><option value="autre">Autre métier</option></select></div>
+      <p class="pickline" id="o-pick" style="grid-column:1/-1;margin:-4px 0 0"></p>
       <div class="f full"><label for="o-name">Nom de votre entreprise</label><input id="o-name" autocomplete="organization" placeholder="Garage du Port" required></div>
-      <div class="f"><label for="o-city">Ville</label><input id="o-city" autocomplete="address-level2" placeholder="Votre ville" required minlength="2"></div>
       <div class="f"><label for="o-tel">Téléphone</label><input id="o-tel" type="tel" autocomplete="tel" placeholder="06 00 00 00 00" required pattern="^\+?[0-9 .()\-]{9,20}$" title="Un numéro de téléphone valide, par exemple 06 12 34 56 78"></div>
-      <div class="f full"><label for="o-mail">Email</label><input id="o-mail" type="email" autocomplete="email" placeholder="vous@exemple.fr" required></div>
+      <div class="f"><label for="o-mail">Email</label><input id="o-mail" type="email" autocomplete="email" placeholder="vous@exemple.fr" required></div>
+      <details class="f full more" id="o-more"><summary id="o-more-s">Formule, style et options (facultatif)</summary><div class="more-in">
+      <div class="f"><label for="o-plan">Formule</label><select id="o-plan"><option>Essentiel</option><option selected>Pro</option><option>Premium</option><option>Boutique</option><option value="AutoImmo">Pack Auto, Moto &amp; Immo</option></select></div>
+      <div class="f"><label for="o-style">Style</label><select id="o-style"><option value="" selected>Choisissez un style</option><option value="moderne">Moderne</option><option value="luxe">Luxe</option><option value="riviera">Riviera</option><option value="chaleureux">Chaleureux</option><option value="audacieux">Audacieux</option><option value="minimal">Minimal crème</option><option value="nuit">Nuit bleue</option><option value="provence">Provence lavande</option><option value="ocean">Océan</option><option value="pop">Pop vitaminé</option><option value="corporate">Pro sérieux</option><option value="retro">Rétro</option><option value="zen">Zen nature</option><option value="neon">Néon</option><option value="poudre">Rose poudré</option><option value="terracotta">Terracotta</option><option value="graphite">Graphite</option><option value="foret">Forêt</option><option value="soleil">Soleil</option><option value="marine">Marine chic</option><option value="signature">Signature Émeraude (Premium et +)</option><option value="signatureonyx">Signature Onyx (Premium et +)</option><option value="signaturesaphir">Signature Saphir (Premium et +)</option><option value="signaturebordeaux">Signature Bordeaux (Premium et +)</option><option value="signatureivoire">Signature Ivoire (Premium et +)</option></select></div>
+      <div class="f"><label for="o-city">Ville (facultatif)</label><input id="o-city" autocomplete="address-level2" placeholder="Votre ville" minlength="2"></div>
       <fieldset class="f full who"><legend>Qui remplit le site ?</legend>
         <label><input type="radio" name="o-self" value="1" checked><span><b>Je le remplis moi-même</b><small>Vous accédez tout de suite à votre espace : textes, prix, horaires, photos.</small></span></label>
         <label><input type="radio" name="o-self" value="0"><span><b>Vous le faites pour moi</b><small>Vous déposez vos infos et vos photos dans votre espace, on prépare le site.</small></span></label>
@@ -1144,7 +1152,9 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <p class="optsum" id="o-sum"></p>
       </fieldset>
       <div class="f full"><label for="o-msg" id="o-msg-l">Un mot sur votre projet (facultatif)</label><textarea id="o-msg" rows="3" maxlength="1500" aria-describedby="o-msg-h" placeholder="Ce que vous faites, ce que vos clients doivent pouvoir faire sur le site…"></textarea><small id="o-msg-h" style="display:block;margin-top:6px;color:var(--muted);font-size:.85rem;line-height:1.45">Pour un site prêt plus vite : ce que vous vendez en une phrase, ce que vos clients doivent pouvoir faire (appeler, réserver, commander, venir vous voir), et un lien vers votre fiche Google, votre Instagram ou votre site actuel.</small></div>
+      </div></details>
       <input id="o-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <p class="optsum" id="o-sum2" style="grid-column:1/-1;margin:0;font-size:.9rem"></p>
       <button class="btn" type="submit">Je veux mon site</button>
       <div class="ok" id="ok" hidden></div>
       <p class="small">En envoyant votre demande, vous acceptez nos <a href="cgv.html">conditions générales</a>. Vos coordonnées servent uniquement à traiter votre demande. Vous pouvez demander leur suppression à tout moment.</p>
@@ -1302,7 +1312,7 @@ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener(
   var $=function(id){return document.getElementById(id);};
   var NM={vtc:'Chauffeur VTC',taxi:'Taxi',restaurant:'Restaurant',garage:'Garage',atelier:'Garage (entretien)',concession:'Concession automobile',moto:'Concession moto',immobilier:'Agence immobilière',batiment:'Bâtiment',beaute:'Coiffure et beauté',bienetre:'Bien-être',veterinaire:'Vétérinaire',autoecole:'Auto-école',coach:'Coach sportif',photographe:'Photographe',toiletteur:'Toilettage',fleuriste:'Fleuriste',traiteur:'Traiteur',nautisme:'Location de bateaux',kine:'Kinésithérapeute',dentiste:'Dentiste',bijouterie:'Bijouterie-horlogerie',liberal:'Professions libérales',services:'Services à domicile',evenementiel:'Événementiel',hebergement:'Chambres d\'hôtes et gîtes',tourisme:'Tourisme et loisirs',location:'Location et déménagement',infirmier:'Infirmier libéral',boulangerie:'Boulangerie',boutique:'Boutique en ligne',depannage:'Dépannage'};
   function line(){ var k=$('o-trade').value, st=$('o-style').value;
-    $('o-pick').innerHTML=NM[k]?'Aperçu de votre choix : <a href="'+FILES[k]+'#'+st+'" target="_blank" rel="noopener">'+NM[k]+', style '+(SN[st]||st)+'</a> · <a href="#modeles" id="o-change">changer</a>':(k==='autre'?'Précisez votre métier dans le message ci-dessous : on part du modèle le plus proche.':''); var au=k==='autre', m=$('o-msg'); m.required=au; $('o-msg-l').textContent=au?'Votre métier et votre projet (obligatoire)':'Un mot sur votre projet (facultatif)'; m.placeholder=au?'Votre métier, ce que vous faites, ce que vos clients doivent pouvoir faire sur le site…':'Ce que vous faites, ce que vos clients doivent pouvoir faire sur le site…'; }
+    $('o-pick').innerHTML=NM[k]?'Aperçu de votre choix : <a href="'+FILES[k]+'#'+st+'" target="_blank" rel="noopener">'+NM[k]+(st?', style '+(SN[st]||st):'')+'</a> · <a href="#modeles" id="o-change">changer</a>':(k==='autre'?'Précisez votre métier dans le message ci-dessous : on part du modèle le plus proche.':''); var au=k==='autre', m=$('o-msg'); m.required=au; if(au) $('o-more').open=true; $('o-msg-l').textContent=au?'Votre métier et votre projet (obligatoire)':'Un mot sur votre projet (facultatif)'; m.placeholder=au?'Votre métier, ce que vous faites, ce que vos clients doivent pouvoir faire sur le site…':'Ce que vous faites, ce que vos clients doivent pouvoir faire sur le site…'; }
   function choose(k,st){ if(k==='garage') k='atelier'; if(k&&$('o-trade').querySelector('option[value="'+k+'"]')) $('o-trade').value=k; if(st) $('o-style').value=st; line(); }
   $('ex-choose').addEventListener('click',function(){ choose(cur.k,cur.s); });
   document.querySelectorAll('.tabs button,.chips button').forEach(function(b){ b.addEventListener('click',function(){ choose(cur.k,cur.s); }); });
@@ -1315,7 +1325,7 @@ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener(
     document.querySelectorAll('#o-opts label[data-o]').forEach(function(l){ var o=l.dataset.o, i=l.querySelector('input'), isInc=inc&&(o==='logo'||o==='bilingue');
       i.disabled=isInc; if(isInc) i.checked=false; l.classList.toggle('inc',isInc); var b=l.querySelector('b'); if(!b.dataset.t) b.dataset.t=b.textContent; b.textContent=isInc?b.dataset.t.replace(/ · .*/,'')+' · inclus en '+pl:b.dataset.t;
       if(i.checked&&!isInc){ m+=OP[o][0]; u+=OP[o][1]; } });
-    $('o-sum').innerHTML='À payer à la validation : <b>'+u+' € une fois</b> puis <b>'+m+' € / mois</b>, sans engagement.'; }
+    $('o-sum').innerHTML='À payer à la validation : <b>'+u+' € une fois</b> puis <b>'+m+' € / mois</b>, sans engagement.'; $('o-sum2').innerHTML='Rien à payer aujourd\'hui. À la validation de votre site : <b>'+u+' € une fois</b> puis <b>'+m+' € / mois</b>, sans engagement.'; }
   document.querySelectorAll('input[name=o-opt]').forEach(function(i){ i.addEventListener('change',sum); });
   $('o-plan').addEventListener('change',sum); document.addEventListener('click',function(){ setTimeout(sum,0); }); sum();
   // 09/11/2026 : formulaire aligné sur les règles des formules (métiers et styles autorisés)
@@ -1329,12 +1339,21 @@ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener(
     if(st.value!==''&&!FS(f,st.value)) st.value='';
     line(); }
   $('o-plan').addEventListener('change',rules); rules();
+  // 16/11/2026 : formulaire en 2 temps (4 champs visibles, le reste replié) ; le résumé montre les choix par défaut
+  function moreSum(){ var st=$('o-style'), pl=$('o-plan'), c=v2('o-city');
+    $('o-more-s').firstChild.textContent='Formule '+(pl.selectedOptions[0]?pl.selectedOptions[0].text:'')+' · style '+(st.value?st.selectedOptions[0].text:'au choix')+(c?' · '+c:''); }
+  function v2(id){ return ($(id).value||'').trim(); }
+  $('o-more-s').insertBefore(document.createTextNode(''),$('o-more-s').firstChild); $('o-more-s').childNodes[1]&&$('o-more-s').removeChild($('o-more-s').childNodes[1]);
+  ['o-plan','o-style','o-city','o-trade'].forEach(function(id){ $(id).addEventListener('change',moreSum); $(id).addEventListener('input',moreSum); });
+  document.addEventListener('click',function(){ setTimeout(moreSum,0); }); moreSum();
 
   line();
   $('orderform').addEventListener('focusin',function(){ if(window.csTrack) window.csTrack('commande-commencee'); },{once:true}); // 12/11/2026 : suivi des étapes (admin)
   $('orderform').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target, b=f.querySelector('button[type=submit]'), ok=$('ok'), v=function(id){return ($(id).value||'').trim();};
+    var bad=f.querySelector('#o-more :invalid'); if(bad) $('o-more').open=true;
+    if(!$('o-style').value){ var so=[].filter.call($('o-style').options,function(o){return o.value&&!o.disabled;}); if(so.length) $('o-style').value=(so.filter(function(o){return o.value==='moderne';})[0]||so[0]).value; }
     if(!f.reportValidity()) return;
     if((v('o-tel').match(/[0-9]/g)||[]).length<9){ $('o-tel').setCustomValidity('Indiquez un numéro de téléphone complet'); $('o-tel').reportValidity(); $('o-tel').setCustomValidity(''); return; }
     if(v('o-trade')==='autre'&&v('o-msg').length<5){ $('o-msg').setCustomValidity('Précisez votre métier'); $('o-msg').reportValidity(); $('o-msg').setCustomValidity(''); return; }
