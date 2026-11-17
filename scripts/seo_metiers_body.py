@@ -742,3 +742,10 @@ BODY["site-internet-services-a-domicile"].append(("Déclaration, agrément : ce 
   "Le site affiche votre numéro de déclaration et, le cas échéant, votre agrément : c'est ce que les familles vérifient avant de vous confier leur domicile ou leurs proches."]))
 FAQ_EXTRA["site-internet-services-a-domicile"] = FAQ_EXTRA.get("site-internet-services-a-domicile", []) + [
   ("Le site convient-il à une entreprise de services à la personne ?", "Oui : ménage, repassage, jardinage, garde d'enfants, aide aux seniors. Le site présente vos services, votre zone, le crédit d'impôt et votre numéro de déclaration.")]
+
+# 17/11/2026 (2e passage SEO) : titres alignés sur les requêtes vues dans la Search Console
+SEO_TITLE.update({
+  "site-internet-infirmier-liberal": "Site internet infirmière ou infirmier libéral",
+  "site-internet-traiteur": "Site web traiteur : menus, devis et réservations",
+  "site-internet-kinesitherapeute": "Site internet kinésithérapeute : cabinet et rendez-vous",
+})
