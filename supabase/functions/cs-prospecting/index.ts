@@ -15,7 +15,8 @@ const SITE = "https://mycreativesite.fr";
 const NAME = "MyCreativeSite";
 const START_H = 9, END_H = 18, MAX_PER_TICK = 2, MAX_ATTEMPTS = 2, LOCK_SECONDS = 150;
 const PERMANENT = /invalid|not found|does not exist|recipient address rejected|invalid to header/i;
-const TEST_TO = ["docheanthony@gmail.com", "abracadeal@gmail.com", "contact@mycreativesite.fr"];
+// 17/11/2026 : destinataires de test = boîte contact@ + adresse du rapport (mail_settings.report_to) + secret CS_TEST_TO (virgules)
+const TEST_TO_BASE = ["contact@mycreativesite.fr"];
 
 const json = (d: unknown, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { "content-type": "application/json; charset=utf-8" } });
 const html = (b: string, s = 200) => new Response(b, { status: s, headers: { "content-type": "text/html; charset=utf-8" } });
@@ -117,8 +118,9 @@ function template(p: { name: string; trade: string; city: string; site_status: s
     : "Les formules commencent à 29 € par mois.";
   const intro = hasSite
     ? (p.site_status === "injoignable"
-      ? `En cherchant ${who}${where}, je suis tombé sur votre site internet, mais il ne s'affiche plus.`
-      : `En cherchant ${who}${where}, je suis tombé sur votre site internet : il commence à dater, surtout sur téléphone.`)
+      ? `En cherchant ${who}${where}, je suis tombé sur l'adresse de votre site internet, mais il ne s'affichait pas quand j'ai essayé de l'ouvrir. Si ce n'est pas voulu, nous pouvons vous aider.`
+      // 17/11/2026 : plus aucun jugement sur le site existant (un pro a répondu, à juste titre, que c'était dévalorisant)
+      : `En cherchant ${who}${where}, je suis tombé sur votre site internet. Si vous pensez un jour à le refaire ou à le compléter, voici ce que nous proposons.`)
     : isNew(p.date_creation)
       ? `Félicitations pour la création de ${who}${where} ! Je n'ai pas encore trouvé de site internet à votre nom.`
       : `En cherchant ${who}${where}, je n'ai pas trouvé de site internet à votre nom.`;
@@ -139,7 +141,7 @@ function template(p: { name: string; trade: string; city: string; site_status: s
     "Anthony",
     "MyCreativeSite",
   ].join("\n");
-  const subject = hasSite ? `${who} : un site internet neuf en 48 h` : `${who} : votre site internet en 48 h`;
+  const subject = hasSite ? `${who} : une idée pour votre site internet` : `${who} : votre site internet en 48 h`;
   return { key: (taxi ? "taxi" : p.trade) + (hasSite ? "-refonte" : "-creation"), subject, body, btn: { label: "Voir des exemples de sites", url: SITE + page + "?utm_source=prospection&utm_medium=email" } }; // 12/11/2026 : lien marqué pour le compteur de visiteurs
 }
 
@@ -274,7 +276,7 @@ async function pending(trades: string[], limit: number) {
     from clicandsite.prospects p
     where p.email is not null and lower(trim(p.email)) ~ '^[^[:space:]@]+@[^[:space:]@]+[.][^[:space:]@]+$'
       and p.status in ('nouveau','a_contacter') and coalesce(p.site_status,'aucun') <> 'moderne' and p.trade = any(${trades})
-      and not exists (select 1 from clicandsite.opposition o where lower(o.value) = lower(trim(p.email)))
+      and not exists (select 1 from clicandsite.opposition o where lower(o.value) in (lower(trim(p.email)), split_part(lower(trim(p.email)), '@', 2)))
       and not exists (select 1 from clicandsite.mail_recipients r where r.prospect_id = p.id and (r.status in ('envoyé','en cours','désinscrit') or r.attempts >= ${MAX_ATTEMPTS}))
       and not exists (select 1 from clicandsite.mail_recipients r2 where lower(r2.email) = lower(trim(p.email)) and r2.status in ('envoyé','désinscrit'))
     order by (p.status = 'a_contacter') desc, (p.date_creation >= current_date - 365) desc nulls last, p.date_creation desc nulls last, p.score desc nulls last, p.created_at asc limit ${limit}`;
@@ -355,7 +357,9 @@ Deno.serve(async (req: Request) => {
     if (br?.mode === "preview") { const t = template(sample); return json({ subject: t.subject, body: t.body, button: t.btn }); }
     if (br?.mode === "test") {
       const to = String(br?.to || "").toLowerCase().trim();
-      if (!TEST_TO.includes(to)) return json({ error: "test recipient not allowed" }, 400);
+      const rt = String((await sql`select report_to from clicandsite.mail_settings where id=1`)[0]?.report_to || "").toLowerCase().trim();
+      const allowed = [...TEST_TO_BASE, rt, ...(Deno.env.get("CS_TEST_TO") || "").toLowerCase().split(",").map((x) => x.trim())].filter(Boolean);
+      if (!allowed.includes(to)) return json({ error: "test recipient not allowed" }, 400);
       if (Number(br?.box) === 2) { if (!BOX2) return json({ error: "2e boîte non configurée" }, 400); BOX = BOX2; }
       const tok = await getToken(); const t = template(sample);
       const id = await sendMime(tok, to, buildMime(to, { ...t, subject: "[TEST] " + t.subject }, SITE));
