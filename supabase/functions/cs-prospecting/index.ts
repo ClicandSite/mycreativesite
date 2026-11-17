@@ -275,7 +275,7 @@ async function pending(trades: string[], limit: number) {
   return await sql`select p.id, lower(trim(p.email)) email, p.name, p.trade, p.city, p.postcode, p.website, p.source, p.site_status, p.segment, p.date_creation
     from clicandsite.prospects p
     where p.email is not null and lower(trim(p.email)) ~ '^[^[:space:]@]+@[^[:space:]@]+[.][^[:space:]@]+$'
-      and p.status in ('nouveau','a_contacter') and coalesce(p.site_status,'aucun') <> 'moderne' and p.trade = any(${trades})
+      and p.status in ('nouveau','a_contacter') and coalesce(p.site_status,'aucun') not in ('moderne','date') and p.trade = any(${trades}) -- 17/11/2026 (Anthony) : jamais les pros qui ont déjà un site
       and not exists (select 1 from clicandsite.opposition o where lower(o.value) in (lower(trim(p.email)), split_part(lower(trim(p.email)), '@', 2)))
       and not exists (select 1 from clicandsite.mail_recipients r where r.prospect_id = p.id and (r.status in ('envoyé','en cours','désinscrit') or r.attempts >= ${MAX_ATTEMPTS}))
       and not exists (select 1 from clicandsite.mail_recipients r2 where lower(r2.email) = lower(trim(p.email)) and r2.status in ('envoyé','désinscrit'))
