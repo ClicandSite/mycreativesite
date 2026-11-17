@@ -724,3 +724,21 @@ BODY["creation-site-internet-cannes"] = [
   ("Déjà des sites en ligne sur la Côte d'Azur", [
     "Parmi nos réalisations, un chauffeur privé basé à Cannes qui couvre Nice, Monaco et Saint-Tropez, avec réservation en ligne et site en quatre langues. Vous pouvez lire son histoire, et celle de nos autres projets, sur la page <a href=\"/realisations/\">Réalisations</a>."]),
 ]
+
+# 17/11/2026 (passage SEO) : titres alignés sur les requêtes vues dans la Search Console + une section chacun
+SEO_TITLE = {
+  "site-internet-concession-automobile": "Site web automobile pour concession et négociant VO",
+  "site-internet-agence-immobiliere": "Site internet agence immobilière indépendante, en 48 h",
+  "site-internet-services-a-domicile": "Site internet services à la personne et à domicile",
+}
+BODY["site-internet-concession-automobile"].append(("Négociant VO, mandataire, garage qui vend", [
+  "Le modèle ne sert pas qu'aux concessions de marque. Un négociant en véhicules d'occasion, un mandataire auto ou un garage qui vend quelques voitures par mois a les mêmes besoins : montrer son stock proprement, répondre vite aux demandes et inspirer confiance à un acheteur qui ne le connaît pas encore.",
+  "Le site s'adapte à votre taille : dix véhicules ou deux cents, la présentation reste claire, et chaque voiture garde sa page tant qu'elle est à vendre."]))
+BODY["site-internet-agence-immobiliere"].append(("L'estimation en ligne, porte d'entrée des mandats", [
+  "Un propriétaire qui pense vendre commence presque toujours par chercher la valeur de son bien. Le formulaire d'estimation du site lui demande l'adresse, le type de bien, la surface, le nombre de pièces et l'état, puis sa demande arrive dans votre espace « Mes clients ». Vous le rappelez avec une estimation argumentée, ou vous fixez une visite.",
+  "C'est souvent le premier contact qui mène à un mandat, bien avant que le bien n'apparaisse sur les portails."]))
+BODY["site-internet-services-a-domicile"].append(("Déclaration, agrément : ce que le site doit afficher", [
+  "Pour que vos clients profitent du crédit d'impôt, votre entreprise doit être déclarée comme organisme de services à la personne, une démarche qui se fait en ligne sur le portail NOVA. Certaines activités demandent en plus un agrément ou une autorisation, notamment la garde d'enfants de moins de trois ans et l'aide aux personnes âgées ou handicapées.",
+  "Le site affiche votre numéro de déclaration et, le cas échéant, votre agrément : c'est ce que les familles vérifient avant de vous confier leur domicile ou leurs proches."]))
+FAQ_EXTRA["site-internet-services-a-domicile"] = FAQ_EXTRA.get("site-internet-services-a-domicile", []) + [
+  ("Le site convient-il à une entreprise de services à la personne ?", "Oui : ménage, repassage, jardinage, garde d'enfants, aide aux seniors. Le site présente vos services, votre zone, le crédit d'impôt et votre numéro de déclaration.")]
