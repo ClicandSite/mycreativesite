@@ -1,0 +1,4 @@
+<!doctype html><meta name="robots" content="noindex"><script>
+const f=new URLSearchParams(location.search).get('f')||'post-8-inclus.jpg';
+fetch('/img/ig/'+f).then(r=>r.arrayBuffer()).then(b=>{(window.opener||parent).postMessage({igimg:b,name:f},'https://www.instagram.com');document.title='sent';});
+</script>
