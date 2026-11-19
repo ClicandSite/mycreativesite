@@ -146,4 +146,4 @@
 - Accueil : carte « Vous préférez payer une fois ? » sous les 3 formules (#achat), formule « Site à l'achat » dans le formulaire (résumé 990 € puis 79 €/an, options mail/bilingue masquées), Offer dans le balisage. CGV : article site à l'achat + droit d'utilisation tant que l'hébergement annuel est réglé.
 - Stripe : 2 produits (990 € unique, 79 €/an), lien de paiement de secours. cs-checkout v9 : plan achat = prix annuel + 990 €, essai 365 jours (les 79 € partent à la 2e année). Testé : session à 1 039 € (990 + logo 49), annuel non prélevé.
 - Base : cs_order_submit / cs_admin_site_plan / cs_photo_quota acceptent 'achat'. Espace : agenda désactivé (cs-agenda.js?v=3) et onglet Statistiques masqué pour 'achat' ; lien de paiement achat dans l'espace et l'aperçu ; admin : formule « Site à l'achat ».
-- Commande de test « Test Achat Claude » (test-achat-claude) à supprimer : la suppression attend la confirmation d'Anthony.
+- Commande de test « Test Achat Claude » supprimée (commande + site) après accord d'Anthony.
