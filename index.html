@@ -240,6 +240,18 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
 :root{--grad:linear-gradient(90deg,#FF2D8E 0%,#8B3DFF 52%,#12A8FF 100%)}
 .buyonce{margin-top:18px;border:1.5px dashed var(--line);border-radius:20px;padding:22px 26px;display:flex;gap:22px;align-items:center;justify-content:space-between}.buyonce h3{margin:0 0 6px}.buyonce p{margin:0 0 6px;color:var(--muted);font-size:.95rem;max-width:72ch}.buyonce p b{color:var(--ink)}.buyonce .bo-small{font-size:.85rem;margin:0}.buyonce .btn{flex:none}
 @media(max-width:700px){.buyonce{flex-direction:column;align-items:stretch;padding:20px}}
+.incl-note{margin:22px 0 0;text-align:center;color:var(--muted);font-size:.92rem}
+.cmpw{overflow-x:auto;border:1.5px solid var(--line);border-radius:20px;background:var(--bg)}
+.cmpt{width:100%;border-collapse:collapse;font-size:.95rem}
+@media(max-width:700px){.cmpw{border:0;background:none;border-radius:0}.cmpt,.cmpt tbody,.cmpt tr,.cmpt th,.cmpt td{display:block;width:auto}.cmpt thead{display:none}.cmpt tr{border:1.5px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;background:var(--bg)}.cmpt tbody th{width:auto;padding:12px 14px 6px;border:0}.cmpt td{padding:8px 14px;border:0;border-top:1px solid var(--line)}.cmpt td::before{content:attr(data-l);display:block;font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}.cmpt td.me::before{color:var(--brand)}.cmpt tbody tr:last-child td{border-top:1px solid var(--line)}}
+.cmpt th,.cmpt td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.cmpt tbody tr:last-child th,.cmpt tbody tr:last-child td{border-bottom:0}
+.cmpt thead th{font-size:.85rem;color:var(--muted);font-weight:700}
+.cmpt thead th.me{color:var(--brand)}
+.cmpt tbody th{font-weight:700}@media(min-width:701px){.cmpt tbody th{width:22%}}
+.cmpt td{color:var(--muted)}
+.cmpt td.me{color:var(--ink);font-weight:600;background:var(--paper)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .plan.spec{position:relative;margin-top:30px;border-color:var(--brand);background:var(--paper)}
 @media(max-width:700px){.plan.spec{padding-top:56px}.plan.spec .badge{left:16px;right:16px;line-height:1.4}} /* 09/11 : le badge sur 2 lignes cachait le prix 99 € sur mobile */
 .spec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -889,12 +901,13 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="5" width="22" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="22" height="7" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8" cy="19.5" r="1.3" fill="currentColor"/></svg><h3>Hébergement</h3><p>Rapide et sécurisé, avec le cadenas HTTPS.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/><path d="M4 14h20M14 4c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z" stroke="currentColor" stroke-width="2"/></svg><h3>Nom de domaine</h3><p>votre-entreprise.fr, à votre nom.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="8" y="2.5" width="12" height="23" rx="3" stroke="currentColor" stroke-width="2"/><path d="M12 21.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Version mobile</h3><p>Pensée pour vos clients qui cherchent depuis leur téléphone.</p></div>
-      <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="5" width="22" height="18" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="11" r="2.2" stroke="currentColor" stroke-width="2"/><path d="M4 20l6-5 4 3 4-4 6 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><h3>Vous modifiez vous-même</h3><p>Prix, horaires, photos : changez-les depuis votre téléphone, en direct. <a href="espace/?demo=garage">Essayer l'espace client</a></p></div>
+      <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="5" width="22" height="18" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="11" r="2.2" stroke="currentColor" stroke-width="2"/><path d="M4 20l6-5 4 3 4-4 6 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><h3>Vous modifiez vous-même</h3><p>Prix, horaires, photos : changez-les depuis votre téléphone, en direct. Les 30 dernières versions sont gardées : vous revenez en arrière en un clic. <a href="espace/?demo=garage">Essayer l'espace client</a></p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 3l9 4v6c0 6-4 10-9 12-5-2-9-6-9-12V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 14l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Mises à jour et dépannage</h3><p>Sauvegardes et sécurité surveillées. Un souci ? On répare à distance, sans frais.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 6h18v13H12l-5 4v-4H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 11h8M10 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Textes et logo simple</h3><p>On écrit vos textes, et pas de logo ? On met votre nom en forme, offert.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 22V9l9-5 9 5v13" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 22v-7h8v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 22h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Mentions légales</h3><p>Pages obligatoires prêtes : mentions, confidentialité.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23V14M11 23V6M17 23v-9M23 23H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Statistiques</h3><p>Vos visiteurs et d'où ils viennent, dans votre espace. Vos propres visites ne comptent pas.</p></div>
     </div>
+    <p class="incl-note">Le <a href="#achat">site à l'achat</a> comprend tout cela, sauf les statistiques.</p>
   </div>
 </section>
 
@@ -1056,6 +1069,30 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
 
 
 <!-- 13/11/2026 (Anthony) : « Services en plus », hors cartes de formules -->
+<!-- 19/11/2026 (idée reprise de CLIIK, Anthony : « Ok ») : comparatif honnête, sans chiffres inventés sur les autres -->
+<section class="cmp" id="comparatif" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Comparer</span>
+      <h2>MyCreativeSite, une agence ou le faire soi-même ?</h2>
+      <p>Les trois se valent selon votre temps et votre budget. Voici ce qui change, concrètement.</p>
+    </div>
+    <div class="cmpw"><table class="cmpt">
+      <thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col" class="me">MyCreativeSite</th><th scope="col">Agence web classique</th><th scope="col">Le faire soi-même</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Prix</th><td class="me" data-l="MyCreativeSite">190 € puis 29 €/mois, sans engagement, ou 990 € une fois</td><td data-l="Agence web classique">Sur devis, souvent plusieurs milliers d'euros</td><td data-l="Le faire soi-même">L'abonnement de l'outil, plus votre temps</td></tr>
+        <tr><th scope="row">Voir son site avant de payer</th><td class="me" data-l="MyCreativeSite">Oui, le vrai site, gratuitement</td><td data-l="Agence web classique">En général une maquette, après un acompte</td><td data-l="Le faire soi-même">Vous le construisez vous-même</td></tr>
+        <tr><th scope="row">Délai</th><td class="me" data-l="MyCreativeSite">48 heures</td><td data-l="Agence web classique">Souvent plusieurs semaines</td><td data-l="Le faire soi-même">Selon le temps que vous y passez</td></tr>
+        <tr><th scope="row">Textes de votre métier</th><td class="me" data-l="MyCreativeSite">Rédigés pour vous</td><td data-l="Agence web classique">Souvent en option</td><td data-l="Le faire soi-même">À écrire vous-même</td></tr>
+        <tr><th scope="row">Changer un prix ou une photo</th><td class="me" data-l="MyCreativeSite">Vous-même, depuis votre téléphone, avec retour en arrière possible</td><td data-l="Agence web classique">Souvent sur demande, parfois facturé</td><td data-l="Le faire soi-même">Vous-même</td></tr>
+        <tr><th scope="row">Hébergement, nom de domaine, version mobile</th><td class="me" data-l="MyCreativeSite">Compris</td><td data-l="Agence web classique">Souvent facturés à part</td><td data-l="Le faire soi-même">Selon la formule de l'outil</td></tr>
+        <tr><th scope="row">Lisible par Google et ChatGPT</th><td class="me" data-l="MyCreativeSite">Réglé pour vous : textes clairs, données structurées, plan du site</td><td data-l="Agence web classique">Selon l'agence</td><td data-l="Le faire soi-même">À régler vous-même</td></tr>
+        <tr><th scope="row">Rendez-vous</th><td class="me" data-l="MyCreativeSite">Aucun, tout se fait en ligne</td><td data-l="Agence web classique">Réunions et échanges</td><td data-l="Le faire soi-même">Aucun</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
 <section class="extras" id="services">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Services en plus</span><h2>Pour aller plus loin.</h2><p>À ajouter à votre site, ou à commander seul.</p></div>

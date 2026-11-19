@@ -30,7 +30,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
 .btn.sm{padding:6px 10px;font-size:.85rem}
 .btn:disabled{opacity:.5;cursor:default}
-.lo-ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}#logout .lo-ic{margin-right:6px}@media (max-width:860px){#logout .lo-ic{margin:0}}
+.lo-ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}#logout .lo-ic{margin-right:6px}@media (max-width:860px){#logout .lo-ic{margin:0}#undo .t{display:none}}
+/* 19/11/2026 : historique des versions */
+.vlist{display:grid;gap:8px}.vrow{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}.vrow div{flex:1;min-width:0;display:grid}.vrow b{font-size:.92rem}.vrow span{font-size:.8rem;color:var(--muted)}.vnote{font-size:.85rem;color:var(--muted);margin:0 0 12px}
 .linkbtn{background:none;border:0;color:var(--brand);font-weight:600;cursor:pointer;padding:0;text-align:left}
 .gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:#1f1f1f;border:1px solid #dadce0;font-weight:600}.gbtn:hover{background:#f8f9fa}
 .gor{display:flex;align-items:center;gap:10px;margin-top:12px;color:var(--muted);font-size:.82rem}.gor::before,.gor::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -411,7 +413,7 @@ html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
       <span class="sp"></span>
       <span class="status" id="status" role="status"></span>
       <a class="btn sm hide-m" id="viewSite" target="_blank" rel="noopener" hidden>Voir mon site</a>
-      <button class="btn sm hide-m" id="undo" type="button" hidden>Annuler la dernière modification</button>
+      <button class="btn sm" id="undo" type="button" hidden title="Historique des versions" aria-label="Historique des versions"><svg class="lo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5M12 7v5l3 2"/></svg><span class="t"> Historique</span></button>
       <button class="btn primary" id="save" type="button" disabled>Enregistrer</button>
       <button class="btn sm" id="logout" type="button" hidden aria-label="Se déconnecter" title="Se déconnecter"><svg class="lo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M15 12H4"/></svg><span class="lo-t">Se déconnecter</span></button>
     </div>
@@ -1238,9 +1240,34 @@ $('save').addEventListener('click',async()=>{
   if(error){ $('save').disabled=false; setStatus('Erreur : '+error.message,'dirty'); return; }
   dirty=false; site.content=JSON.parse(JSON.stringify(state)); setStatus(site.status==='en_ligne'?'Enregistré : votre site est à jour':'Enregistré','saved'); toast('Modifications enregistrées');
 });
+// 19/11/2026 : historique des versions (30 dernières) — on choisit une version, elle s'affiche dans l'éditeur et l'aperçu,
+// rien n'est en ligne tant que le client n'a pas cliqué sur Enregistrer (et l'enregistrement garde la version actuelle dans l'historique).
 $('undo').addEventListener('click',async()=>{
-  if(!site) return; const {data,error}=await SB.rpc('cs_site_undo',{p_id:site.id});
-  if(error){ toast(error.message); return; } site.content=data; await openSite(site); toast('Dernière modification annulée');
+  if(!site||DEMO) return;
+  const {data,error}=await SB.rpc('cs_site_versions',{p_id:site.id});
+  if(error){ toast(error.message); return; }
+  const fmt=d=>new Date(d).toLocaleString('fr-FR',{weekday:'short',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'});
+  const ov=document.createElement('div'); ov.className='bnov'; ov.setAttribute('role','dialog'); ov.setAttribute('aria-modal','true'); ov.setAttribute('aria-label','Historique des versions');
+  ov.innerHTML='<div class="bnbox" style="width:min(560px,100%)"><div class="bntop"><div><b>Historique des versions</b><span>Les 30 dernières versions de votre site sont gardées.</span></div><button class="bnx" type="button" aria-label="Fermer">×</button></div><div class="bnbody"><p class="vnote">Choisissez une version : elle s\'affiche dans l\'éditeur et l\'aperçu. Elle ne part en ligne que si vous cliquez sur « Enregistrer », et la version actuelle reste dans l\'historique.</p><div class="vlist"></div></div></div>';
+  const list=ov.querySelector('.vlist');
+  if(!data||!data.length) list.innerHTML='<p class="vnote">Aucune version précédente pour l\'instant : l\'historique se remplit à chaque enregistrement.</p>';
+  (data||[]).forEach((v,i)=>{ const r=document.createElement('div'); r.className='vrow';
+    r.innerHTML='<div><b></b><span></span></div><button class="btn sm" type="button">Revenir à cette version</button>';
+    r.querySelector('b').textContent='Avant l\'enregistrement du '+fmt(v.at); r.querySelector('span').textContent=(i===0?'Version juste avant la version actuelle · ':'')+'enregistrement fait par '+v.by_who;
+    r.querySelector('button').addEventListener('click',async()=>{
+      if(dirty&&!confirm('Des modifications ne sont pas enregistrées. Les remplacer par cette version ?')) return;
+      const {data:c,error:e2}=await SB.rpc('cs_site_version_get',{p_id:site.id,p_hist:v.id});
+      if(e2){ toast(e2.message); return; }
+      close(); const keep=site.content; site.content=c;
+      try{ await openSite(site); markDirty(); toast('Version chargée : cliquez sur Enregistrer pour la remettre en ligne'); }
+      catch(e3){ toast('Impossible de charger cette version : '+(e3.message||'réessayez')); }
+      finally{ site.content=keep; }
+    });
+    list.appendChild(r); });
+  function close(){ ov.remove(); document.documentElement.classList.remove('bnopen'); document.removeEventListener('keydown',esc); }
+  function esc(e){ if(e.key==='Escape') close(); }
+  ov.addEventListener('click',e=>{ if(e.target===ov) close(); }); ov.querySelector('.bnx').addEventListener('click',close); document.addEventListener('keydown',esc);
+  document.documentElement.classList.add('bnopen'); document.body.appendChild(ov); ov.querySelector('.bnx').focus();
 });
 $('sitePick').addEventListener('change',async e=>{ if(dirty&&!confirm('Des modifications ne sont pas enregistrées. Changer de site quand même ?')){ e.target.value=site.id; return; } const s=sites.find(x=>x.id===e.target.value); if(s) await openSite(s); });
 $('demoTrade').addEventListener('change',e=>{ const t=e.target.value; history.replaceState(null,'','?demo='+t); openSite({id:'demo',name:'Site d\'exemple',trade:t==='taxi'?'vtc':t==='moto'?'garage':t,style:'moderne',content:t==='taxi'?{taxi:true}:t==='moto'?{concession:true,moto:true}:{},status:'brouillon'}); }); // 12/11/2026 : Taxi = modèle VTC version taxi

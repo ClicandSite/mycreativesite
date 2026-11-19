@@ -3,3 +3,5 @@
 -- cs_admin_site_plan : 'achat' accepté. cs_photo_quota : 'achat' = 10 photos.
 -- Stripe (compte MyCreativeSite) : prod_VesKFLjIXB1Ixc / price_1UdYa6EVjm0uqFCcFUC4kGIw (990 € une fois),
 -- prod_VesKs418SiDbdK / price_1UdYaCEVjm0uqFCcVzeahGQY (79 €/an), lien de secours https://buy.stripe.com/fZu14n2ujamLbmNckwgfu0g (essai 365 j).
+-- 19/11/2026 (2) : migration site_versions_history — cs_site_versions(p_id) (30 dernières versions, « vous » / « MyCreativeSite »)
+-- et cs_site_version_get(p_id, p_hist), réservées au propriétaire du site ou à l'admin (cs_can_edit_site), rôle authenticated.
