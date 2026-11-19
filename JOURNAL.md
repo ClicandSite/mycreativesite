@@ -134,3 +134,8 @@
 ## 18/11/2026 23:5x — Instagram post 8 publié depuis Chrome
 - Visuel « Tout ce qui est inclus dans 29 €/mois » (img/ig/post-8-inclus.jpg), format 4:5, publié sur @mycreativesite.fr.
 - Méthode d'envoi sans choisir de fichier : img/ig/relay.html (noindex) ouvert en popup depuis Instagram via un clic, renvoie l'image par postMessage, injectée dans l'input file du dialogue. Réutilisable : déposer l'image dans img/ig/ puis relay.html?f=<nom>.
+
+## 19/11/2026 (passage SEO, 17 h)
+- Vérifs OK : 0 lien interne cassé, 103 adresses du plan indexables (canonical juste), 102 pages testées en 360 px sans débordement ni erreur JavaScript, 242 blocs JSON-LD valides, tâches planifiées Supabase 986/986 en succès sur 24 h, base 112 Mo.
+- Search Console (28 j, données au 17/11) : 1 020 impressions sur 7 jours (663 la semaine d'avant), 2 clics, position moyenne 57,5 ; 390 requêtes. Meilleures positions : « service à la personne » 14, « création site internet dentiste bordeaux » 27, « site web automobile » 31, « création site internet infirmière » 31, « site internet boulangerie » 36.
+- Enrichi : nouveau guide /conseils/formations-obligatoires-ouvrir-un-commerce/ (≈ 1 370 mots) pour la requête « formation obligatoire pour ouvrir un commerce » (14 impressions, position 58, seulement couverte par le guide restaurant) : SPI facultatif depuis la loi PACTE, hygiène alimentaire 14 h, permis d'exploitation 20 h, qualification artisanale (CAP ou 3 ans), métiers à carte ou agrément, commerces sans diplôme ; sources vérifiées (service-public, bpifrance-creation, CMA). Liens depuis la checklist création et le guide restaurant. Sitemap 103 adresses.
