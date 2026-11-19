@@ -1,0 +1,5 @@
+-- 19/11/2026 : site à l'achat (990 € une fois, puis 79 €/an) — appliqué directement (remplacement de texte dans les fonctions) :
+-- cs_order_submit : formule 'achat' acceptée ; options mail et bilingue (mensuelles) refusées avec 'achat'.
+-- cs_admin_site_plan : 'achat' accepté. cs_photo_quota : 'achat' = 10 photos.
+-- Stripe (compte MyCreativeSite) : prod_VesKFLjIXB1Ixc / price_1UdYa6EVjm0uqFCcFUC4kGIw (990 € une fois),
+-- prod_VesKs418SiDbdK / price_1UdYaCEVjm0uqFCcVzeahGQY (79 €/an), lien de secours https://buy.stripe.com/fZu14n2ujamLbmNckwgfu0g (essai 365 j).

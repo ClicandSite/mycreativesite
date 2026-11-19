@@ -298,7 +298,7 @@
   }
 
   window.CSAgenda = {
-    enabled: function () { return !!site && !!TRADES[site.trade] && !(site.trade === 'garage' && typeof state === 'object' && state && state.concession === true); },
+    enabled: function () { return !!site && !!TRADES[site.trade] && String(site.plan || '').toLowerCase() !== 'achat' && !(site.trade === 'garage' && typeof state === 'object' && state && state.concession === true); },
     open: open
   };
 })();

@@ -452,7 +452,7 @@ html{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
 const SB = supabase.createClient('https://avcynjwcyygygkjuxsdt.supabase.co','sb_publishable_fdSM-pnUtZRKX7K6nOf5Ag_i1TQgqLO',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storageKey:'clicandsite-espace'}});
 const $ = id => document.getElementById(id);
 const STYLES = {'moderne': 'Moderne', 'luxe': 'Luxe', 'riviera': 'Riviera', 'chaleureux': 'Chaleureux', 'audacieux': 'Audacieux', 'minimal': 'Minimal crème', 'nuit': 'Nuit bleue', 'provence': 'Provence lavande', 'ocean': 'Océan', 'pop': 'Pop vitaminé', 'corporate': 'Pro sérieux', 'retro': 'Rétro', 'zen': 'Zen nature', 'neon': 'Néon', 'poudre': 'Rose poudré', 'terracotta': 'Terracotta', 'graphite': 'Graphite', 'foret': 'Forêt', 'soleil': 'Soleil', 'marine': 'Marine chic', 'signature': 'Signature Émeraude ★', 'signatureonyx': 'Signature Onyx ★', 'signaturesaphir': 'Signature Saphir ★', 'signaturebordeaux': 'Signature Bordeaux ★', 'signatureivoire': 'Signature Ivoire ★'};
-const PAYLINK={essentiel:'https://buy.stripe.com/3cIcN5d8X7azbmNesEgfu04',pro:'https://buy.stripe.com/dRmdR9ed1dyXfD3gAMgfu08',premium:'https://buy.stripe.com/00weVd6KzbqP62t0BOgfu09',boutique:'https://buy.stripe.com/5kQ14n3ynbqP2Qh5W8gfu07',autoimmo:'https://buy.stripe.com/5kQcN56Kz8eD2Qhacogfu0b'};
+const PAYLINK={essentiel:'https://buy.stripe.com/3cIcN5d8X7azbmNesEgfu04',pro:'https://buy.stripe.com/dRmdR9ed1dyXfD3gAMgfu08',premium:'https://buy.stripe.com/00weVd6KzbqP62t0BOgfu09',boutique:'https://buy.stripe.com/5kQ14n3ynbqP2Qh5W8gfu07',autoimmo:'https://buy.stripe.com/5kQcN56Kz8eD2Qhacogfu0b',achat:'https://buy.stripe.com/fZu14n2ujamLbmNckwgfu0g'};
 let SESSION_EMAIL='';
 const ITEMS = {garage:'Véhicules en stock', immobilier:'Biens en vente et location', batiment:'Réalisations', beaute:'Réalisations', bienetre:'Soins', veterinaire:'Actes et soins',autoecole:'Formules',coach:'Formules et séances',photographe:'Séances',toiletteur:'Prestations',fleuriste:'Créations',traiteur:'Carte',nautisme:'Bateaux et sorties',kine:'Prises en charge',dentiste:'Actes',bijouterie:'Bijoux, montres et atelier',liberal:'Missions',services:'Formules',evenementiel:'Prestations',hebergement:'Chambres et logements',tourisme:'Sorties',location:'Véhicules et formules',infirmier:'Soins', boulangerie:'Produits en vitrine', boutique:'Produits de la boutique', depannage:'Interventions', vtc:'Éléments', restaurant:'Éléments'};
 const params = new URLSearchParams(location.search);
@@ -1175,6 +1175,8 @@ function paySection(){
 /* ---------- Chargement d'un site ---------- */
 /* 07/11/2026 : fonctions selon la formule (Essentiel < Pro < Premium < Boutique) */
 const RANK={essentiel:1,pro:2,premium:3,boutique:4,autoimmo:2};
+// 19/11/2026 : site à l'achat (990 € puis 79 €/an) = site vitrine, sans agenda ni statistiques ni paiement en ligne
+function isAchat(){ return !DEMO&&String(site&&site.plan||'').toLowerCase()==='achat'; }
 function planRank(){ return DEMO?4:(RANK[String(site&&site.plan||'').toLowerCase()]||1); }
 async function openSite(s){
   if(!site||site.id!==s.id){ shopCfg=null; payCfg=null; }
@@ -1218,7 +1220,7 @@ async function openSite(s){
     try{ const r=await fetch('https://avcynjwcyygygkjuxsdt.supabase.co/functions/v1/cs-checkout',{method:'POST',headers:{'Content-Type':'application/json',apikey:'sb_publishable_fdSM-pnUtZRKX7K6nOf5Ag_i1TQgqLO'},body:JSON.stringify({slug:site.slug})}); const j=await r.json(); location.href=(r.ok&&j.url)?j.url:fb; }
     catch(x){ location.href=fb; } finally{ setTimeout(()=>{ pb.textContent=old; },3000); } }); }
   // 10/11/2026 (Anthony) : site en ligne = l'espace sert d'abord à gérer (clients, rendez-vous, véhicules, devis) ; la modification du site reste accessible
-  { const live=DEMO||s.status==='en_ligne'; $('homeTab').hidden=!live; $('statsTab').hidden=!live; if(!live&&mode==='stats') await setMode('edit'); $('editTab').textContent=live?'Modifier mon site':'Mon site';
+  { const live=DEMO||s.status==='en_ligne'; $('homeTab').hidden=!live; $('statsTab').hidden=!live||isAchat(); if(!live&&mode==='stats') await setMode('edit'); $('editTab').textContent=live?'Modifier mon site':'Mon site';
     { const vs=document.querySelector('.vseg[aria-label="Affichage"]'), ord=live?['home','crm','agenda','stock','devis','stats','edit','brief']:['edit','brief','stock','agenda','devis','crm','home','stats'];
       ord.forEach(m=>{ const b=vs.querySelector('button[data-mode="'+m+'"]'); if(b) vs.appendChild(b); }); }
     if(!live&&mode==='home') await setMode('edit');
@@ -1990,7 +1992,7 @@ boot();
 </script>
 <script src="/assets/cs-stock.js?v=1"></script>
 <script src="/assets/cs-inline.js?v=4"></script>
-<script src="/assets/cs-agenda.js?v=2">
+<script src="/assets/cs-agenda.js?v=3">
 </script>
 <script>/* ---------- 10/11/2026 (Anthony, maquette) : menu à gauche sur ordinateur ---------- */
 (function(){

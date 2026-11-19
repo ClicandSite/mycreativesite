@@ -19,7 +19,12 @@ const PLAN: Record<string, { monthly: string; setup: string }> = {
   boutique: { monthly: "price_1UZ76PEVjm0uqFCczretGSsA", setup: "price_1UYmdPEVjm0uqFCcNdD6SaXX" },
   // 08/11/2026 : Pack Auto & Immo — 99 €/mois + 490 € (même mise en ligne que Boutique, demande d'Anthony) ; annonces illimitées sur Abracadeal
   autoimmo: { monthly: "price_1UZdDdEVjm0uqFCcnQKR8aXu", setup: "price_1UYmdPEVjm0uqFCcNdD6SaXX" },
+  // 19/11/2026 (Anthony : « Fais ») : site à l'achat — 990 € une fois (1re année comprise), puis 79 €/an (domaine + hébergement).
+  // « monthly » est ici le prix annuel ; essai de 365 jours pour que les 79 € ne partent qu'à partir de la 2e année.
+  achat: { monthly: "price_1UdYaCEVjm0uqFCcVzeahGQY", setup: "price_1UdYa6EVjm0uqFCcFUC4kGIw" },
 };
+// Options mensuelles impossibles avec un abonnement annuel (Stripe refuse des intervalles mélangés)
+const MONTHLY_OPT = ["mail", "bilingue"];
 const OPTION: Record<string, string> = {
   logo: "price_1UZrJqEVjm0uqFCc5FvJc1nJ",      // logo et bannière, 49 € une fois (09/11/2026, avant 19 €)
   google: "price_1UZYzqEVjm0uqFCcjqQ0XeWb",    // 149 € une fois
@@ -51,7 +56,8 @@ Deno.serve(async (req) => {
     if (!plan) return out({ message: "Formule à choisir : écrivez-nous à contact@mycreativesite.fr." }, 400);
     if (!SK) return out({ message: "Paiement indisponible" }, 503);
     const inc = INCLUDED[String(s.plan).toLowerCase()] || [];
-    const opts = (Array.isArray(s.options) ? s.options : []).filter((o: string) => OPTION[o] && !inc.includes(o));
+    const isAchat = String(s.plan).toLowerCase() === "achat";
+    const opts = (Array.isArray(s.options) ? s.options : []).filter((o: string) => OPTION[o] && !inc.includes(o) && !(isAchat && MONTHLY_OPT.includes(o)));
     const items = [{ price: plan.monthly, quantity: 1 }, { price: plan.setup, quantity: 1 }, ...opts.map((o: string) => ({ price: OPTION[o], quantity: 1 }))];
     const back = "https://mycreativesite.fr/apercu/?s=" + encodeURIComponent(slug);
     const body: Record<string, unknown> = {
@@ -72,6 +78,10 @@ Deno.serve(async (req) => {
     if (/^(autoimmo|boutique)/.test(String(s.plan).toLowerCase())) {
       (body.custom_fields as unknown[]).push({ key: "siret", label: { type: "custom", custom: "SIRET de votre entreprise (14 chiffres)" }, type: "numeric", numeric: { minimum_length: 14, maximum_length: 14 } });
       body.billing_address_collection = "required";
+    }
+    if (isAchat) {
+      (body.subscription_data as Record<string, unknown>).trial_period_days = 365;
+      body.custom_text = { submit: { message: "990 € aujourd'hui, 1re année d'hébergement et de nom de domaine comprise, puis 79 € par an à partir de la 2e année, résiliable à tout moment. TVA non applicable, art. 293 B du CGI." } };
     }
     if (s.email) body.customer_email = s.email;
     const r = await fetch("https://api.stripe.com/v1/checkout/sessions", {
