@@ -547,6 +547,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
 .gobar .btn{padding:12px 16px;font-size:.92rem;white-space:nowrap}
 .gobar[hidden]{display:none}
 @media (min-width:921px){.gobar{display:none!important}}
+@media (max-width:920px){html body .studio2.wz .wnav{position:static!important;margin:14px 0 0!important;padding:0!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}html body .studio2.wz .wnav[hidden]{display:flex!important}}
 @media (max-width:520px){.args>div{padding:0 10px}.args b{font-size:.86rem}.args span:not(.ai){font-size:.78rem}}
 
 /* 09/11/2026 (Anthony) : sur ordinateur, menu à gauche (formule, métiers, styles en liste) et le site en grand à droite */
@@ -897,7 +898,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
   </div>
 </section>
 
-<div class="gobar" id="gobar" hidden><span><b>Votre site dès 29 €/mois</b><small>Vous payez seulement après l'avoir vu</small></span><a class="btn" href="#commande">Je veux mon site</a></div>
+<!-- 20/11/2026 (Anthony : « les bannières qui prennent tout ») : barre du bas « Votre site dès 29 €/mois » retirée, le bouton reste dans l'en-tête -->
 <div class="pickbar" id="pickbar" hidden><span><b id="pb-k">Chauffeur VTC</b><small id="pb-s">Moderne</small></span><a class="btn" href="#commande" id="pb-go">Je veux ce modèle</a></div>
 <section class="allgrid" id="tous" hidden>
   <div class="wrap">
@@ -1497,9 +1498,9 @@ document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.
   var c=document.querySelector('input[name="o-opt"][value="'+a.getAttribute('data-addopt')+'"]'); if(c&&!c.checked&&!c.disabled){ c.checked=true; c.dispatchEvent(new Event('change',{bubbles:true})); } },true);
 /* 13/11/2026 : barre « Je veux mon site » sur téléphone, sauf en haut, dans les modèles et sur le formulaire */
 (function(){
-  var bar=document.getElementById('gobar'); if(!bar||!('IntersectionObserver' in window)) return;
+  if(!('IntersectionObserver' in window)) return;
   var ids=['accueil','modeles','commande'], vis={};
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ vis[e.target.id]=e.isIntersecting; }); bar.hidden=ids.some(function(i){return vis[i];}); var wn=document.querySelector('.studio2.wz .wnav'); if(wn) wn.hidden=!vis.modeles; },{rootMargin:'0px 0px -15% 0px'});
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ vis[e.target.id]=e.isIntersecting; }); var wn=document.querySelector('.studio2.wz .wnav'); if(wn) wn.hidden=!vis.modeles; },{rootMargin:'0px 0px -15% 0px'});
   ids.forEach(function(i){ var el=document.getElementById(i); if(el){ vis[i]=i==='accueil'; io.observe(el);} });
 })();
 /* 09/11/2026 : barre « Je veux ce modèle » sur téléphone pendant qu'on regarde les modèles */
