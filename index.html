@@ -547,7 +547,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
 .gobar .btn{padding:12px 16px;font-size:.92rem;white-space:nowrap}
 .gobar[hidden]{display:none}
 @media (min-width:921px){.gobar{display:none!important}}
-@media (max-width:920px){html body .studio2.wz .wnav{position:static!important;margin:14px 0 0!important;padding:0!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}html body .studio2.wz .wnav[hidden]{display:flex!important}}
+@media (max-width:920px){html body .studio2.wz .wnav{position:static!important;margin:14px 0 0!important;padding:0!important;background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:0!important;box-shadow:none!important}}
 @media (max-width:520px){.args>div{padding:0 10px}.args b{font-size:.86rem}.args span:not(.ai){font-size:.78rem}}
 
 /* 09/11/2026 (Anthony) : sur ordinateur, menu à gauche (formule, métiers, styles en liste) et le site en grand à droite */
@@ -633,7 +633,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
 @media (min-width:921px){
   .studio2.wz{grid-template-columns:370px minmax(0,1fr)}
   .studio2.wz .cfg{gap:16px;padding:20px 20px 0}
-  .studio2.wz .wnav{position:sticky;bottom:0;margin:0 -20px;padding:12px 20px 16px;background:linear-gradient(to bottom,color-mix(in srgb,var(--bg) 0%,transparent),var(--bg) 22%);z-index:2}
+  /* 20/11/2026 : barre Continuer plus fixée/collante en bas (retiré) */
   .studio2.wz .cfg .mrow button{padding:8px 12px;font-size:.93rem}
   .studio2.wz .cfg .srow{gap:6px}
   .studio2.wz .cfg .fchips button b,.studio2.wz .cfg .fchips button .fpr{font-size:.98rem}
@@ -667,8 +667,8 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
   .studio2.wz[data-step="2"] .screens .pscreen{height:34svh!important;min-height:0;border-radius:15px}
   .studio2.wz[data-step="2"] .desc,.studio2.wz[data-step="2"] .ex-actions{display:none}
   .studio2.wz[data-step="3"] .view{margin-top:14px}
-  .studio2.wz .wnav{position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 94%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
-  .studio2.wz .wnav[hidden]{display:none}
+  /* 20/11/2026 : barre Continuer plus fixée/collante en bas (retiré) */
+  /* 20/11/2026 : barre Continuer plus fixée/collante en bas (retiré) */
   .pickbar{display:none!important}
 }
 
@@ -1500,7 +1500,7 @@ document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.
 (function(){
   if(!('IntersectionObserver' in window)) return;
   var ids=['accueil','modeles','commande'], vis={};
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ vis[e.target.id]=e.isIntersecting; }); var wn=document.querySelector('.studio2.wz .wnav'); if(wn) wn.hidden=!vis.modeles; },{rootMargin:'0px 0px -15% 0px'});
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ vis[e.target.id]=e.isIntersecting; }); },{rootMargin:'0px 0px -15% 0px'});
   ids.forEach(function(i){ var el=document.getElementById(i); if(el){ vis[i]=i==='accueil'; io.observe(el);} });
 })();
 /* 09/11/2026 : barre « Je veux ce modèle » sur téléphone pendant qu'on regarde les modèles */
