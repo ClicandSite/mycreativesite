@@ -152,3 +152,9 @@
 - CLIIK : 990 € (prix barré 1 980 €) ou 12 × 99 € avec engagement, + 49 €/mois obligatoire dès le 4e mois, option contenus +29 €/mois ; pas d'aperçu avant paiement annoncé, pas de mentions légales identifiables. Nos prix restent plus bas.
 - Espace client : « Annuler la dernière modification » remplacé par « Historique » (visible aussi sur téléphone, icône) : les 30 versions gardées (table site_history déjà alimentée par cs_site_save), avec date et auteur ; « Revenir à cette version » la charge dans l'éditeur et l'aperçu, rien en ligne avant « Enregistrer » (la version actuelle reste dans l'historique). Nouvelles fonctions cs_site_versions / cs_site_version_get.
 - Accueil : tableau « MyCreativeSite, une agence ou le faire soi-même ? » (#comparatif, avant les services ; cartes empilées sur mobile), sans chiffres inventés sur les autres ; ligne « Lisible par Google et ChatGPT » (textes clairs, données structurées, plan du site, robots ouverts). Carte « Vous modifiez vous-même » : mention des 30 versions. Sous « Inclus dans toutes les formules » : précision « le site à l'achat comprend tout cela sauf les statistiques » (corrige une incohérence).
+
+## 20/11/2026 (15 h) — Moins de défilement sur l'accueil (Anthony : « trop de scroll »)
+- Téléphone (390 px) : 28 écrans → 19 ; ordinateur : 15 → 14.
+- Téléphone : formules, étapes « Comment ça marche », réalisations et services en cartes qui défilent au doigt (avec « Faites glisser pour tout voir → ») ; liste des métiers du sélecteur sur 2 colonnes compactes ; comparatif limité à 3 lignes + « Voir le comparatif complet » ; longue liste des métiers de l'intro Tarifs masquée ; listes Pack Auto/Boutique repliées à 4 lignes + « Voir tout ce qui est inclus ».
+- Ordinateur : grille « Un modèle pensé pour chaque métier » limitée à 2 rangées (10) + « Voir les 31 métiers ».
+- Vérifié 360/390/1300 px : aucun débordement, aucune erreur JavaScript.

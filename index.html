@@ -252,6 +252,37 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
 .cmpt td{color:var(--muted)}
 .cmpt td.me{color:var(--ink);font-weight:600;background:var(--paper)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 20/11/2026 (Anthony : « trop de scroll dans le site ») : sur téléphone, cartes côte à côte qui défilent au doigt,
+   liste des métiers sur 2 colonnes, comparatif replié, textes secondaires masqués */
+.swipe,.cmpd,.foldbtn{display:none}
+.gmore{display:none}
+@media (min-width:921px){.allgrid:not(.all) .gcard:nth-child(n+11){display:none}.allgrid:not(.all) .gmore{display:flex;margin:22px auto 0}}
+@media (max-width:700px){
+  .m-hide{display:none}
+  .swipe{display:block;margin:-6px 0 10px;font-size:.82rem;font-weight:600;color:var(--muted);text-align:right}
+  .swipe span{display:inline-block;animation:swipeHint 1.6s ease-in-out infinite}
+  @keyframes swipeHint{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+  .plans:not(.duo),.steps,.refgrid,.xgrid{display:flex!important;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-left:-16px;margin-right:-16px;padding:6px 16px 14px;scroll-padding-inline:16px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:stretch}
+  .plans:not(.duo)::-webkit-scrollbar,.steps::-webkit-scrollbar,.refgrid::-webkit-scrollbar,.xgrid::-webkit-scrollbar{display:none}
+  .plans:not(.duo)>*,.steps>*,.refgrid>*,.xgrid>*{flex:0 0 86%;max-width:86%;scroll-snap-align:start;margin-top:0!important}
+  .plans:not(.duo)>.plan{margin-top:14px!important}
+  .studio2.wz .cfg .mrow{grid-template-columns:1fr 1fr!important;gap:6px!important}
+  .studio2.wz .cfg .mrow button{grid-template-columns:28px 1fr!important;column-gap:8px!important;padding:7px 8px!important;font-size:.84rem!important;border-radius:12px!important}
+  .studio2.wz .cfg .mrow button .ic{width:28px!important;height:28px!important}
+  .studio2.wz .cfg .mrow button .ic svg{width:16px!important;height:16px!important}
+  .studio2.wz .cfg .mrow button .tx small{display:none!important}
+  .studio2.wz .cfg .mrow button[aria-pressed="true"]::after{display:none!important}
+  ul.fold:not(.open)>li:nth-child(n+5){display:none}
+  .foldbtn{display:block;margin:4px 0 14px;padding:0;border:0;background:none;font:700 .9rem var(--body);color:var(--brand);text-decoration:underline;cursor:pointer}
+  ul.fold.open+.foldbtn{display:none}
+  .cmpd{display:block;margin:0}
+  .cmpd summary{list-style:none;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;margin-top:4px;padding:12px;border:1.5px solid var(--line);border-radius:14px;font-weight:700;color:var(--brand)}
+  .cmpd summary::-webkit-details-marker{display:none}
+  .cmp:has(.cmpd:not([open])) .cmpt tbody tr:nth-child(n+4){display:none}
+  .cmpd[open]{display:none}
+  .cmpd summary{margin-top:0}
+}
 .plan.spec{position:relative;margin-top:30px;border-color:var(--brand);background:var(--paper)}
 @media(max-width:700px){.plan.spec{padding-top:56px}.plan.spec .badge{left:16px;right:16px;line-height:1.4}} /* 09/11 : le badge sur 2 lignes cachait le prix 99 € sur mobile */
 .spec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -873,6 +904,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
     </div>
     <p class="libre" style="display:flex;gap:10px;align-items:flex-start;margin:0 0 22px;padding:12px 16px;border-radius:12px;background:var(--brand-soft);color:var(--ink);font-size:.95rem;line-height:1.5"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px;color:var(--brand)"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Toutes les photos des modèles sont libres de droits.</strong> Vous pouvez les garder sur votre site, ou les remplacer par les vôtres. Les textes aussi : gardez-les tels quels, adaptez-les, ou servez-vous-en comme modèle.</span></p>
     <div id="grid"></div>
+    <button type="button" class="btn ghost gmore" id="gmore" onclick="document.getElementById('tous').classList.add('all');this.remove()">Voir les 31 métiers</button>
   </div>
 </section>
 
@@ -883,7 +915,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <h2>Trois étapes, aucun rendez-vous.</h2>
       <p>Tout se fait en ligne. Pas de visio, pas de réunion : vous nous envoyez vos infos, on vous envoie votre site.</p>
     </div>
-    <div class="steps">
+    <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="steps">
       <div class="step"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M15 16l2 2 4-4"/></svg></span><span class="n">1</span><h3>Vous choisissez</h3><p>Votre formule, votre métier et votre style. Vous pouvez changer de style plus tard sans frais.</p><span class="t">2 minutes</span></div>
       <div class="step"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg></span><span class="n">2</span><h3>Vous envoyez vos infos</h3><p>Nom, adresse, horaires, services, prix et photos. Un formulaire simple, depuis votre téléphone.</p><span class="t">15 minutes</span></div>
       <div class="step"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 10.5l2 2 4-4"/></svg></span><span class="n">3</span><h3>Votre site est en ligne</h3><p>On rédige les textes, on installe tout, on branche votre nom de domaine. Vous validez, c'est en ligne.</p><span class="t">48 heures</span></div>
@@ -920,7 +952,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <h2>Ils sont en ligne avec nous</h2>
       <p>Trois sites réalisés par MyCreativeSite, en ligne et utilisés chaque jour. <a href="realisations/">Lire l'histoire de chaque projet</a></p>
     </div>
-    <div class="refgrid">
+    <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="refgrid">
       <a class="ref" href="https://www.elite-prestige-services.fr/" target="_blank" rel="noopener">
         <div class="refshot"><img src="img/ref-eps-d.jpg?v=2" width="960" height="600" alt="Site d'Elite Prestige Services, chauffeur privé sur la Côte d'Azur" loading="lazy"><img class="rm" src="img/ref-eps-m.jpg?v=2" width="360" height="720" alt="" loading="lazy"></div>
         <div class="reftxt"><span class="tag">Chauffeur VTC</span><h3>Elite Prestige Services</h3><p>Chauffeur privé à Cannes, Nice et Monaco. Réservation en ligne, flotte, transferts aéroport, site en 4 langues.</p><span class="lnk">elite-prestige-services.fr ↗</span></div>
@@ -942,9 +974,9 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
     <div class="head">
       <span class="eyebrow">Tarifs</span>
       <h2>Un prix clair. Sans engagement.</h2>
-      <p>Des frais de mise en ligne une seule fois, puis un abonnement mensuel. Vous arrêtez quand vous voulez. Vous préférez payer une fois ? Voyez le <a href="#achat">site à l'achat</a>. Un site sur mesure en agence coûte souvent plus de 1 500 €, sans la maintenance.<br>Essentiel, Pro et Premium : VTC, taxis, restaurants, artisans, beauté, bien-être, vétérinaires, kinés, dentistes, auto-écoles, coachs, photographes, toiletteurs, fleuristes, traiteurs, location de bateaux, bijouteries-horlogeries, professions libérales, services à domicile, événementiel, chambres d'hôtes et gîtes, tourisme et loisirs, location et déménagement, infirmiers libéraux, boulangeries, dépannage. Garages en entretien seul (vidange, pneus, freins) : Essentiel, Pro ou Premium. Garages qui vendent des véhicules, concessions et agences immobilières : Pack Auto, Moto &amp; Immo. Vente en ligne : formule Boutique.</p>
+      <p>Des frais de mise en ligne une seule fois, puis un abonnement mensuel. Vous arrêtez quand vous voulez. Vous préférez payer une fois ? Voyez le <a href="#achat">site à l'achat</a>. Un site sur mesure en agence coûte souvent plus de 1 500 €, sans la maintenance.<span class="m-hide"><br>Essentiel, Pro et Premium : VTC, taxis, restaurants, artisans, beauté, bien-être, vétérinaires, kinés, dentistes, auto-écoles, coachs, photographes, toiletteurs, fleuristes, traiteurs, location de bateaux, bijouteries-horlogeries, professions libérales, services à domicile, événementiel, chambres d'hôtes et gîtes, tourisme et loisirs, location et déménagement, infirmiers libéraux, boulangeries, dépannage. Garages en entretien seul (vidange, pneus, freins) : Essentiel, Pro ou Premium. Garages qui vendent des véhicules, concessions et agences immobilières : Pack Auto, Moto &amp; Immo. Vente en ligne : formule Boutique.</span></p>
     </div>
-    <div class="plans">
+    <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="plans">
       <div class="plan">
         <h3>Essentiel</h3>
         <p class="for">Pour être trouvé sur Google et recevoir des demandes.</p>
@@ -1017,7 +1049,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <div class="spec-col">
           <h3>Boutique</h3>
           <p class="for">Pour vendre vos produits en ligne : créateurs, épiceries fines, caves, fleuristes, concept stores.</p>
-          <ul>
+          <ul class="fold">
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tout Premium, CRM compris</li>
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance et réparations à distance comprises</li>
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Statistiques de visites, sans compter vos propres visites</li>
@@ -1026,7 +1058,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Retrait en boutique ou livraison, frais et seuil de gratuité au choix</li>
         <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Chaque commande arrive dans votre espace (onglet Mes clients), avec son statut de paiement</li>
         <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vos produits publiés sur Abracadeal en illimité, synchronisés avec votre catalogue</li>
-      </ul>
+      </ul><button type="button" class="foldbtn">Voir tout ce qui est inclus</button>
           <a class="btn" href="#commande" data-plan="Boutique">Choisir Boutique</a>
           <a class="lnk2" href="modeles/boutique.html#moderne" target="_blank" rel="noopener">Voir la boutique d'exemple</a>
         </div>
@@ -1037,7 +1069,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
             <a class="star" href="modeles/garage.html?concession=1#luxe" target="_blank" rel="noopener"><b><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="pi" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /> <circle cx="7" cy="17" r="2" /> <path d="M9 17h6" /> <circle cx="17" cy="17" r="2" /></svg> Concession automobile</b><span>100 % vente de voitures : stock en vitrine, fiches complètes, reprise et financement. Pas d'atelier, pas de rendez-vous.</span></a><a class="star" style="margin-top:8px" href="modeles/garage.html?concession=1&amp;moto=1#luxe" target="_blank" rel="noopener"><b><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M15 6h2l3 11M5.5 17l4-7h6l3 7M9.5 10 8 6H6"/></svg> Concession moto <em>Nouveau</em></b><span>Motos et scooters : stock en vitrine, motos A2 mises en avant, reprise de votre moto et financement. Pas d'atelier, pas de rendez-vous.</span></a>
             <a class="star" style="margin-top:8px" href="modeles/immobilier.html#riviera" target="_blank" rel="noopener"><b><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="pi" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg> Agence immobilière</b><span>Biens à vendre et à louer, DPE et GES, estimation</span></a>
           </div>
-          <ul>
+          <ul class="fold">
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tout Pro : espace client, devis PDF, paiement en ligne, vos avis Google, modifications faites par nous</li>
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance et réparations à distance comprises</li>
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Statistiques de visites, sans compter vos propres visites</li>
@@ -1048,7 +1080,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Votre page professionnelle sur Abracadeal, visible sur Google</li>
         <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Aucune passerelle ni logiciel de diffusion à payer en plus</li>
         <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>SIRET demandé au paiement : votre espace Abracadeal est ouvert et relié à votre site automatiquement</li>
-      </ul>
+      </ul><button type="button" class="foldbtn">Voir tout ce qui est inclus</button>
           <a class="btn" href="#commande" data-plan="AutoImmo">Choisir le Pack Auto, Moto &amp; Immo</a>
           <span class="lnk2" style="color:var(--muted);font-weight:500">Cliquez sur une version pour voir le site d'exemple</span>
         </div>
@@ -1089,14 +1121,14 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <tr><th scope="row">Lisible par Google et ChatGPT</th><td class="me" data-l="MyCreativeSite">Réglé pour vous : textes clairs, données structurées, plan du site</td><td data-l="Agence web classique">Selon l'agence</td><td data-l="Le faire soi-même">À régler vous-même</td></tr>
         <tr><th scope="row">Rendez-vous</th><td class="me" data-l="MyCreativeSite">Aucun, tout se fait en ligne</td><td data-l="Agence web classique">Réunions et échanges</td><td data-l="Le faire soi-même">Aucun</td></tr>
       </tbody>
-    </table></div>
+    </table></div><details class="cmpd" id="cmpd"><summary>Voir le comparatif complet</summary></details>
   </div>
 </section>
 
 <section class="extras" id="services">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Services en plus</span><h2>Pour aller plus loin.</h2><p>À ajouter à votre site, ou à commander seul.</p></div>
-    <div class="xgrid">
+    <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="xgrid">
       <article class="xcard hi xwide">
         <div>
           <span class="xtag">Nouveau · Landing Page</span>
@@ -1502,5 +1534,6 @@ document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.
 })();
 </script>
 <script src="/assets/cs-visits.js?v=5" defer></script>
+<script>/* 20/11/2026 : listes repliées sur téléphone */document.querySelectorAll('.foldbtn').forEach(function(b){b.addEventListener('click',function(){var u=b.previousElementSibling;if(u)u.classList.add('open');});});</script>
 </body>
 </html>
