@@ -255,7 +255,20 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
 
 /* 20/11/2026 (Anthony : « trop de scroll dans le site ») : sur téléphone, cartes côte à côte qui défilent au doigt,
    liste des métiers sur 2 colonnes, comparatif replié, textes secondaires masqués */
-.swipe,.cmpd,.foldbtn{display:none}
+
+/* 20/11/2026 (Anthony : « trop d'info d'un coup ») : les détails se déplient à la demande */
+.sfold{margin:0}
+.sfold>summary{list-style:none;cursor:pointer;display:flex;justify-content:center;margin:6px auto 0;width:max-content;max-width:100%;padding:12px 22px;border:1.5px solid var(--line);border-radius:999px;font:700 .95rem var(--body);color:var(--ink);background:var(--bg);text-align:center;transition:border-color .2s}
+.sfold>summary:hover{border-color:var(--brand);color:var(--brand)}
+.sfold>summary::-webkit-details-marker{display:none}
+.sfold>summary .sc{display:none}
+.sfold[open]>summary{margin-bottom:26px}
+.sfold[open]>summary .so{display:none}.sfold[open]>summary .sc{display:inline}
+@media (max-width:700px){.sfold>summary{width:auto;font-size:.9rem;padding:12px 16px}}
+.swipe{display:none}
+ul.fold:not(.open)>li:nth-child(n+5){display:none}
+.foldbtn{display:block;margin:4px 0 14px;padding:0;border:0;background:none;font:700 .9rem var(--body);color:var(--brand);text-decoration:underline;cursor:pointer}
+ul.fold.open+.foldbtn{display:none}
 .gmore{display:none}
 @media (min-width:921px){.allgrid:not(.all) .gcard:nth-child(n+11){display:none}.allgrid:not(.all) .gmore{display:flex;margin:22px auto 0}}
 @media (max-width:700px){
@@ -273,15 +286,6 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
   .studio2.wz .cfg .mrow button .ic svg{width:16px!important;height:16px!important}
   .studio2.wz .cfg .mrow button .tx small{display:none!important}
   .studio2.wz .cfg .mrow button[aria-pressed="true"]::after{display:none!important}
-  ul.fold:not(.open)>li:nth-child(n+5){display:none}
-  .foldbtn{display:block;margin:4px 0 14px;padding:0;border:0;background:none;font:700 .9rem var(--body);color:var(--brand);text-decoration:underline;cursor:pointer}
-  ul.fold.open+.foldbtn{display:none}
-  .cmpd{display:block;margin:0}
-  .cmpd summary{list-style:none;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;margin-top:4px;padding:12px;border:1.5px solid var(--line);border-radius:14px;font-weight:700;color:var(--brand)}
-  .cmpd summary::-webkit-details-marker{display:none}
-  .cmp:has(.cmpd:not([open])) .cmpt tbody tr:nth-child(n+4){display:none}
-  .cmpd[open]{display:none}
-  .cmpd summary{margin-top:0}
 }
 .plan.spec{position:relative;margin-top:30px;border-color:var(--brand);background:var(--paper)}
 @media(max-width:700px){.plan.spec{padding-top:56px}.plan.spec .badge{left:16px;right:16px;line-height:1.4}} /* 09/11 : le badge sur 2 lignes cachait le prix 99 € sur mobile */
@@ -895,7 +899,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
 
 <div class="gobar" id="gobar" hidden><span><b>Votre site dès 29 €/mois</b><small>Vous payez seulement après l'avoir vu</small></span><a class="btn" href="#commande">Je veux mon site</a></div>
 <div class="pickbar" id="pickbar" hidden><span><b id="pb-k">Chauffeur VTC</b><small id="pb-s">Moderne</small></span><a class="btn" href="#commande" id="pb-go">Je veux ce modèle</a></div>
-<section class="allgrid" id="tous">
+<section class="allgrid" id="tous" hidden>
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Les métiers</span>
@@ -929,7 +933,8 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <span class="eyebrow">Inclus dans toutes les formules</span>
       <h2>Vous n'avez rien d'autre à payer.</h2>
     </div>
-    <div class="incl">
+    <details class="sfold"><summary><span class="so">Voir tout ce qui est inclus</span><span class="sc">Masquer</span></summary>
+<div class="incl">
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="5" width="22" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="22" height="7" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8" cy="19.5" r="1.3" fill="currentColor"/></svg><h3>Hébergement</h3><p>Rapide et sécurisé, avec le cadenas HTTPS.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/><path d="M4 14h20M14 4c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z" stroke="currentColor" stroke-width="2"/></svg><h3>Nom de domaine</h3><p>votre-entreprise.fr, à votre nom.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="8" y="2.5" width="12" height="23" rx="3" stroke="currentColor" stroke-width="2"/><path d="M12 21.5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Version mobile</h3><p>Pensée pour vos clients qui cherchent depuis leur téléphone.</p></div>
@@ -939,11 +944,12 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 22V9l9-5 9 5v13" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 22v-7h8v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 22h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Mentions légales</h3><p>Pages obligatoires prêtes : mentions, confidentialité.</p></div>
       <div class="inc"><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23V14M11 23V6M17 23v-9M23 23H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Statistiques</h3><p>Vos visiteurs et d'où ils viennent, dans votre espace. Vos propres visites ne comptent pas.</p></div>
     </div>
-    <p class="incl-note">Le <a href="#achat">site à l'achat</a> comprend tout cela, sauf les statistiques.</p>
+    <p class="incl-note">Le <a href="#achat">site à l'achat</a> comprend tout cela, sauf les statistiques.</p></details>
+
   </div>
 </section>
 
-<section class="ctaband" style="padding-top:0"><div class="wrap"><div class="cband"><div><h2>Votre site prêt en 48 heures.</h2><p>Une minute pour envoyer votre demande. Vous voyez votre site sur ordinateur et téléphone, et vous ne payez qu'après l'avoir validé.</p></div><a class="btn" href="#commande">Je veux mon site</a></div></div></section>
+<!-- 20/11/2026 : bandeau « Votre site prêt en 48 heures » retiré (trop d'info d'un coup) -->
 
 <section class="refs" id="references">
   <div class="wrap">
@@ -974,7 +980,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
     <div class="head">
       <span class="eyebrow">Tarifs</span>
       <h2>Un prix clair. Sans engagement.</h2>
-      <p>Des frais de mise en ligne une seule fois, puis un abonnement mensuel. Vous arrêtez quand vous voulez. Vous préférez payer une fois ? Voyez le <a href="#achat">site à l'achat</a>. Un site sur mesure en agence coûte souvent plus de 1 500 €, sans la maintenance.<span class="m-hide"><br>Essentiel, Pro et Premium : VTC, taxis, restaurants, artisans, beauté, bien-être, vétérinaires, kinés, dentistes, auto-écoles, coachs, photographes, toiletteurs, fleuristes, traiteurs, location de bateaux, bijouteries-horlogeries, professions libérales, services à domicile, événementiel, chambres d'hôtes et gîtes, tourisme et loisirs, location et déménagement, infirmiers libéraux, boulangeries, dépannage. Garages en entretien seul (vidange, pneus, freins) : Essentiel, Pro ou Premium. Garages qui vendent des véhicules, concessions et agences immobilières : Pack Auto, Moto &amp; Immo. Vente en ligne : formule Boutique.</span></p>
+      <p>Des frais de mise en ligne une seule fois, puis un abonnement sans engagement. Vous ne payez qu'après avoir vu votre site.</p>
     </div>
     <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="plans">
       <div class="plan">
@@ -982,7 +988,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <p class="for">Pour être trouvé sur Google et recevoir des demandes.</p>
         <div class="price"><b>29 €</b><span>/ mois</span></div>
         <p class="setup">+ <b>190 €</b> de mise en ligne, une fois</p>
-        <ul>
+        <ul class="fold">
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Le modèle de votre métier, au style choisi</li>
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hébergement, domaine, version mobile</li>
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Maintenance et réparations à distance comprises</li>
@@ -991,7 +997,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Agenda de réservation en ligne : vos clients prennent un créneau libre, confirmé tout de suite, et vous gérez tout depuis votre espace (ou bouton « Appeler » si vous préférez le téléphone)</li>
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vos devis en PDF avec votre logo (et bons de commande pour les VTC)</li>
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>QR code de votre site inclus</li>
-        </ul>
+        </ul><button type="button" class="foldbtn">Voir tout ce qui est inclus</button>
         <a class="btn ghost" href="#commande" data-plan="Essentiel">Choisir Essentiel</a>
       </div>
       <div class="plan hot">
@@ -1000,13 +1006,13 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <p class="for">Pour encaisser vos réservations en ligne.</p>
         <div class="price"><b>49 €</b><span>/ mois</span></div>
         <p class="setup">+ <b>290 €</b> de mise en ligne, une fois</p>
-        <ul>
+        <ul class="fold">
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tout Essentiel</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Réservation avec paiement en ligne : acompte ou totalité, l'argent arrive directement sur votre compte (frais Stripe en plus)</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vos avis Google sur le site : on reprend votre note et 5 avis</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bouton « Laisser un avis » et demande d'avis à vos clients en un clic</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Modifications faites par nous sur simple message</li>
-        </ul>
+        </ul><button type="button" class="foldbtn">Voir tout ce qui est inclus</button>
         <a class="btn" href="#commande" data-plan="Pro">Choisir Pro</a>
       </div>
       <div class="plan">
@@ -1014,19 +1020,20 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <p class="for">Pour gérer vos clients et passer devant.</p>
         <div class="price"><b>79 €</b><span>/ mois</span></div>
         <p class="setup">+ <b>490 €</b> de mise en ligne, une fois</p>
-        <ul>
+        <ul class="fold">
           <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tout Pro</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM : fichier clients, historique des demandes et relances</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Site en français et en anglais</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Référencement local renforcé</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Création de votre logo et de votre bannière offerte</li>
           <li class="plus"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Style Signature : vert profond et or, notre design le plus haut de gamme</li>
-        </ul>
+        </ul><button type="button" class="foldbtn">Voir tout ce qui est inclus</button>
         <a class="btn ghost" href="#commande" data-plan="Premium">Choisir Premium</a>
       </div>
     </div>
 
     <!-- 19/11/2026 (Anthony : « un site payable une fois ? » → « Fais ») : site à l'achat, 990 € puis 79 €/an -->
+<details class="sfold"><summary><span class="so">Voir le site à l'achat, les formules Boutique et Auto, Moto &amp; Immo, et les options</span><span class="sc">Masquer</span></summary>
     <div class="buyonce" id="achat">
       <div class="bo-txt">
         <h3>Vous préférez payer une fois&nbsp;?</h3>
@@ -1096,6 +1103,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <div class="opt"><span class="n2">Adresse mail pro<span class="d2">contact@votre-entreprise.fr, configuration sur votre téléphone incluse</span></span><span class="p2">+ 5 € / mois</span></div>
       <div class="opt"><span class="n2">Site bilingue français / anglais<span class="d2">Bouton FR / EN sur votre site, traduction faite pour vous. Inclus en Premium et Boutique</span></span><span class="p2">+ 10 € / mois</span></div>
     </div>
+</details>
   </div>
 </section>
 
@@ -1107,9 +1115,10 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
     <div class="head">
       <span class="eyebrow">Comparer</span>
       <h2>MyCreativeSite, une agence ou le faire soi-même ?</h2>
-      <p>Les trois se valent selon votre temps et votre budget. Voici ce qui change, concrètement.</p>
+      
     </div>
-    <div class="cmpw"><table class="cmpt">
+    <details class="sfold"><summary><span class="so">Voir le comparatif</span><span class="sc">Masquer</span></summary>
+<div class="cmpw"><table class="cmpt">
       <thead><tr><th scope="col"><span class="sr">Critère</span></th><th scope="col" class="me">MyCreativeSite</th><th scope="col">Agence web classique</th><th scope="col">Le faire soi-même</th></tr></thead>
       <tbody>
         <tr><th scope="row">Prix</th><td class="me" data-l="MyCreativeSite">190 € puis 29 €/mois, sans engagement, ou 990 € une fois</td><td data-l="Agence web classique">Sur devis, souvent plusieurs milliers d'euros</td><td data-l="Le faire soi-même">L'abonnement de l'outil, plus votre temps</td></tr>
@@ -1121,14 +1130,16 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <tr><th scope="row">Lisible par Google et ChatGPT</th><td class="me" data-l="MyCreativeSite">Réglé pour vous : textes clairs, données structurées, plan du site</td><td data-l="Agence web classique">Selon l'agence</td><td data-l="Le faire soi-même">À régler vous-même</td></tr>
         <tr><th scope="row">Rendez-vous</th><td class="me" data-l="MyCreativeSite">Aucun, tout se fait en ligne</td><td data-l="Agence web classique">Réunions et échanges</td><td data-l="Le faire soi-même">Aucun</td></tr>
       </tbody>
-    </table></div><details class="cmpd" id="cmpd"><summary>Voir le comparatif complet</summary></details>
+    </table></div></details>
+
   </div>
 </section>
 
 <section class="extras" id="services">
   <div class="wrap">
-    <div class="head"><span class="eyebrow">Services en plus</span><h2>Pour aller plus loin.</h2><p>À ajouter à votre site, ou à commander seul.</p></div>
-    <p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="xgrid">
+    <div class="head"><span class="eyebrow">Services en plus</span><h2>Pour aller plus loin.</h2></div>
+    <details class="sfold"><summary><span class="so">Voir les services : landing page, Google Ads, réseaux sociaux, logo</span><span class="sc">Masquer</span></summary>
+<p class="swipe" aria-hidden="true">Faites glisser pour tout voir <span>→</span></p><div class="xgrid">
       <article class="xcard hi xwide">
         <div>
           <span class="xtag">Nouveau · Landing Page</span>
@@ -1167,10 +1178,11 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <a class="btn ghost" href="#commande" data-addopt="logo">L'ajouter à ma commande</a>
       </article>
     </div>
+</details>
   </div>
 </section>
 
-<section>
+<section hidden>
   <div class="wrap">
     <div class="head"><span class="eyebrow">Nos engagements</span><h2>Ce qui est à vous reste à vous.</h2></div>
     <div class="promise">
@@ -1204,7 +1216,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <span class="eyebrow">Commander</span>
       <h2 style="margin-top:12px">Votre site en ligne dans 48 heures.</h2>
       <p class="sub">Votre métier, votre nom et vos coordonnées suffisent pour commencer : le reste se règle ensuite dans votre espace. Rien n'est facturé avant que vous ayez validé votre site.</p>
-      <ol class="steps-o">
+      <ol class="steps-o" hidden>
         <li><b>Vous envoyez cette demande</b><span>30 secondes, depuis votre téléphone.</span></li>
         <li><b>Vous remplissez votre site, ou on le fait pour vous</b><span>Textes, prix, horaires, photos : depuis votre espace, avec l'aperçu en direct. Ou vous nous envoyez tout et on s'en occupe en 48 h.</span></li>
         <li><b>Vous le voyez en vrai</b><span>Sur une adresse provisoire, sur ordinateur et téléphone.</span></li>
@@ -1535,5 +1547,9 @@ document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.
 </script>
 <script src="/assets/cs-visits.js?v=5" defer></script>
 <script>/* 20/11/2026 : listes repliées sur téléphone */document.querySelectorAll('.foldbtn').forEach(function(b){b.addEventListener('click',function(){var u=b.previousElementSibling;if(u)u.classList.add('open');});});</script>
+<script>/* 20/11/2026 : un lien vers une partie repliée (#achat, #boutique…) la déplie */
+(function(){function op(id){var t=id&&document.getElementById(id);if(!t)return;var d=t.closest('details');while(d){d.open=true;d=d.parentElement&&d.parentElement.closest('details');}}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(a)op(a.getAttribute('href').slice(1));},true);
+if(location.hash)op(location.hash.slice(1));window.addEventListener('hashchange',function(){op(location.hash.slice(1));});})();</script>
 </body>
 </html>

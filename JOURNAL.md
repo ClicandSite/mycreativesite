@@ -158,3 +158,9 @@
 - Téléphone : formules, étapes « Comment ça marche », réalisations et services en cartes qui défilent au doigt (avec « Faites glisser pour tout voir → ») ; liste des métiers du sélecteur sur 2 colonnes compactes ; comparatif limité à 3 lignes + « Voir le comparatif complet » ; longue liste des métiers de l'intro Tarifs masquée ; listes Pack Auto/Boutique repliées à 4 lignes + « Voir tout ce qui est inclus ».
 - Ordinateur : grille « Un modèle pensé pour chaque métier » limitée à 2 rangées (10) + « Voir les 31 métiers ».
 - Vérifié 360/390/1300 px : aucun débordement, aucune erreur JavaScript.
+
+## 20/11/2026 (15 h 10) — Accueil simplifié (Anthony : « trop d'info d'un coup », « le plus simple possible, avec les infos essentielles »)
+- Téléphone : 28 écrans → 10 ; ordinateur : 15 → 8.
+- Restent visibles : accueil, modèles à essayer, 3 étapes, réalisations, les 3 formules (4 avantages chacune + « Voir tout ce qui est inclus »), questions, commande.
+- Repliés derrière un bouton : tout ce qui est inclus, site à l'achat + formules Boutique / Auto, Moto & Immo + options, comparatif, services (landing page, Google Ads, kit réseaux, logo). Un lien vers #achat ou #boutique déplie la bonne partie.
+- Masqués (redites) : grille des 31 métiers (déjà dans le sélecteur), bandeau « Votre site prêt en 48 heures », « Nos engagements » (déjà dans l'accueil et les formules), liste des 4 étapes dans la commande. Intro des tarifs réduite à une phrase.
