@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Démo Signature 3D · MyCreativeSite</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Démo d'un site avec scènes animées au défilement, réalisée par MyCreativeSite. Marques fictives, visuels générés par IA.">
+<meta name="theme-color" content="#07080c">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="preload" as="image" href="f/car-m/001.webp" media="(max-width:759px)">
+<link rel="preload" as="image" href="f/car-d/001.webp" media="(min-width:760px)">
+<style>
+/* 20/11/2026 — Démo « Signature 3D » (Anthony : « Tu sais faire ? » + vidéos Grok Imagine).
+   Principe : la vidéo est découpée en images (WebP, 12 par seconde) et dessinée dans un canvas au rythme du défilement. */
+:root{--bg:#07080c;--ink:#f3efe7;--muted:#a49f95;--gold:#c9a96a;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+body{font-family:Figtree,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+.demo-tag{position:fixed;z-index:20;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(7,8,12,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+.demo-tag a{color:var(--gold);text-decoration:none;font-weight:700}
+nav.top{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:56px 6vw 0}
+.logo{font-family:'Bricolage Grotesque',Figtree,sans-serif;font-weight:700;letter-spacing:.32em;font-size:.95rem;text-transform:uppercase}
+.logo small{display:block;font-family:Figtree,sans-serif;font-weight:500;letter-spacing:.22em;font-size:.6rem;color:var(--muted)}
+.navbtn{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none}
+/* scènes */
+.scene{position:relative}
+.scene .stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scene .shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,transparent 35%,rgba(7,8,12,.75) 100%),linear-gradient(to bottom,rgba(7,8,12,.55),transparent 28%,transparent 70%,rgba(7,8,12,.85));pointer-events:none}
+.cap{position:absolute;left:6vw;right:6vw;bottom:13vh;max-width:640px;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.cap.on{opacity:1;transform:none;pointer-events:auto}
+.cap.r{left:auto;text-align:right}
+.cap.c{left:50%;right:auto;transform:translate(-50%,24px);text-align:center;width:min(88vw,680px)}
+.cap.c.on{transform:translate(-50%,0)}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+h1,h2{font-family:'Bricolage Grotesque',Figtree,sans-serif;font-weight:600;line-height:1.02;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,8vw,6.2rem)}
+h2{font-size:clamp(2rem,5.5vw,4rem)}
+.cap p{color:#d9d3c8;font-size:clamp(1rem,1.6vw,1.15rem);margin-top:14px}
+.btn{display:inline-block;margin-top:22px;padding:15px 26px;border-radius:999px;background:var(--gold);color:#16120a;font-weight:700;text-decoration:none;letter-spacing:.02em}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
+.hint{position:absolute;left:50%;bottom:4vh;transform:translateX(-50%);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:center;transition:opacity .4s}
+.hint i{display:block;width:1px;height:34px;margin:10px auto 0;background:linear-gradient(var(--muted),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.bar{position:absolute;left:6vw;right:6vw;top:calc(100svh - 3px);height:2px;background:var(--line)}
+/* contenu classique entre les scènes */
+.block{padding:16vh 6vw;max-width:1180px;margin:0 auto}
+.block .head{max-width:640px;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:22px;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+.card b{display:block;font-family:'Bricolage Grotesque',Figtree,sans-serif;font-size:1.25rem;margin-bottom:8px}
+.card span{color:var(--muted);font-size:.95rem}
+.card .price{display:block;margin-top:18px;color:var(--gold);font-weight:700}
+@media (max-width:759px){.cards{grid-template-columns:1fr}.block{padding:12vh 6vw}.btn.ghost{margin-left:0;margin-top:10px}.cap{bottom:16vh}.cap.r{text-align:left;left:6vw}}
+footer{border-top:1px solid var(--line);padding:56px 6vw calc(56px + env(safe-area-inset-bottom,0px));text-align:center}
+footer h2{font-size:clamp(1.6rem,4vw,2.6rem)}
+footer p{color:var(--muted);max-width:560px;margin:14px auto 0}
+footer .btn{background:linear-gradient(90deg,#ff3d8b,#7c3aed,#22a7ff);color:#fff}
+footer small{display:block;margin-top:28px;color:var(--muted);font-size:.8rem}
+@media (prefers-reduced-motion:reduce){.cap{transition:none}.hint i{animation:none}}
+</style>
+</head>
+<body>
+<div class="demo-tag">Démo · <a href="https://mycreativesite.fr/">MyCreativeSite</a></div>
+
+<!-- Scène 1 : voiture -->
+<section class="scene" id="s-car" data-frames="73" data-mfit="width" data-d="f/car-d/" data-m="f/car-m/" style="height:420vh">
+  <div class="stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="shade"></div>
+    <nav class="top"><div class="logo">Écurie Riviera<small>Cannes · Monaco · Saint-Tropez</small></div><a class="navbtn" href="#reserver">Réserver</a></nav>
+    <div class="cap c on" data-from="0" data-to=".16"><div class="eyebrow">Location de voitures d'exception</div><h1>L'exception,<br>à votre porte.</h1></div>
+    <div class="cap" data-from=".24" data-to=".46"><div class="eyebrow">Livraison incluse</div><h2>Livrée à votre hôtel, votre villa ou l'aéroport.</h2><p>De Nice à Saint-Tropez, le véhicule vous attend, plein fait, à l'heure dite.</p></div>
+    <div class="cap r" data-from=".52" data-to=".72"><div class="eyebrow">Avec ou sans chauffeur</div><h2>Vous conduisez. Ou on vous conduit.</h2><p>Un chauffeur en costume, sur demande, à la journée ou pour un trajet.</p></div>
+    <div class="cap c" data-from=".8" data-to="1.01"><h2>Réservez en deux minutes.</h2><p>Choisissez vos dates, votre véhicule et votre lieu de livraison.</p><a class="btn" href="#reserver">Voir la collection</a></div>
+    <div class="hint">Faites défiler<i></i></div>
+  </div>
+</section>
+
+<section class="block" id="reserver">
+  <div class="head"><div class="eyebrow">La collection</div><h2>Trois façons de rouler.</h2></div>
+  <div class="cards">
+    <div class="card"><b>SUV de prestige</b><span>5 places, cuir, toit panoramique. Idéal pour la famille ou les affaires.</span><span class="price">dès 390 € / jour</span></div>
+    <div class="card"><b>Cabriolet</b><span>La corniche cheveux au vent, de Cannes à Monaco.</span><span class="price">dès 450 € / jour</span></div>
+    <div class="card"><b>Avec chauffeur</b><span>Van haut de gamme et chauffeur privé, pour vos transferts et soirées.</span><span class="price">dès 95 € / heure</span></div>
+  </div>
+</section>
+
+<!-- Scène 2 : bouteille -->
+<section class="scene" id="s-wine" data-frames="73" data-d="f/wine-d/" data-m="f/wine-m/" style="height:340vh">
+  <div class="stick">
+    <canvas aria-hidden="true"></canvas>
+    <div class="shade"></div>
+    <div class="cap c on" data-from="0" data-to=".22"><div class="eyebrow">Et pour un domaine viticole</div><h2>Maison Alcyone</h2><p>Blanc de la Côte d'Azur, élevé en fût.</p></div>
+    <div class="cap" data-from=".34" data-to=".62"><div class="eyebrow">Le millésime</div><h2>Notes d'agrumes, finale saline.</h2><p>Chaque marque a sa scène : un produit qui tourne, un geste, une matière.</p></div>
+    <div class="cap r" data-from=".72" data-to="1.01"><h2>Commandez au domaine.</h2><a class="btn" href="#fin">Découvrir</a></div>
+  </div>
+</section>
+
+<footer id="fin">
+  <h2>Vous voulez un site comme celui-ci ?</h2>
+  <p>Votre produit, votre véhicule ou votre lieu, mis en scène au défilement, avec la réservation ou la commande intégrée. Vous voyez votre site avant de payer.</p>
+  <a class="btn" href="https://mycreativesite.fr/#commande">En parler avec MyCreativeSite</a>
+  <small>Démo réalisée par MyCreativeSite. Marques et prix fictifs, visuels générés par IA.</small>
+</footer>
+
+<script>
+(function(){
+  var small=window.matchMedia('(max-width:759px)').matches;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var scenes=[].slice.call(document.querySelectorAll('.scene')).map(function(sec){
+    var n=+sec.dataset.frames, base=small?sec.dataset.m:sec.dataset.d, cv=sec.querySelector('canvas'), ctx=cv.getContext('2d');
+    var imgs=new Array(n), loaded=new Array(n), caps=[].slice.call(sec.querySelectorAll('.cap'));
+    function src(i){ return base+('00'+(i+1)).slice(-3)+'.webp'; }
+    function load(i){ if(imgs[i]) return; var im=new Image(); im.decoding='async'; im.onload=function(){ loaded[i]=true; if(i===S.cur||!S.drawn) draw(); }; im.src=src(i); imgs[i]=im; }
+    var S={sec:sec,cv:cv,ctx:ctx,n:n,cur:0,drawn:false,caps:caps,load:load,started:false};
+    function nearest(i){ for(var d=0;d<n;d++){ if(loaded[i-d]) return i-d; if(loaded[i+d]) return i+d; } return -1; }
+    function size(){ var r=Math.min(window.devicePixelRatio||1,2); cv.width=Math.round(cv.clientWidth*r); cv.height=Math.round(cv.clientHeight*r); draw(); }
+    function draw(){ var k=nearest(S.cur); if(k<0) return; var im=imgs[k], W=cv.width, H=cv.height, fitW=small&&sec.dataset.mfit==='width';
+      var s=fitW?W/im.naturalWidth*1.3:Math.max(W/im.naturalWidth,H/im.naturalHeight)*(small?1.08:1);
+      var w=im.naturalWidth*s, h=im.naturalHeight*s, y=fitW?H*.4-h/2:(H-h)/2; ctx.fillStyle='#07080c'; ctx.fillRect(0,0,W,H); ctx.drawImage(im,(W-w)/2,y,w,h);
+      if(fitW){ var f=h*.22, g=ctx.createLinearGradient(0,y,0,y+f); g.addColorStop(0,'#07080c'); g.addColorStop(1,'rgba(7,8,12,0)'); ctx.fillStyle=g; ctx.fillRect(0,y-1,W,f+1);
+        g=ctx.createLinearGradient(0,y+h-f,0,y+h); g.addColorStop(0,'rgba(7,8,12,0)'); g.addColorStop(1,'#07080c'); ctx.fillStyle=g; ctx.fillRect(0,y+h-f,W,f+1);
+        var fx=w*.08; g=ctx.createLinearGradient(0,0,fx,0); g.addColorStop(0,'#07080c'); g.addColorStop(1,'rgba(7,8,12,0)'); ctx.fillStyle=g; ctx.fillRect(0,y,fx,h);
+        g=ctx.createLinearGradient(W-fx,0,W,0); g.addColorStop(0,'rgba(7,8,12,0)'); g.addColorStop(1,'#07080c'); ctx.fillStyle=g; ctx.fillRect(W-fx,y,fx,h); } S.drawn=true; }
+    S.size=size; S.draw=draw;
+    S.preload=function(){ if(S.started) return; S.started=true; var order=[]; for(var step=8;step>=1;step=Math.floor(step/2)){ for(var i=0;i<n;i+=step) if(order.indexOf(i)<0) order.push(i); if(step===1) break; }
+      var k=0; (function next(){ var batch=order.slice(k,k+6); k+=6; batch.forEach(load); if(k<order.length) setTimeout(next,60); })(); };
+    load(0); return S;
+  });
+  function onScroll(){
+    var vh=window.innerHeight;
+    scenes.forEach(function(S){
+      var r=S.sec.getBoundingClientRect(), total=r.height-vh, p=Math.min(1,Math.max(0,-r.top/total));
+      if(r.top<vh*2.5) S.preload();
+      var f=reduce?0:Math.min(S.n-1,Math.round(p*(S.n-1)));
+      if(f!==S.cur){ S.cur=f; S.draw(); }
+      S.caps.forEach(function(c){ c.classList.toggle('on', p>=+c.dataset.from && p<+c.dataset.to); });
+    });
+    var h=document.querySelector('.hint'); if(h) h.style.opacity=window.scrollY>40?0:1;
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ ticking=false; onScroll(); }); } },{passive:true});
+  window.addEventListener('resize',function(){ scenes.forEach(function(S){ S.size(); }); onScroll(); });
+  scenes.forEach(function(S){ S.size(); }); scenes[0].preload(); onScroll();
+})();
+</script>
+</body>
+</html>
