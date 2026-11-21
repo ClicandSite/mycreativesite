@@ -179,3 +179,7 @@
 
 ## 21/11/2026 (19 h) — Tâche de nuit dans le cloud (Anthony : « tâche de nuit cloud »)
 - Tâche planifiée « MyCreativeSite – tâche de nuit (contrôle + SEO) », chaque nuit à 2 h 47 (heure de Paris), dans le cloud (Mac non nécessaire), approbation automatique. Contrôles (génération, plan du site, liens, JSON-LD, 360 px, Supabase), un enrichissement vérifié par nuit, IndexNow, message du matin. Interdits : prix, formules, CGV, commande, espace client, admin, Edge Functions, Stripe, prospection, noindex, suppression de pages. Pas de Search Console (accès seulement via l'appli du Mac).
+
+## 21/11/2026 (19 h 20) — Haut de page façon Colosseum (Anthony : « le système de carrousel c'est terrible », « le plus simple possible »)
+- Haut de page court et centré : « Votre site pro. En ligne en 48 h. », une phrase, 2 boutons, « Dès 29 €/mois · nom de domaine inclus · sans engagement ».
+- La maquette ordinateur + téléphone, la légende et la rangée de boutons métiers sont remplacées par une bande de téléphones qui défile en boucle (31 modèles, images img/modele-*-m.jpg, chargement différé), pause au survol ou au toucher ; un clic ouvre ce modèle dans « Les modèles ». Sans animation si l'appareil demande moins de mouvement (défilement au doigt).
