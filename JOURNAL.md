@@ -176,3 +176,6 @@
 - Corrigé : le plan du site mettait la date du jour sur toutes les pages à chaque génération (Google finit par ignorer ces dates). build_seo.py garde maintenant l'ancienne date quand la page n'a pas changé depuis le dernier commit.
 - Enrichi : guide « Combien coûte un site internet » (≈ 1 440 mots, mis à jour le 21/11) : calcul payer une fois ou s'abonner sur 1 à 3 ans (nos vrais prix Essentiel / site à l'achat), « Les prix qui doivent vous alerter » (prix barrés, paiement en plusieurs fois + abonnement obligatoire, location 24–48 mois, pas de prix affiché), lien vers #achat.
 - Search Console non consultée : le navigateur de l'appli (compte qui a l'accès) n'est pas joignable cette nuit, Chrome n'a pas l'accès.
+
+## 21/11/2026 (19 h) — Tâche de nuit dans le cloud (Anthony : « tâche de nuit cloud »)
+- Tâche planifiée « MyCreativeSite – tâche de nuit (contrôle + SEO) », chaque nuit à 2 h 47 (heure de Paris), dans le cloud (Mac non nécessaire), approbation automatique. Contrôles (génération, plan du site, liens, JSON-LD, 360 px, Supabase), un enrichissement vérifié par nuit, IndexNow, message du matin. Interdits : prix, formules, CGV, commande, espace client, admin, Edge Functions, Stripe, prospection, noindex, suppression de pages. Pas de Search Console (accès seulement via l'appli du Mac).
