@@ -1393,7 +1393,20 @@ def main():
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     from articles import ARTICLES
     adate = {f"conseils/{a['slug']}/": a["date"] for a in ARTICLES}
-    sm += [f'  <url><loc>{SITE}/{u}</loc><lastmod>{adate.get(u, TODAY)}</lastmod><priority>{pr}</priority></url>' for u, pr in urls]
+    # 21/11/2026 : date de modification réelle — on garde l'ancienne date si la page n'a pas changé depuis le dernier commit
+    # (avant, toutes les pages prenaient la date du jour à chaque génération, et Google finit par ignorer ces dates).
+    import re as _re, subprocess as _sp
+    try: prev = dict(_re.findall(r"<loc>" + _re.escape(SITE) + r"/(.*?)</loc><lastmod>(.*?)</lastmod>", _sp.run(["git", "show", "HEAD:sitemap.xml"], capture_output=True, text=True).stdout))
+    except Exception: prev = {}
+    def _lm(u):
+        f = (u or "") + ("index.html" if (u == "" or u.endswith("/")) else "")
+        try:
+            old = _sp.run(["git", "show", "HEAD:" + f], capture_output=True).stdout
+            same = old and old == open(f, "rb").read()
+        except Exception: same = False
+        if same and u in prev: return prev[u]
+        return TODAY if not same else adate.get(u, TODAY)
+    sm += [f'  <url><loc>{SITE}/{u}</loc><lastmod>{_lm(u)}</lastmod><priority>{pr}</priority></url>' for u, pr in urls]
     sm.append("</urlset>")
     open("sitemap.xml", "w").write("\n".join(sm) + "\n")
     links = "".join(f'<a class="card" href="/{p["slug"]}/"><h3>{p.get("label") or NAMES[p["k"]]}</h3></a>' for p in PAGES)

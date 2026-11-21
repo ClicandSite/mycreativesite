@@ -170,3 +170,9 @@
 ## 20/11/2026 (21 h 30) — Démo « Signature 3D » (Anthony : pub Veltharis à 2 997 € HT, « Tu sais faire ? » → vidéos Grok Imagine)
 - /demos/signature/ (noindex, hors plan du site) : 2 scènes animées au défilement à partir de ses 2 vidéos Grok (6 s) : SUV qui tourne (« Écurie Riviera », location de prestige fictive) puis bouteille et éclaboussures (« Maison Alcyone », domaine fictif), textes qui apparaissent au fil du défilement, bloc « collection » classique entre les deux, pied de page vers la commande.
 - Technique : vidéos découpées en 73 images WebP (12 par seconde), versions ordinateur et téléphone (voiture 1 280/720 px, bouteille 1 100/640 px), dessinées dans un canvas selon le défilement ; chargement progressif (1re image tout de suite, puis 1 image sur 8, sur 4…). Téléphone ≈ 2,3 Mo d'images en tout. Sur téléphone la voiture est cadrée en largeur avec bords fondus.
+
+## 21/11/2026 (3 h) — Passage SEO
+- Vérifs OK : 0 lien cassé, 103 adresses indexables, 103 pages testées en 360 px sans débordement ni erreur, JSON-LD valides ; Supabase 112 Mo, tâches 986/986 OK.
+- Corrigé : le plan du site mettait la date du jour sur toutes les pages à chaque génération (Google finit par ignorer ces dates). build_seo.py garde maintenant l'ancienne date quand la page n'a pas changé depuis le dernier commit.
+- Enrichi : guide « Combien coûte un site internet » (≈ 1 440 mots, mis à jour le 21/11) : calcul payer une fois ou s'abonner sur 1 à 3 ans (nos vrais prix Essentiel / site à l'achat), « Les prix qui doivent vous alerter » (prix barrés, paiement en plusieurs fois + abonnement obligatoire, location 24–48 mois, pas de prix affiché), lien vers #achat.
+- Search Console non consultée : le navigateur de l'appli (compte qui a l'accès) n'est pas joignable cette nuit, Chrome n'a pas l'accès.
