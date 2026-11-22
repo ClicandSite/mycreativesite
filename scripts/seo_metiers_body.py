@@ -691,6 +691,17 @@ _LAST = {
 for _s, (_h, _t) in _LAST.items():
     BODY[_s].append((_h, [_t]))
 
+# 22/11/2026 (tâche de nuit) : photographe, droit à l'image (source : service-public.gouv.fr F32103, CNIL)
+_add("site-internet-photographe", [
+  ("Votre portfolio et le droit à l'image", [
+    "Votre portfolio montre des gens : des mariés, des familles, des enfants, des salariés. Avant de publier une photo où une personne est reconnaissable, il faut son accord écrit. Le fait qu'elle ait accepté d'être photographiée ne suffit pas.",
+    "L'accord doit être précis : sur quel support la photo sera publiée (votre site, vos réseaux), dans quel but et pour combien de temps. Le plus simple est de prévoir une case ou une clause dans votre contrat ou votre devis, que le client remplit dès la réservation.",
+    "Pour un enfant, c'est l'accord écrit des parents qu'il faut. Pour une photo de groupe d'enfants, l'accord des parents de chaque enfant.",
+    "Si un client refuse, rien ne vous empêche de montrer votre travail autrement : détails, décor, mains, silhouettes de dos, paysages ou objets. Et si un client change d'avis plus tard, vous retirez la photo vous-même depuis votre espace client, en quelques secondes."]),
+],[
+  ("Puis-je mettre les photos de mes clients dans mon portfolio en ligne ?", "Oui, avec leur accord écrit et précis (support, but, durée) pour chaque personne reconnaissable, et celui des parents pour un enfant. Prévoyez-le dans votre contrat dès la réservation."),
+])
+
 # 16/11/2026 (passage SEO) : pages d'intention et page Cannes enrichies.
 # BODY_EXTRA s'ajoute à la fin d'un « body » existant (pages déjà enrichies dans seo_contenu.py).
 BODY_EXTRA = {
