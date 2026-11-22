@@ -188,3 +188,8 @@
 ## 22/11/2026 (nuit, tâche cloud)
 - Vérifs OK : génération sans erreur, 103 adresses du plan indexables (canonical juste), 0 lien interne cassé, 242 blocs JSON-LD valides, 103 pages en 360 px sans débordement ni erreur JavaScript. Supabase : base 112 Mo, tâches planifiées 986/986 en succès sur 24 h, aucune nouvelle commande, 3 visiteurs sur 24 h (direct, Google, prospection).
 - Enrichi : page /site-internet-photographe/ (984 → 1 184 mots) : section « Votre portfolio et le droit à l'image » (accord écrit et précis — support, but, durée — de chaque personne reconnaissable, accord des parents pour un enfant, alternatives si refus) + 1 question de FAQ. Source : service-public.gouv.fr (F32103) et CNIL. IndexNow envoyé.
+
+## 22/11/2026 (19 h) — Search Console (Anthony : « regarde le search »)
+- 7 jours (au 20/11) : 1 410 impressions (1 020 la semaine d'avant), 0 clic. 96 pages indexées, 16 non indexées (4 noindex voulues, 4 /espace/ bloquées voulues, 8 « détectées, pas encore explorées »).
+- Requêtes en tête : « site internet plombier » 21 impr. (pos. 58), « ouvrir un institut de beauté » 19 (46), « devenir chauffeur vtc bvtc » 19 (61), « service à la personne » 17 (15), « formation obligatoire pour ouvrir un commerce » 16 (52, guide du 19/11), « site internet infirmier » 7 (21), « devenir chauffeur vtc france travail » 6 (22).
+- Indexation demandée : /site-internet-kinesitherapeute/, /site-internet-veterinaire/, /site-internet-bijouterie/, /site-internet-location-bateau/ (restent : location-demenagement, aide/nom-de-domaine, 2 guides indispensables).
