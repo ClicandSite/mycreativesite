@@ -760,3 +760,20 @@ SEO_TITLE.update({
   "site-internet-traiteur": "Site web traiteur : menus, devis et réservations",
   "site-internet-kinesitherapeute": "Site internet kinésithérapeute : cabinet et rendez-vous",
 })
+
+# 23/11/2026 (Anthony : « améliore encore SEO ») : « site internet plombier » = requête n°1 de la Search Console (21 impressions/7 j, position 58).
+# Sources : arrêté du 24 janvier 2017 modifié (Légifrance, INC, DGCCRF), loi n° 96-603 art. 22-2 (CAPEB).
+BODY_EXTRA["site-internet-plombier-electricien"] = BODY_EXTRA.get("site-internet-plombier-electricien", []) + [
+  ("Prix, devis, assurance : ce que la loi demande… et ce que le site affiche", [
+    "Depuis le 1er avril 2017, un artisan qui fait du dépannage, de la réparation ou de l'entretien chez un particulier (plomberie, électricité, serrurerie, vitrerie, chauffage…) doit informer le client de ses prix avant d'intervenir : taux horaire ou forfaits, frais de déplacement, et caractère gratuit ou payant du devis. Ces informations doivent aussi figurer sur ses supports publicitaires, site internet compris.",
+    "Le devis détaillé est devenu obligatoire dès le premier euro pour ces interventions à domicile : l'ancien seuil de 150 € a disparu. Seule l'urgence absolue, quand il faut faire cesser un danger pour les personnes ou pour les locaux, échappe à ces règles.",
+    "Si votre activité est soumise à l'assurance décennale, vos devis et factures doivent indiquer l'assurance souscrite, les coordonnées de l'assureur et la zone géographique couverte.",
+    "Le modèle a une rubrique « Tarifs » prévue pour ça : taux horaire, déplacement, forfaits courants (débouchage, remplacement d'un chauffe-eau, mise aux normes d'un tableau). Vous les tenez à jour vous-même, et l'espace client génère vos devis en PDF avec votre logo et vos mentions."]),
+  ("Urgence ou rendez-vous : deux parcours sur la même page", [
+    "Le client en panne veut appeler tout de suite : le bouton d'appel reste visible en bas de l'écran sur téléphone. Celui qui prévoit des travaux préfère décrire son besoin et être rappelé : le formulaire de demande de rappel lui sert à ça, et la demande arrive dans votre espace et par e-mail.",
+    "Indiquez clairement vos horaires et si vous intervenez le soir et le week-end : c'est l'une des premières choses que vérifie un client avant d'appeler."]),
+]
+FAQ_EXTRA["site-internet-plombier-electricien"] = FAQ_EXTRA.get("site-internet-plombier-electricien", []) + [
+  ("Dois-je afficher mes tarifs sur mon site de plombier ?", "Pour le dépannage, la réparation et l'entretien chez les particuliers, l'arrêté du 24 janvier 2017 vous impose d'informer le client de vos prix avant l'intervention, y compris sur vos supports publicitaires : taux horaire ou forfaits, frais de déplacement, devis gratuit ou payant. La rubrique Tarifs du site est faite pour ça."),
+  ("Un devis est-il obligatoire pour un petit dépannage ?", "Oui : depuis le 1er avril 2017, le devis détaillé est obligatoire dès le premier euro pour les dépannages, réparations et entretiens à domicile, sauf urgence absolue. Votre espace MyCreativeSite génère ces devis en PDF."),
+]
