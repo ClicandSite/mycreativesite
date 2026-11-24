@@ -23,6 +23,9 @@ const PLAN: Record<string, { monthly: string; setup: string }> = {
   // « monthly » est ici le prix annuel ; essai de 365 jours pour que les 79 € ne partent qu'à partir de la 2e année.
   achat: { monthly: "price_1UdYaCEVjm0uqFCcVzeahGQY", setup: "price_1UdYa6EVjm0uqFCcFUC4kGIw" },
 };
+// 24/11/2026 (Anthony : « Oui très bien ») : maintenance du site à l'achat, 240 €/an — 1re année payée à la commande
+// (prix unique) puis renouvelée chaque année avec l'hébergement (même essai de 365 jours).
+const MAINT = { first: "price_1UfL3QEVjm0uqFCc6ZmHa14V", yearly: "price_1UfL3MEVjm0uqFCcYWhu0vdR" };
 // Options mensuelles impossibles avec un abonnement annuel (Stripe refuse des intervalles mélangés)
 const MONTHLY_OPT = ["mail", "bilingue"];
 const OPTION: Record<string, string> = {
@@ -59,6 +62,8 @@ Deno.serve(async (req) => {
     const isAchat = String(s.plan).toLowerCase() === "achat";
     const opts = (Array.isArray(s.options) ? s.options : []).filter((o: string) => OPTION[o] && !inc.includes(o) && !(isAchat && MONTHLY_OPT.includes(o)));
     const items = [{ price: plan.monthly, quantity: 1 }, { price: plan.setup, quantity: 1 }, ...opts.map((o: string) => ({ price: OPTION[o], quantity: 1 }))];
+    const maint = isAchat && Array.isArray(s.options) && s.options.includes("maintenance");
+    if (maint) { items.push({ price: MAINT.yearly, quantity: 1 }, { price: MAINT.first, quantity: 1 }); opts.push("maintenance"); }
     const back = "https://mycreativesite.fr/apercu/?s=" + encodeURIComponent(slug);
     const body: Record<string, unknown> = {
       mode: "subscription",
@@ -81,7 +86,7 @@ Deno.serve(async (req) => {
     }
     if (isAchat) {
       (body.subscription_data as Record<string, unknown>).trial_period_days = 365;
-      body.custom_text = { submit: { message: "990 € aujourd'hui, 1re année d'hébergement et de nom de domaine comprise, puis 79 € par an à partir de la 2e année, résiliable à tout moment. TVA non applicable, art. 293 B du CGI." } };
+      body.custom_text = { submit: { message: (maint ? "990 € + 240 € de maintenance aujourd'hui, 1re année d'hébergement et de nom de domaine comprise, puis 79 € + 240 € par an à partir de la 2e année" : "990 € aujourd'hui, 1re année d'hébergement et de nom de domaine comprise, puis 79 € par an à partir de la 2e année") + ", résiliable à tout moment. TVA non applicable, art. 293 B du CGI." } };
     }
     if (s.email) body.customer_email = s.email;
     const r = await fetch("https://api.stripe.com/v1/checkout/sessions", {

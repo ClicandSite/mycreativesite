@@ -238,7 +238,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
 .logo-mark{width:34px;height:34px;flex:none;display:block}
 .logo .and,.logo i,.grad-t{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 :root{--grad:linear-gradient(90deg,#FF2D8E 0%,#8B3DFF 52%,#12A8FF 100%)}
-.buyonce{margin-top:18px;border:1.5px dashed var(--line);border-radius:20px;padding:22px 26px;display:flex;gap:22px;align-items:center;justify-content:space-between}.buyonce h3{margin:0 0 6px}.buyonce p{margin:0 0 6px;color:var(--muted);font-size:.95rem;max-width:72ch}.buyonce p b{color:var(--ink)}.buyonce .bo-small{font-size:.85rem;margin:0}.buyonce .btn{flex:none}
+.buyonce{margin-top:18px;border:1.5px dashed var(--line);border-radius:20px;padding:22px 26px;display:flex;gap:22px;align-items:center;justify-content:space-between}.buyonce h3{margin:0 0 6px}.buyonce p{margin:0 0 6px;color:var(--muted);font-size:.95rem;max-width:72ch}.buyonce p b{color:var(--ink)}.buyonce .bo-small{font-size:.85rem;margin:0}.buyonce .bo-calc{margin-top:6px;color:var(--ink)}.buyonce .btn{flex:none}
 @media(max-width:700px){.buyonce{flex-direction:column;align-items:stretch;padding:20px}}
 .incl-note{margin:22px 0 0;text-align:center;color:var(--muted);font-size:.92rem}
 .cmpw{overflow-x:auto;border:1.5px solid var(--line);border-radius:20px;background:var(--bg)}
@@ -1020,7 +1020,8 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
       <div class="bo-txt">
         <h3>Vous préférez payer une fois&nbsp;?</h3>
         <p><b>Site à l'achat : 990 €</b>, payé une seule fois. Le modèle de votre métier au style choisi, la mise en ligne, le nom de domaine et l'hébergement de la première année sont compris, et vous modifiez textes, photos et horaires depuis votre espace. Ensuite, <b>79 € par an</b> pour garder le nom de domaine et l'hébergement.</p>
-        <p class="bo-small">Site vitrine sans agenda de réservation, sans paiement en ligne et sans statistiques de visites. Vos devis en PDF et vos demandes de clients restent dans votre espace. Changements faits par nous : 49 € la retouche, sur devis.</p>
+        <p class="bo-small">Site vitrine sans agenda de réservation, sans paiement en ligne et sans statistiques de visites. <b>Maintenance en option : 240 € par an</b> (mises à jour, pannes, sauvegardes et petites modifications faites par nous) ; sans maintenance, 49 € l'intervention.</p>
+        <p class="bo-small bo-calc">Sur 3 ans avec la maintenance : 1 868 € à l'achat, contre 1 234 € avec l'abonnement Essentiel, qui comprend en plus l'agenda et les statistiques. <b>L'abonnement revient moins cher.</b></p>
       </div>
       <a class="btn ghost" href="#commande" data-plan="Achat">Choisir le site à l'achat</a>
     </div>
@@ -1223,6 +1224,7 @@ svg.pi{vertical-align:-3px;margin-right:4px;opacity:.85}
         <label data-o="logo"><input type="checkbox" name="o-opt" value="logo"><span><b>Logo et bannière · 49 €</b><small>Une fois. Logo (2 propositions) et bannière du site, fichiers fournis.</small></span></label>
         <label data-o="google"><input type="checkbox" name="o-opt" value="google"><span><b>Fiche Google optimisée · 149 €</b><small>Une fois. Avec bouton Réserver.</small></span></label>
         <label data-o="mail"><input type="checkbox" name="o-opt" value="mail"><span><b>Adresse mail pro · 5 €/mois</b><small>contact@votre-domaine, configurée sur votre téléphone.</small></span></label>
+        <label data-o="maintenance" hidden><input type="checkbox" name="o-opt" value="maintenance"><span><b>Maintenance · 240 €/an</b><small>Site à l'achat : mises à jour, pannes, sauvegardes et petites modifications faites par nous.</small></span></label>
         <label data-o="bilingue"><input type="checkbox" name="o-opt" value="bilingue"><span><b>Site français / anglais · 10 €/mois</b><small>Bouton FR / EN, traduction faite pour vous.</small></span></label>
         <p class="optsum" id="o-sum"></p>
       </fieldset>
@@ -1398,12 +1400,12 @@ document.querySelectorAll('[data-plan]').forEach(function(a){a.addEventListener(
   ['o-trade','o-style'].forEach(function(id){ $(id).addEventListener('change',line); });
   // 08/11/2026 : le style Signature est réservé aux formules Premium et Boutique
   // 08/11/2026 : options ajoutées au paiement ; logo et bilingue déjà inclus en Premium et Boutique
-  var PL={Essentiel:[29,190],Pro:[49,290],Premium:[79,490],Boutique:[99,490],AutoImmo:[99,490],Achat:[0,990]}, OP={logo:[0,49],google:[0,149],mail:[5,0],bilingue:[10,0]};
+  var PL={Essentiel:[29,190],Pro:[49,290],Premium:[79,490],Boutique:[99,490],AutoImmo:[99,490],Achat:[0,990]}, OP={logo:[0,49],google:[0,149],mail:[5,0],bilingue:[10,0],maintenance:[0,240]};
   function sum(){ var pl=$('o-plan').value, inc=/^(Premium|Boutique)$/.test(pl), p=PL[pl]||[0,0], m=p[0], u=p[1];
-    document.querySelectorAll('#o-opts label[data-o]').forEach(function(l){ var o=l.dataset.o, i=l.querySelector('input'), isInc=inc&&(o==='logo'||o==='bilingue'), noBuy=pl==='Achat'&&(o==='mail'||o==='bilingue');
+    document.querySelectorAll('#o-opts label[data-o]').forEach(function(l){ var o=l.dataset.o, i=l.querySelector('input'), isInc=inc&&(o==='logo'||o==='bilingue'), noBuy=(pl==='Achat'&&(o==='mail'||o==='bilingue'))||(pl!=='Achat'&&o==='maintenance');
       l.hidden=noBuy; if(noBuy) i.checked=false; i.disabled=isInc||noBuy; if(isInc) i.checked=false; l.classList.toggle('inc',isInc); var b=l.querySelector('b'); if(!b.dataset.t) b.dataset.t=b.textContent; b.textContent=isInc?b.dataset.t.replace(/ · .*/,'')+' · inclus en '+pl:b.dataset.t;
       if(i.checked&&!isInc){ m+=OP[o][0]; u+=OP[o][1]; } });
-    if(pl==='Achat'){ $('o-sum').innerHTML='À payer à la validation : <b>'+u+' € une fois</b>, 1re année d\'hébergement comprise, puis <b>79 € / an</b>.'; $('o-sum2').innerHTML='Rien à payer aujourd\'hui. À la validation de votre site : <b>'+u+' € une fois</b>, puis <b>79 € / an</b> à partir de la 2e année.'; return; }
+    if(pl==='Achat'){ var mt=document.querySelector('input[name=o-opt][value=maintenance]'), an=79+(mt&&mt.checked?240:0); $('o-sum').innerHTML='À payer à la validation : <b>'+u+' €</b>'+(an>79?' (site + 1re année de maintenance)':' une fois')+', 1re année d\'hébergement comprise, puis <b>'+an+' € / an</b>.'; $('o-sum2').innerHTML='Rien à payer aujourd\'hui. À la validation de votre site : <b>'+u+' €</b>'+(an>79?' (site 990 € + 1re année de maintenance 240 €)':' une fois')+', puis <b>'+an+' € / an</b> à partir de la 2e année.'; return; }
     $('o-sum').innerHTML='À payer à la validation : <b>'+u+' € une fois</b> puis <b>'+m+' € / mois</b>, sans engagement.'; $('o-sum2').innerHTML='Rien à payer aujourd\'hui. À la validation de votre site : <b>'+u+' € une fois</b> puis <b>'+m+' € / mois</b>, sans engagement.'; }
   document.querySelectorAll('input[name=o-opt]').forEach(function(i){ i.addEventListener('change',sum); });
   $('o-plan').addEventListener('change',sum); document.addEventListener('click',function(){ setTimeout(sum,0); }); sum();
