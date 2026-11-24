@@ -199,14 +199,14 @@ async function help(site: string, email: string, message: string, page: string) 
   const msg = message.trim().slice(0, 5000); if (msg.length < 5) return { error: "Décrivez votre demande." };
   const recent = Number((await sql`select count(*) n from clicandsite.support_requests where site_id=${site} and created_at > now() - interval '1 hour'`)[0].n);
   if (recent >= 10) return { error: "Plusieurs demandes déjà envoyées : nous revenons vers vous très vite." };
-  const s = (await sql`select name, slug, domain, plan, status, owner_email, trade from clicandsite.sites where id=${site}`)[0];
+  const s = (await sql`select name, slug, domain, plan, status, owner_email, trade, coalesce('maintenance' = any(options), false) maint from clicandsite.sites where id=${site}`)[0];
   const r = (await sql`insert into clicandsite.support_requests (site_id, from_email, message, page) values (${site}, ${email}, ${msg}, ${page.slice(0, 200)}) returning id`)[0];
   const pass = Deno.env.get("SMTP_PASSWORD") || (await sql`select value from clicandsite.secrets where name='smtp_password'`)[0]?.value || "";
   if (!pass) return { ok: true, mailed: false };
   const us = (Deno.env.get("CS_FROM") || "contact@mycreativesite.fr").trim();
   const box: Box = { email: us, host: Deno.env.get("SMTP_HOST") || "ssl0.ovh.net", port: Number(Deno.env.get("SMTP_PORT") || "465"), username: Deno.env.get("SMTP_USER") || us, password: pass };
   const open = "https://mycreativesite.fr/espace/?site=" + encodeURIComponent(s.slug);
-  const info = [["Site", s.name], ["Identifiant", s.slug], ["Domaine", s.domain || "(pas encore)"], ["Statut", s.status], ["Formule", s.plan || "-"], ["Métier", s.trade], ["Client (compte)", s.owner_email], ["Envoyé par", email], ["Page", page || "-"]];
+  const info = [["Site", s.name], ["Identifiant", s.slug], ["Domaine", s.domain || "(pas encore)"], ["Statut", s.status], ["Formule", s.plan || "-"], ...(String(s.plan || "").toLowerCase() === "achat" ? [["Maintenance", s.maint ? "oui (240 €/an, intervention comprise)" : "non : intervention 49 € — lien de paiement https://buy.stripe.com/dRm00j7ODcuTduV5W8gfu0h"]] : []), ["Métier", s.trade], ["Client (compte)", s.owner_email], ["Envoyé par", email], ["Page", page || "-"]];
   const text = msg + "\n\n---\n" + info.map(([k, v]) => k + " : " + v).join("\n") + "\n\nOuvrir son espace : " + open;
   const htmlB = '<div style="font:15px/1.6 -apple-system,Segoe UI,Arial,sans-serif;color:#1f2937;max-width:640px"><p style="white-space:pre-wrap">' + esc(msg) + '</p><table style="border-collapse:collapse;font-size:14px;margin-top:16px">' +
     info.map(([k, v]) => '<tr><td style="padding:3px 12px 3px 0;color:#6b7280">' + esc(k) + '</td><td style="padding:3px 0"><b>' + esc(v) + "</b></td></tr>").join("") +
