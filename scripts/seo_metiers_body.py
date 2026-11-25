@@ -777,3 +777,16 @@ FAQ_EXTRA["site-internet-plombier-electricien"] = FAQ_EXTRA.get("site-internet-p
   ("Dois-je afficher mes tarifs sur mon site de plombier ?", "Pour le dépannage, la réparation et l'entretien chez les particuliers, l'arrêté du 24 janvier 2017 vous impose d'informer le client de vos prix avant l'intervention, y compris sur vos supports publicitaires : taux horaire ou forfaits, frais de déplacement, devis gratuit ou payant. La rubrique Tarifs du site est faite pour ça."),
   ("Un devis est-il obligatoire pour un petit dépannage ?", "Oui : depuis le 1er avril 2017, le devis détaillé est obligatoire dès le premier euro pour les dépannages, réparations et entretiens à domicile, sauf urgence absolue. Votre espace MyCreativeSite génère ces devis en PDF."),
 ]
+
+# 25/11/2026 (tâche de nuit) : toiletteur, toilettage seul ou avec pension (source : bpifrance-creation.fr, fiche « Garde de chiens et chats », mise à jour du 18/08/2025 ; code rural L214-6-1)
+_add("site-internet-toiletteur", [
+  ("Toilettage seul ou avec une pension : ce qui change", [
+    "Le toilettage n'apparaît pas dans la liste des activités pour lesquelles le code rural exige une qualification avec les animaux de compagnie. La garde, elle, y figure. Si vous gardez des chiens ou des chats à la journée ou pour la nuit, ou si vous vendez des animaux, les règles ne sont plus les mêmes.",
+    "Pour la garde, au moins une personne en contact direct avec les animaux doit justifier d'une certification professionnelle reconnue, d'une formation habilitée suivie d'une évaluation (au moins 17 heures pour une seule catégorie d'animaux), ou d'un certificat de capacité obtenu avant 2016. L'activité se déclare à la DDPP au moins 30 jours avant de commencer.",
+    "Il faut aussi un contrat écrit en deux exemplaires pour chaque garde, avec l'identification de l'animal et les dates, et un registre des entrées et sorties. Si vous proposez ces services, le site les présente sur une page à part, avec ce que le client doit apporter (carnet de santé, numéro d'identification)."]),
+  ("Les informations à donner avant le rendez-vous", [
+    "Un client qui vient pour la première fois veut savoir combien de temps dure le toilettage, s'il peut rester, s'il doit revenir chercher son animal et comment il sera prévenu. Le site répond à ces questions sur la page des prestations, ce qui évite les appels et les retards.",
+    "Indiquez aussi vos conditions : ce qui se passe en cas de retard ou d'annulation, si vous acceptez les chiens non vaccinés ou les chiennes en chaleur, et comment vous gérez un pelage très emmêlé. Annoncé à l'avance, un supplément ou une tonte courte ne surprend personne."]),
+],[
+  ("Faut-il un diplôme pour ouvrir un salon de toilettage ?", "Le toilettage seul n'est pas dans la liste des activités du code rural qui demandent une qualification avec les animaux. Si vous gardez aussi des animaux (pension, garde à la journée), une certification ou une formation habilitée devient obligatoire pour au moins une personne au contact des animaux."),
+])
