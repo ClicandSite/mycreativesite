@@ -19,7 +19,7 @@
 <style>/* 10/11/2026 : sur iPhone, les champs date et heure ne dépassent plus de leur cadre */input[type=date],input[type=datetime-local],input[type=time],input[type=month]{min-width:0;max-width:100%;box-sizing:border-box}@supports (-webkit-touch-callout:none){input[type=date],input[type=datetime-local],input[type=time],input[type=month]{-webkit-appearance:none;appearance:none;display:block;width:100%;min-height:2.6em}input::-webkit-date-and-time-value{text-align:left;margin:0}}
 /* 06/11/2026 (Claude) : espace client MyCreativeSite. Le client modifie lui-même son site (textes, prix, horaires, coordonnées, photos)
    avec un aperçu en direct. Données dans le projet Supabase MyCreativeSite. Mode démo sans compte : ?demo=garage */
-:root{--bg:#FFFFFF;--paper:#FAF8FF;--ink:#12162B;--muted:#5C627A;--line:#E1E4EE;--brand:#7C3AED;--soft:#E8EBFF;--ok:#1E8E5A;--bad:#C0392B;--warn:#9A6200;--r:14px}
+:root{--bg:#F6F5F1;--paper:#ECEAE3;--ink:#12162B;--muted:#5C627A;--line:#DAD7CE;--brand:#1D3A8A;--soft:#E3E8F5;--ok:#1E8E5A;--bad:#C0392B;--warn:#9A6200;--r:14px}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{height:100%}
@@ -82,7 +82,7 @@ label{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin:0 
 .login .brand{font:700 1.4rem "Bricolage Grotesque",sans-serif}
 .brand{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:inherit}
 .brand img{flex:none;display:block}
-.brand>span>span{background:linear-gradient(90deg,#FF2D8E 0%,#8B3DFF 52%,#12A8FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand>span>span{background:#1D3A8A;-webkit-background-clip:text;background-clip:text;color:transparent}
 .login p{margin:0;color:var(--muted);font-size:.92rem}
 .msg.err{color:var(--bad);font-size:.88rem}.msg.ok{color:var(--ok);font-size:.88rem}
 .demo-cta{margin-top:16px;text-align:center;font-size:.9rem;color:var(--muted)}
@@ -1988,7 +1988,7 @@ async function logout(){ await SB.auth.signOut(); location.href=location.pathnam
       box=document.createElement('div'); box.setAttribute('role','alertdialog');
       box.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#12162B;color:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.3);display:flex;gap:12px;align-items:center;font-size:.92rem;max-width:92vw';
       box.innerHTML='<span>Sans activité, vous serez déconnecté dans 2 minutes'+(dirty?' (pensez à enregistrer vos modifications)':'')+'.</span>';
-      const b=document.createElement('button'); b.type='button'; b.textContent='Rester connecté'; b.style.cssText='background:#7C3AED;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:700;cursor:pointer;white-space:nowrap'; b.onclick=touch; box.appendChild(b); document.body.appendChild(box);
+      const b=document.createElement('button'); b.type='button'; b.textContent='Rester connecté'; b.style.cssText='background:#1D3A8A;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:700;cursor:pointer;white-space:nowrap'; b.onclick=touch; box.appendChild(b); document.body.appendChild(box);
     }
   },20000);
   if(params.get('deconnecte')==='1') setTimeout(()=>lmsg('Vous avez été déconnecté après 30 minutes sans activité.',true),0);

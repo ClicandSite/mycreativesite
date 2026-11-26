@@ -715,12 +715,12 @@ INTENT += INTENT_LOCAL
 
 CSS = """.logo-mark{width:34px;height:34px;flex:none;display:block}
 .logo .and,.logo i,.grad-t{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-:root{--grad:linear-gradient(90deg,#FF2D8E 0%,#8B3DFF 52%,#12A8FF 100%)}
+:root{--grad:#1D3A8A}
 
-:root{--bg:#FFFFFF;--paper:#FAF8FF;--ink:#12162B;--muted:#5C627A;--line:#E1E4EE;--brand:#7C3AED;--brand-ink:#FFFFFF;--soft:#E8EBFF}
+:root{--bg:#F6F5F1;--paper:#ECEAE3;--ink:#12162B;--muted:#5C627A;--line:#DAD7CE;--brand:#1D3A8A;--brand-ink:#FFFFFF;--soft:#E3E8F5}
 /* 11/11/2026 (Anthony) : pages métier toujours en clair comme l'accueil, même si le téléphone est en mode sombre */
-:root{color-scheme:light;--brand-soft:#F2EAFF;--pop:#FFB020;--device:#12162B}
-:root[data-theme="dark"]{--bg:#0D1020;--paper:#151A30;--ink:#EEF0F8;--muted:#9AA1BC;--line:#262C47;--brand:#A98BFF;--brand-ink:#0D1020;--soft:#1E2550;color-scheme:dark}
+:root{color-scheme:light;--brand-soft:#E3E8F5;--pop:#FFB020;--device:#12162B}
+:root[data-theme="dark"]{--bg:#0D1020;--paper:#151A30;--ink:#EEF0F8;--muted:#9AA1BC;--line:#262C47;--brand:#8FA8E8;--brand-ink:#0D1020;--soft:#1E2550;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}

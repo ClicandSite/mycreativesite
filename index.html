@@ -22,8 +22,8 @@
 <style>/* 10/11/2026 : sur iPhone, les champs date et heure ne dépassent plus de leur cadre */input[type=date],input[type=datetime-local],input[type=time],input[type=month]{min-width:0;max-width:100%;box-sizing:border-box}@supports (-webkit-touch-callout:none){input[type=date],input[type=datetime-local],input[type=time],input[type=month]{-webkit-appearance:none;appearance:none;display:block;width:100%;min-height:2.6em}input::-webkit-date-and-time-value{text-align:left;margin:0}}
 /* Layout : bandes pleine largeur ; un écran d'ordinateur + un téléphone montrent les vrais modèles ; contenu max 1140px */
 :root{
-  --bg:#FFFFFF; --paper:#FAF8FF; --ink:#12162B; --muted:#5C627A; --line:#E1E4EE;
-  --brand:#7C3AED; --brand-ink:#FFFFFF; --brand-soft:#F2EAFF; --pop:#FFB020;
+  --bg:#F6F5F1; --paper:#ECEAE3; --ink:#12162B; --muted:#5C627A; --line:#DAD7CE;
+  --brand:#1D3A8A; --brand-ink:#FFFFFF; --brand-soft:#E3E8F5; --pop:#FFB020;
   --device:#12162B;
   --display:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
   --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -32,7 +32,7 @@
 :root{color-scheme:light}
 :root[data-theme="dark"]{
   --bg:#0D1020; --paper:#151A30; --ink:#EEF0F8; --muted:#9AA1BC; --line:#262C47;
-  --brand:#A98BFF; --brand-ink:#0D1020; --brand-soft:#2A1F4D; --pop:#FFB020; --device:#05070F; color-scheme:dark}
+  --brand:#8FA8E8; --brand-ink:#0D1020; --brand-soft:#1E2A4D; --pop:#FFB020; --device:#05070F; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
@@ -237,7 +237,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:10px 18px;min-width:0}
 }
 .logo-mark{width:34px;height:34px;flex:none;display:block}
 .logo .and,.logo i,.grad-t{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-:root{--grad:linear-gradient(90deg,#FF2D8E 0%,#8B3DFF 52%,#12A8FF 100%)}
+:root{--grad:#1D3A8A}
 .buyonce{margin-top:18px;border:1.5px dashed var(--line);border-radius:20px;padding:22px 26px;display:flex;gap:22px;align-items:center;justify-content:space-between}.buyonce h3{margin:0 0 6px}.buyonce p{margin:0 0 6px;color:var(--muted);font-size:.95rem;max-width:72ch}.buyonce p b{color:var(--ink)}.buyonce .bo-small{font-size:.85rem;margin:0}.buyonce .bo-calc{margin-top:6px;color:var(--ink)}.buyonce .btn{flex:none}
 @media(max-width:700px){.buyonce{flex-direction:column;align-items:stretch;padding:20px}}
 .incl-note{margin:22px 0 0;text-align:center;color:var(--muted);font-size:.92rem}
@@ -341,7 +341,7 @@ ul.fold.open+.foldbtn{display:none}
 .shopband .sb-l{display:flex;flex-direction:column;gap:14px}
 .shopband .sb-btns{display:flex;flex-wrap:wrap;gap:10px}
 @media (max-width:860px){.shopband{grid-template-columns:1fr}}
-.hero h1 .u{background:linear-gradient(transparent 64%,color-mix(in srgb,#8B3DFF 22%,transparent) 64%);padding:0 .05em}
+.hero h1 .u{background:linear-gradient(transparent 64%,color-mix(in srgb,#E9703E 30%,transparent) 64%);padding:0 .05em}
 .hero-show{min-width:0;display:grid;gap:14px}
 .devices img{transition:opacity .22s ease}
 .devices img.fade{opacity:0}
