@@ -838,7 +838,7 @@ AVANT = {"site-internet-vtc": "devenir-chauffeur-vtc-etapes", "site-internet-tax
   "site-internet-fleuriste": "ouvrir-une-boutique-de-fleuriste", "site-internet-photographe": "devenir-photographe-independant",
   "site-internet-traiteur": "devenir-traiteur-etapes", "site-internet-creation-entreprise": "creer-son-entreprise-checklist",
   "site-internet-auto-entrepreneur": "auto-entrepreneur-site-internet",
-  "site-internet-bijouterie": "ouvrir-une-bijouterie-etapes"}
+  "site-internet-bijouterie": "ouvrir-une-bijouterie-etapes", "site-internet-infirmier-liberal": "devenir-infirmier-liberal-etapes"}
 def guide(p):
     from articles import ARTICLES
     g = GUIDES.get(p.get("k"))
