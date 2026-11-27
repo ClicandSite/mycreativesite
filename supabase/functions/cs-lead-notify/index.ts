@@ -3,6 +3,7 @@
 // Envoi par la boîte OVH contact@mycreativesite.fr (même mot de passe que la prospection : clicandsite.secrets 'smtp_password').
 // Destinataire : sites.owner_email. Réponse directe possible au client (Reply-To = e-mail du client s'il l'a laissé).
 // Appel : cron chaque minute (POST, en-tête x-cs-key = secret mail_internal) ; GET ?health=1.
+// 27/11/2026 : couleurs du nouveau style (bleu encre #1D3A8A).
 import postgres from "https://deno.land/x/postgresjs@v3.4.5/mod.js";
 
 const sql = postgres(Deno.env.get("SUPABASE_DB_URL")!, { prepare: false, max: 1 });
@@ -65,10 +66,10 @@ function message(l: any) {
     `Retrouvez toutes vos demandes dans « Mes clients » : ${espace}`, "", "MyCreativeSite"].join("\n");
   const tel = l.phone ? String(l.phone).replace(/[^0-9+]/g, "") : "";
   const htmlBody = `<div style="font-family:Arial,sans-serif;color:#12162B;max-width:560px;margin:0 auto;padding:20px">
-<p style="margin:0 0 6px;font-size:13px;color:#7C3AED;font-weight:bold;text-transform:uppercase;letter-spacing:.06em">${esc(kind)}</p>
+<p style="margin:0 0 6px;font-size:13px;color:#1D3A8A;font-weight:bold;text-transform:uppercase;letter-spacing:.06em">${esc(kind)}</p>
 <h1 style="margin:0 0 16px;font-size:20px">Nouvelle demande sur ${esc(l.site_name || l.slug)}</h1>
-<table style="border-collapse:collapse;width:100%;font-size:15px">${rows.map(([k, v]) => `<tr><td style="padding:7px 10px 7px 0;color:#5C627A;vertical-align:top;white-space:nowrap">${esc(k)}</td><td style="padding:7px 0;border-bottom:1px solid #E1E4EE">${esc(v).replace(/\n/g, "<br>")}</td></tr>`).join("")}</table>
-<p style="margin:20px 0 0">${tel ? `<a href="tel:${esc(tel)}" style="display:inline-block;background:#12162B;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:bold;margin:0 8px 8px 0">Appeler</a>` : ""}<a href="${esc(espace)}" style="display:inline-block;background:#7C3AED;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:bold;margin:0 0 8px">Ouvrir Mes clients</a></p>
+<table style="border-collapse:collapse;width:100%;font-size:15px">${rows.map(([k, v]) => `<tr><td style="padding:7px 10px 7px 0;color:#5C627A;vertical-align:top;white-space:nowrap">${esc(k)}</td><td style="padding:7px 0;border-bottom:1px solid #DAD7CE">${esc(v).replace(/\n/g, "<br>")}</td></tr>`).join("")}</table>
+<p style="margin:20px 0 0">${tel ? `<a href="tel:${esc(tel)}" style="display:inline-block;background:#12162B;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:bold;margin:0 8px 8px 0">Appeler</a>` : ""}<a href="${esc(espace)}" style="display:inline-block;background:#1D3A8A;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:bold;margin:0 0 8px">Ouvrir Mes clients</a></p>
 <p style="margin:14px 0 0;font-size:13px;color:#5C627A">${l.email ? "Répondez simplement à ce mail pour écrire au client." : "Le client n'a pas laissé d'e-mail : rappelez-le."}</p>
 <p style="margin:18px 0 0;font-size:12px;color:#9AA1BC">MyCreativeSite · vous recevez ce mail car une demande a été envoyée depuis votre site.</p></div>`;
   const bd = "cs" + crypto.randomUUID().replace(/-/g, "");
