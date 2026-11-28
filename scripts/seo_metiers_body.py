@@ -790,3 +790,17 @@ _add("site-internet-toiletteur", [
 ],[
   ("Faut-il un diplôme pour ouvrir un salon de toilettage ?", "Le toilettage seul n'est pas dans la liste des activités du code rural qui demandent une qualification avec les animaux. Si vous gardez aussi des animaux (pension, garde à la journée), une certification ou une formation habilitée devient obligatoire pour au moins une personne au contact des animaux."),
 ])
+
+# 28/11/2026 (tâche de nuit) : concession moto, vente d'occasion à un particulier (sources : service-public.gouv.fr F16540, vérifiée le 30/10/2026 ; entreprendre.service-public.gouv.fr F39552, vérifiée le 24/04/2026)
+_add("site-internet-concession-moto", [
+  ("Vendre une moto d'occasion : le contrôle technique", [
+    "Depuis l'arrivée du contrôle technique des deux-roues, la vente d'une occasion se prépare. Quand vous vendez à un particulier une moto, un scooter ou un quadricycle à moteur de plus de 5 ans, vous devez lui remettre le procès-verbal du contrôle technique. Ce contrôle doit dater de moins de 6 mois au moment où l'acheteur demande sa nouvelle carte grise.",
+    "En cas de défaillance critique, la contre-visite et les réparations doivent être faites avant la vente à un particulier. Une moto qui ne roule pas ne peut pas être proposée à un particulier.",
+    "Sur le site, chaque fiche peut indiquer la date du dernier contrôle technique et son résultat. L'acheteur sait tout de suite que la moto est prête à être immatriculée à son nom, et vous évitez les questions au téléphone."]),
+  ("Ce que chaque fiche doit dire", [
+    "Pour un véhicule d'occasion, le professionnel donne par écrit la marque, le type, la version, l'année et le mois de première mise en circulation, et le kilométrage total. S'il ne connaît pas le kilométrage réel, il indique celui du compteur avec la mention « non garanti ». Avant la vente, il informe aussi l'acheteur des garanties légales (garantie de conformité, garantie contre les vices cachés).",
+    "Le modèle de fiche moto prévoit ces champs, pour que votre annonce en ligne et votre document de vente disent la même chose.",
+    "Côté boutique, la vente d'occasion demande aussi de déclarer l'activité en préfecture et de tenir un registre des objets mobiliers, rempli chaque jour. Le site n'y change rien, mais une fiche complète et honnête rassure l'acheteur avant même qu'il pousse la porte."]),
+],[
+  ("Faut-il un contrôle technique pour vendre une moto d'occasion à un particulier ?", "Oui, si elle a plus de 5 ans : vous remettez à l'acheteur le procès-verbal d'un contrôle technique de moins de 6 mois à la date de sa demande de carte grise. Une moto de moins de 5 ans peut être vendue à un particulier sans contrôle."),
+])
